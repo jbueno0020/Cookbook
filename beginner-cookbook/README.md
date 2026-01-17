@@ -51,6 +51,22 @@ Visit `http://localhost:5173` to see the app.
 npm run build
 ```
 
+### Deploy to Vercel
+
+This app is ready to deploy to Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/jbueno0020/Cookbook)
+
+Or manually:
+1. Push your code to GitHub
+2. Visit [vercel.com](https://vercel.com)
+3. Sign up/Login with GitHub
+4. Click "Add New Project"
+5. Import your repository
+6. Click "Deploy"
+
+Your app will be live at `your-project.vercel.app` in under 2 minutes!
+
 ## Tech Stack
 
 - **React** - UI framework
