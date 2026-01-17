@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Recipe } from '../types';
+import type { Recipe } from '../types';
 
 interface RecipeDetailProps {
   recipe: Recipe;
@@ -22,7 +22,6 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set());
   const [checkedIngredients, setCheckedIngredients] = useState<Set<string>>(new Set());
   const [activeTimer, setActiveTimer] = useState<number | null>(null);
-  const [timerSeconds, setTimerSeconds] = useState<number>(0);
 
   const toggleStep = (stepId: number) => {
     const newCompleted = new Set(completedSteps);
@@ -45,7 +44,6 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   };
 
   const startTimer = (minutes: number) => {
-    setTimerSeconds(minutes * 60);
     setActiveTimer(minutes);
   };
 

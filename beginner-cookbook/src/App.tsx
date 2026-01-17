@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Recipe } from './types';
+import type { Recipe } from './types';
 import { recipes } from './data/recipes';
 import { RecipeCard } from './components/RecipeCard';
 import { RecipeDetail } from './components/RecipeDetail';
