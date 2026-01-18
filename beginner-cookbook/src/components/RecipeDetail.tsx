@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import type { Recipe } from '../types';
+import { CookingTechniqueModal } from './CookingTechniqueModal';
+import { cookingTechniques, detectCookingTerms } from '../utils/cookingTechniques';
 
 interface RecipeDetailProps {
   recipe: Recipe;
@@ -25,6 +27,10 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   const [timerSeconds, setTimerSeconds] = useState<number | null>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [selectedTechnique, setSelectedTechnique] = useState<string | null>(null);
+  const [timerPosition, setTimerPosition] = useState({ x: window.innerWidth - 180, y: window.innerHeight - 250 });
+  const [isDraggingTimer, setIsDraggingTimer] = useState(false);
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Timer countdown effect
@@ -125,6 +131,68 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
     }
   };
 
+  // Timer drag handlers
+  const onTimerTouchStart = (e: React.TouchEvent) => {
+    setIsDraggingTimer(true);
+    const touch = e.touches[0];
+    setDragOffset({
+      x: touch.clientX - timerPosition.x,
+      y: touch.clientY - timerPosition.y
+    });
+  };
+
+  const onTimerTouchMove = (e: React.TouchEvent) => {
+    if (isDraggingTimer) {
+      const touch = e.touches[0];
+      setTimerPosition({
+        x: touch.clientX - dragOffset.x,
+        y: touch.clientY - dragOffset.y
+      });
+    }
+  };
+
+  const onTimerTouchEnd = () => {
+    setIsDraggingTimer(false);
+  };
+
+  // Helper to add technique links to text
+  const renderTextWithTechniqueLinks = (text: string) => {
+    const terms = detectCookingTerms(text);
+    if (terms.length === 0) return text;
+
+    let result: (string | React.ReactElement)[] = [text];
+
+    terms.forEach(term => {
+      const newResult: (string | React.ReactElement)[] = [];
+      result.forEach((part, index) => {
+        if (typeof part === 'string') {
+          const regex = new RegExp(`\\b(${term})\\b`, 'gi');
+          const parts = part.split(regex);
+          parts.forEach((p, i) => {
+            if (p.toLowerCase() === term.toLowerCase()) {
+              newResult.push(
+                <button
+                  key={`${term}-${index}-${i}`}
+                  onClick={() => setSelectedTechnique(term)}
+                  className="text-purple-600 font-semibold underline decoration-dotted hover:text-purple-700"
+                >
+                  {p}
+                </button>
+              );
+            } else if (p) {
+              newResult.push(p);
+            }
+          });
+        } else {
+          newResult.push(part);
+        }
+      });
+      result = newResult;
+    });
+
+    return <>{result}</>;
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       {/* Header */}
@@ -222,7 +290,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                 }`}
               >
                 <div className="font-medium text-gray-900">
-                  {ingredient.amount} {ingredient.name}
+                  {renderTextWithTechniqueLinks(`${ingredient.amount} ${ingredient.name}`)}
                 </div>
                 {ingredient.visual && (
                   <div className="text-sm text-gray-500 italic">
@@ -267,7 +335,10 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
 
           {/* Step Card */}
           <div
-            className="bg-white rounded-xl shadow-lg overflow-hidden"
+            className="bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 border-4 border-blue-100"
+            style={{
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.1)'
+            }}
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
@@ -358,9 +429,22 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
         </div>
       )}
 
-      {/* Countdown Timer Display */}
+      {/* Draggable Countdown Timer Display */}
       {timerSeconds !== null && (
-        <div className="fixed bottom-6 right-6 bg-blue-600 text-white p-6 rounded-xl shadow-2xl border-4 border-white">
+        <div
+          className="fixed bg-blue-600 text-white p-6 rounded-xl shadow-2xl border-4 border-white cursor-move touch-none select-none"
+          style={{
+            left: `${timerPosition.x}px`,
+            top: `${timerPosition.y}px`,
+            zIndex: 1000
+          }}
+          onTouchStart={onTimerTouchStart}
+          onTouchMove={onTimerTouchMove}
+          onTouchEnd={onTimerTouchEnd}
+        >
+          <div className="text-xs font-medium mb-1 text-center opacity-75">
+            👆 Drag to move
+          </div>
           <div className="text-sm font-medium mb-2 text-center opacity-90">⏰ Timer</div>
           <div className="text-5xl font-bold text-center mb-4 tabular-nums">
             {formatTime(timerSeconds)}
@@ -372,6 +456,14 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
             Stop Timer
           </button>
         </div>
+      )}
+
+      {/* Cooking Technique Modal */}
+      {selectedTechnique && cookingTechniques[selectedTechnique] && (
+        <CookingTechniqueModal
+          technique={cookingTechniques[selectedTechnique]}
+          onClose={() => setSelectedTechnique(null)}
+        />
       )}
     </div>
   );
