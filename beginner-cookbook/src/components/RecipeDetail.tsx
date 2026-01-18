@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { Recipe } from '../types';
 
 interface RecipeDetailProps {
@@ -21,17 +21,32 @@ const difficultyLabels = {
 export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set());
   const [checkedIngredients, setCheckedIngredients] = useState<Set<string>>(new Set());
-  const [activeTimer, setActiveTimer] = useState<number | null>(null);
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const [timerSeconds, setTimerSeconds] = useState<number | null>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const toggleStep = (stepId: number) => {
-    const newCompleted = new Set(completedSteps);
-    if (newCompleted.has(stepId)) {
-      newCompleted.delete(stepId);
-    } else {
-      newCompleted.add(stepId);
+  // Timer countdown effect
+  useEffect(() => {
+    if (timerSeconds !== null && timerSeconds > 0) {
+      timerRef.current = setInterval(() => {
+        setTimerSeconds((prev) => {
+          if (prev === null || prev <= 1) {
+            // Timer completed
+            if (timerRef.current) clearInterval(timerRef.current);
+            alert('⏰ Timer completed!');
+            return null;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+
+      return () => {
+        if (timerRef.current) clearInterval(timerRef.current);
+      };
     }
-    setCompletedSteps(newCompleted);
-  };
+  }, [timerSeconds]);
 
   const toggleIngredient = (ingredientName: string) => {
     const newChecked = new Set(checkedIngredients);
@@ -44,11 +59,71 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   };
 
   const startTimer = (minutes: number) => {
-    setActiveTimer(minutes);
+    setTimerSeconds(minutes * 60);
   };
 
+  const stopTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    setTimerSeconds(null);
+  };
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  const currentStep = recipe.steps[currentStepIndex];
   const progress = (completedSteps.size / recipe.steps.length) * 100;
   const totalTime = recipe.prepTime + recipe.cookTime;
+
+  // Swipe handlers
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && currentStepIndex < recipe.steps.length - 1) {
+      // Swipe left - mark current step complete and go to next
+      const newCompleted = new Set(completedSteps);
+      newCompleted.add(currentStep.id);
+      setCompletedSteps(newCompleted);
+      setCurrentStepIndex(currentStepIndex + 1);
+    }
+
+    if (isRightSwipe && currentStepIndex > 0) {
+      // Swipe right - go to previous step
+      setCurrentStepIndex(currentStepIndex - 1);
+    }
+  };
+
+  const goToNextStep = () => {
+    if (currentStepIndex < recipe.steps.length - 1) {
+      const newCompleted = new Set(completedSteps);
+      newCompleted.add(currentStep.id);
+      setCompletedSteps(newCompleted);
+      setCurrentStepIndex(currentStepIndex + 1);
+    }
+  };
+
+  const goToPreviousStep = () => {
+    if (currentStepIndex > 0) {
+      setCurrentStepIndex(currentStepIndex - 1);
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -160,99 +235,139 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
         </div>
       </div>
 
-      {/* Steps */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-          <span>📝</span> Step-by-Step Instructions
-        </h2>
-        <div className="space-y-6">
-          {recipe.steps.map((step, index) => (
-            <div
-              key={step.id}
-              className={`border-l-4 pl-6 pb-6 relative ${
-                completedSteps.has(step.id)
-                  ? 'border-green-500'
-                  : 'border-gray-300'
-              }`}
-            >
-              {/* Step number badge */}
-              <div
-                className={`absolute -left-6 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${
-                  completedSteps.has(step.id)
-                    ? 'bg-green-500 text-white'
-                    : 'bg-gray-200 text-gray-700'
-                }`}
-              >
-                {index + 1}
+      {/* Swipeable Step Card */}
+      {completedSteps.size === recipe.steps.length ? (
+        /* Completion Message */
+        <div className="bg-green-50 border-2 border-green-500 rounded-lg p-8 text-center">
+          <div className="text-6xl mb-4">🎉</div>
+          <h3 className="text-3xl font-bold text-green-800 mb-3">
+            Amazing Job!
+          </h3>
+          <p className="text-green-700 text-lg mb-6">
+            You've completed all the steps! Enjoy your delicious {recipe.title}!
+          </p>
+          <button
+            onClick={() => {
+              setCompletedSteps(new Set());
+              setCurrentStepIndex(0);
+            }}
+            className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700"
+          >
+            Start Over
+          </button>
+        </div>
+      ) : (
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <span>📝</span> Cooking Instructions
+          </h2>
+          <p className="text-gray-600 mb-4 text-center">
+            Swipe left to complete step • Swipe right to go back
+          </p>
+
+          {/* Step Card */}
+          <div
+            className="bg-white rounded-xl shadow-lg overflow-hidden"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
+            {/* Step Header */}
+            <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium opacity-90">
+                  Step {currentStepIndex + 1} of {recipe.steps.length}
+                </span>
+                {completedSteps.has(currentStep.id) && (
+                  <span className="bg-green-400 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    ✓ Done
+                  </span>
+                )}
               </div>
+              <h3 className="text-2xl font-bold">
+                {currentStep.instruction}
+              </h3>
+            </div>
 
-              <div className="ml-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {step.instruction}
-                </h3>
+            {/* Step Content */}
+            <div className="p-6">
+              <p className="text-gray-800 text-lg leading-relaxed mb-6">
+                {currentStep.plainLanguage}
+              </p>
 
-                <p className="text-gray-700 mb-3 leading-relaxed">
-                  {step.plainLanguage}
-                </p>
-
-                {step.tip && (
-                  <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 mb-3">
-                    <div className="flex items-start gap-2">
-                      <span className="text-yellow-600 font-bold">💡 Tip:</span>
-                      <span className="text-yellow-800">{step.tip}</span>
+              {currentStep.tip && (
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                  <div className="flex items-start gap-2">
+                    <span className="text-xl">💡</span>
+                    <div>
+                      <div className="font-bold text-yellow-800 mb-1">Pro Tip:</div>
+                      <p className="text-yellow-700">{currentStep.tip}</p>
                     </div>
                   </div>
-                )}
-
-                <div className="flex gap-3 mt-4">
-                  <button
-                    onClick={() => toggleStep(step.id)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                      completedSteps.has(step.id)
-                        ? 'bg-green-500 text-white hover:bg-green-600'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                    }`}
-                  >
-                    {completedSteps.has(step.id) ? '✓ Completed' : 'Mark Complete'}
-                  </button>
-
-                  {step.timer && (
-                    <button
-                      onClick={() => startTimer(step.timer!)}
-                      className="px-4 py-2 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors flex items-center gap-2"
-                    >
-                      <span>⏱️</span>
-                      Start {step.timer} min timer
-                    </button>
-                  )}
                 </div>
+              )}
+
+              {/* Timer Button */}
+              {currentStep.timer && (
+                <button
+                  onClick={() => startTimer(currentStep.timer!)}
+                  disabled={timerSeconds !== null}
+                  className="w-full mb-4 px-6 py-4 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-lg"
+                >
+                  <span>⏱️</span>
+                  {timerSeconds !== null ? 'Timer Running...' : `Start ${currentStep.timer} min timer`}
+                </button>
+              )}
+
+              {/* Navigation Buttons */}
+              <div className="flex gap-3">
+                <button
+                  onClick={goToPreviousStep}
+                  disabled={currentStepIndex === 0}
+                  className="flex-1 px-6 py-4 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  ← Previous
+                </button>
+                <button
+                  onClick={goToNextStep}
+                  disabled={currentStepIndex === recipe.steps.length - 1}
+                  className="flex-1 px-6 py-4 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Complete & Next →
+                </button>
+              </div>
+
+              {/* Step Dots Indicator */}
+              <div className="flex justify-center gap-2 mt-6">
+                {recipe.steps.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentStepIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentStepIndex
+                        ? 'bg-blue-600 w-6'
+                        : completedSteps.has(recipe.steps[index].id)
+                        ? 'bg-green-500'
+                        : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Completion Message */}
-        {completedSteps.size === recipe.steps.length && (
-          <div className="mt-8 bg-green-50 border-2 border-green-500 rounded-lg p-6 text-center">
-            <div className="text-5xl mb-3">🎉</div>
-            <h3 className="text-2xl font-bold text-green-800 mb-2">
-              Amazing Job!
-            </h3>
-            <p className="text-green-700">
-              You've completed all the steps! Enjoy your delicious {recipe.title}!
-            </p>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
-      {/* Simple Timer Display */}
-      {activeTimer !== null && (
-        <div className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-lg shadow-lg">
-          <div className="text-sm font-medium mb-1">Timer Running</div>
-          <div className="text-2xl font-bold">{activeTimer} minutes</div>
+      {/* Countdown Timer Display */}
+      {timerSeconds !== null && (
+        <div className="fixed bottom-6 right-6 bg-blue-600 text-white p-6 rounded-xl shadow-2xl border-4 border-white">
+          <div className="text-sm font-medium mb-2 text-center opacity-90">⏰ Timer</div>
+          <div className="text-5xl font-bold text-center mb-4 tabular-nums">
+            {formatTime(timerSeconds)}
+          </div>
           <button
-            onClick={() => setActiveTimer(null)}
-            className="mt-2 text-xs bg-white text-blue-600 px-3 py-1 rounded hover:bg-gray-100"
+            onClick={stopTimer}
+            className="w-full text-sm bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-100 font-semibold"
           >
             Stop Timer
           </button>
