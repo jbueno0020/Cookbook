@@ -1133,5 +1133,710 @@ export const recipes: Recipe[] = [
         tip: 'Even better the next day! Leftovers taste amazing!'
       }
     ]
+  },
+  {
+    id: '14',
+    title: 'Chilaquiles (Mexican Breakfast)',
+    description: 'Crispy tortilla chips in flavorful red salsa topped with cheese and eggs. A beloved Mexican breakfast!',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 15,
+    servings: 4,
+    tags: ['mexican', 'breakfast', 'authentic', 'vegetarian-option'],
+    ingredients: [
+      {
+        name: 'Tortilla chips',
+        amount: '6 cups',
+        visual: 'About half a large bag of chips'
+      },
+      {
+        name: 'Red salsa or enchilada sauce',
+        amount: '2 cups',
+        visual: 'Store-bought is fine! About 16 oz jar'
+      },
+      {
+        name: 'Eggs',
+        amount: '4 eggs',
+        visual: 'One per person'
+      },
+      {
+        name: 'Queso fresco or cotija cheese',
+        amount: '1/2 cup crumbled',
+        visual: 'Feta cheese works too!'
+      },
+      {
+        name: 'Mexican crema or sour cream',
+        amount: '1/4 cup',
+        visual: 'For drizzling on top'
+      },
+      {
+        name: 'Cilantro (optional)',
+        amount: 'Handful chopped',
+        visual: 'Fresh green herb - skip if you don\'t like it'
+      },
+      {
+        name: 'Oil for frying eggs',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Heat the salsa',
+        plainLanguage: 'Pour salsa into a large pan and warm it over medium heat until it starts bubbling gently. This takes about 3-4 minutes.',
+        timer: 4
+      },
+      {
+        id: 2,
+        instruction: 'Add the tortilla chips',
+        plainLanguage: 'Add tortilla chips to the warm salsa. Stir gently to coat all the chips. They should get soft but not mushy. Cook for 2-3 minutes.',
+        timer: 3,
+        tip: 'Don\'t let them sit too long or they\'ll get soggy! You want them soft on outside, still a bit crispy inside'
+      },
+      {
+        id: 3,
+        instruction: 'Fry the eggs',
+        plainLanguage: 'While chips simmer, heat oil in another pan on medium heat. Crack eggs in and fry them sunny-side up (yolk on top) for 3-4 minutes.',
+        timer: 4,
+        tip: 'The runny yolk mixes with the chilaquiles - it\'s delicious!'
+      },
+      {
+        id: 4,
+        instruction: 'Plate the chilaquiles',
+        plainLanguage: 'Divide the chip mixture onto plates. The chips should be coated in sauce and slightly softened.',
+      },
+      {
+        id: 5,
+        instruction: 'Add toppings',
+        plainLanguage: 'Top each plate with a fried egg, crumbled cheese, a drizzle of crema, and fresh cilantro if using.',
+        tip: 'Also great with avocado slices, black beans, or jalapeños!'
+      },
+      {
+        id: 6,
+        instruction: 'Serve immediately',
+        plainLanguage: 'Eat right away while the chips still have some texture. Break the egg yolk and let it mix in - so good!',
+        tip: 'Traditional Mexican breakfast! Often eaten with refried beans on the side'
+      }
+    ]
+  },
+  {
+    id: '15',
+    title: 'Easy Indian Chicken Curry',
+    description: 'Aromatic, flavorful curry with tender chicken in a rich tomato sauce. Authentic Indian comfort food!',
+    difficulty: 'intermediate',
+    prepTime: 15,
+    cookTime: 30,
+    servings: 4,
+    tags: ['indian', 'curry', 'dinner', 'authentic'],
+    ingredients: [
+      {
+        name: 'Chicken thighs or breast',
+        amount: '1.5 lbs, cut into pieces',
+        visual: 'About 4-5 pieces, cut into chunks'
+      },
+      {
+        name: 'Onion',
+        amount: '1 large, diced',
+        visual: 'One onion cut into small pieces'
+      },
+      {
+        name: 'Garlic',
+        amount: '4 cloves, minced',
+        visual: '4 small pieces chopped tiny'
+      },
+      {
+        name: 'Ginger',
+        amount: '1 inch piece, minced',
+        visual: 'Small piece of fresh ginger, chopped fine'
+      },
+      {
+        name: 'Canned diced tomatoes',
+        amount: '1 can (14 oz)',
+        visual: 'One standard can'
+      },
+      {
+        name: 'Curry powder',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Garam masala',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful - find in spice aisle'
+      },
+      {
+        name: 'Coconut milk or heavy cream',
+        amount: '1 cup',
+        visual: 'One can or cup from carton'
+      },
+      {
+        name: 'Oil',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Salt',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Cilantro for garnish',
+        amount: 'Optional',
+        visual: 'Fresh green herb'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Brown the chicken',
+        plainLanguage: 'Heat oil in a large pot on medium-high. Add chicken pieces and cook for 5-6 minutes until browned on outside. They don\'t need to be cooked through. Remove to a plate.',
+        timer: 6,
+        tip: 'Browning adds flavor! Don\'t skip this step'
+      },
+      {
+        id: 2,
+        instruction: 'Cook the aromatics',
+        plainLanguage: 'In the same pot, add onion. Cook for 5 minutes until soft. Add garlic and ginger, cook 1 more minute until fragrant.',
+        timer: 6,
+        tip: 'Ginger and garlic should smell amazing when ready!'
+      },
+      {
+        id: 3,
+        instruction: 'Add spices',
+        plainLanguage: 'Add curry powder and garam masala. Stir for 30 seconds. The spices will become very fragrant.',
+        tip: 'Cooking spices in oil releases their flavors - this is called "blooming"'
+      },
+      {
+        id: 4,
+        instruction: 'Add tomatoes',
+        plainLanguage: 'Pour in diced tomatoes with their juice. Stir and let it simmer for 5 minutes until it thickens a bit.',
+        timer: 5
+      },
+      {
+        id: 5,
+        instruction: 'Add chicken back',
+        plainLanguage: 'Return chicken to the pot with any juices. Stir to coat in sauce. Bring to a gentle bubble.',
+      },
+      {
+        id: 6,
+        instruction: 'Simmer until cooked',
+        plainLanguage: 'Turn heat to medium-low. Cover and let simmer for 15-20 minutes until chicken is cooked through and tender.',
+        timer: 18,
+        tip: 'Chicken is done when it reaches 165°F inside and cuts easily'
+      },
+      {
+        id: 7,
+        instruction: 'Add cream',
+        plainLanguage: 'Stir in coconut milk or cream. Let it heat through for 2 minutes. Taste and add salt if needed.',
+        timer: 2,
+        tip: 'Coconut milk makes it dairy-free! Cream makes it richer'
+      },
+      {
+        id: 8,
+        instruction: 'Serve with rice',
+        plainLanguage: 'Serve hot over basmati rice or with naan bread. Garnish with fresh cilantro. Enjoy your homemade curry!',
+        tip: 'Curry tastes even better the next day as flavors develop!'
+      }
+    ]
+  },
+  {
+    id: '16',
+    title: 'Easy Pad Thai',
+    description: 'Sweet, tangy Thai noodles with vegetables and peanuts. Restaurant favorite made at home!',
+    difficulty: 'intermediate',
+    prepTime: 15,
+    cookTime: 15,
+    servings: 3,
+    tags: ['thai', 'noodles', 'asian', 'quick'],
+    ingredients: [
+      {
+        name: 'Rice noodles',
+        amount: '8 oz',
+        visual: 'One package of flat rice noodles'
+      },
+      {
+        name: 'Eggs',
+        amount: '2 eggs',
+        visual: 'Two eggs from the carton'
+      },
+      {
+        name: 'Shrimp or chicken (optional)',
+        amount: '8 oz',
+        visual: 'Half a pound - can skip for vegetarian'
+      },
+      {
+        name: 'Bean sprouts',
+        amount: '1 cup',
+        visual: 'Fresh sprouts from produce section'
+      },
+      {
+        name: 'Green onions',
+        amount: '3 stalks, chopped',
+        visual: 'The long green onions, sliced'
+      },
+      {
+        name: 'Garlic',
+        amount: '3 cloves, minced',
+        visual: '3 small pieces chopped tiny'
+      },
+      {
+        name: 'Tamarind paste or lime juice',
+        amount: '2 tablespoons',
+        visual: 'Find in Asian aisle or use lime'
+      },
+      {
+        name: 'Fish sauce',
+        amount: '3 tablespoons',
+        visual: 'In Asian section - smells strong but tastes great!'
+      },
+      {
+        name: 'Brown sugar',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Crushed peanuts',
+        amount: '1/4 cup',
+        visual: 'For topping'
+      },
+      {
+        name: 'Oil',
+        amount: '3 tablespoons',
+        visual: 'Three big spoonfuls'
+      },
+      {
+        name: 'Lime wedges',
+        amount: 'For serving',
+        visual: 'Cut a lime into wedges'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Soak the noodles',
+        plainLanguage: 'Put rice noodles in a bowl of warm water. Let them soak for 20-30 minutes until soft and bendable. Drain before using.',
+        timer: 25,
+        tip: 'Do this first! While noodles soak, you can prep everything else'
+      },
+      {
+        id: 2,
+        instruction: 'Make the sauce',
+        plainLanguage: 'In a small bowl, mix tamarind paste (or lime juice), fish sauce, and brown sugar. Stir until sugar dissolves. Set aside.',
+        tip: 'This is your Pad Thai sauce! Sweet, salty, and tangy'
+      },
+      {
+        id: 3,
+        instruction: 'Cook protein if using',
+        plainLanguage: 'Heat 1 tablespoon oil in a large pan or wok on high heat. Add shrimp or chicken. Cook 3-4 minutes until done. Remove to a plate.',
+        timer: 4,
+        tip: 'High heat is key for authentic stir-fry flavor!'
+      },
+      {
+        id: 4,
+        instruction: 'Scramble the eggs',
+        plainLanguage: 'Add another tablespoon of oil to pan. Crack in eggs and scramble quickly for 1 minute. Push to side of pan.',
+        timer: 1
+      },
+      {
+        id: 5,
+        instruction: 'Stir-fry noodles',
+        plainLanguage: 'Add remaining oil and garlic. After 30 seconds, add drained noodles. Stir-fry for 2-3 minutes.',
+        timer: 3,
+        tip: 'Keep everything moving! Stir constantly so nothing burns'
+      },
+      {
+        id: 6,
+        instruction: 'Add sauce',
+        plainLanguage: 'Pour sauce over noodles. Toss everything together for 2 minutes. The noodles should turn golden and get a bit sticky.',
+        timer: 2
+      },
+      {
+        id: 7,
+        instruction: 'Add vegetables and protein',
+        plainLanguage: 'Add bean sprouts, green onions, and cooked protein. Toss for 1 minute until everything is hot.',
+        timer: 1,
+        tip: 'Don\'t overcook the bean sprouts - they should stay crunchy!'
+      },
+      {
+        id: 8,
+        instruction: 'Serve immediately',
+        plainLanguage: 'Divide onto plates. Top with crushed peanuts and lime wedges. Squeeze lime over top before eating!',
+        tip: 'True restaurant-style Pad Thai! Also great with sriracha on the side'
+      }
+    ]
+  },
+  {
+    id: '17',
+    title: 'Falafel (Middle Eastern)',
+    description: 'Crispy on the outside, fluffy inside chickpea fritters. A Middle Eastern classic!',
+    difficulty: 'intermediate',
+    prepTime: 20,
+    cookTime: 15,
+    servings: 4,
+    tags: ['middle-eastern', 'vegetarian', 'vegan', 'authentic'],
+    ingredients: [
+      {
+        name: 'Dried chickpeas',
+        amount: '1.5 cups',
+        visual: 'Must be DRIED, not canned! Soak overnight'
+      },
+      {
+        name: 'Onion',
+        amount: '1 small, roughly chopped',
+        visual: 'One small onion in chunks'
+      },
+      {
+        name: 'Garlic',
+        amount: '4 cloves',
+        visual: '4 small garlic pieces'
+      },
+      {
+        name: 'Fresh parsley',
+        amount: '1 cup packed',
+        visual: 'Big handful of fresh parsley'
+      },
+      {
+        name: 'Fresh cilantro',
+        amount: '1/2 cup',
+        visual: 'Small handful - can skip if you don\'t like it'
+      },
+      {
+        name: 'Cumin',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Coriander',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Baking powder',
+        amount: '1/2 teaspoon',
+        visual: 'Half a small spoonful'
+      },
+      {
+        name: 'Salt',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Flour',
+        amount: '2-4 tablespoons',
+        visual: 'To help bind if needed'
+      },
+      {
+        name: 'Oil for frying',
+        amount: '2 cups',
+        visual: 'Enough to cover halfway up the falafels'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Soak chickpeas overnight',
+        plainLanguage: 'Put dried chickpeas in a bowl and cover with lots of water. Let sit overnight (at least 12 hours). They will double in size! Drain before using.',
+        tip: 'This is essential! Canned chickpeas won\'t work - too wet and they\'ll fall apart'
+      },
+      {
+        id: 2,
+        instruction: 'Blend the mixture',
+        plainLanguage: 'Put soaked chickpeas, onion, garlic, parsley, cilantro, cumin, coriander, salt, and baking powder in a food processor. Pulse until it looks like coarse breadcrumbs - not smooth!',
+        tip: 'Don\'t over-blend! You want texture, not hummus. Should hold together when squeezed'
+      },
+      {
+        id: 3,
+        instruction: 'Add flour if needed',
+        plainLanguage: 'If the mixture is too wet, add flour 1 tablespoon at a time. Form a small ball - it should hold together without crumbling.',
+        tip: 'The mix should be moldable but not sticky'
+      },
+      {
+        id: 4,
+        instruction: 'Refrigerate the dough',
+        plainLanguage: 'Cover the bowl and put it in the fridge for at least 1 hour. This helps them hold together when frying.',
+        timer: 60,
+        tip: 'Can refrigerate overnight! Make ahead for easy cooking'
+      },
+      {
+        id: 5,
+        instruction: 'Form the falafels',
+        plainLanguage: 'Using wet hands (keeps from sticking), form mixture into balls or patties about the size of a golf ball or slightly flatter.',
+        tip: 'Wet hands are the secret! Re-wet between each falafel'
+      },
+      {
+        id: 6,
+        instruction: 'Heat the oil',
+        plainLanguage: 'Pour oil into a deep pan until it\'s about 2 inches deep. Heat to 350°F on medium-high. Test with a small piece - it should bubble vigorously.',
+        timer: 5,
+        tip: 'Too hot = burnt outside, raw inside. Too cool = greasy. Medium-high heat is right!'
+      },
+      {
+        id: 7,
+        instruction: 'Fry the falafels',
+        plainLanguage: 'Carefully add falafels to hot oil, don\'t crowd the pan. Fry 3-4 minutes until deep golden brown, flipping once halfway. Remove with a slotted spoon.',
+        timer: 4,
+        tip: 'Fry in batches! Crowding the pan lowers oil temperature'
+      },
+      {
+        id: 8,
+        instruction: 'Drain and serve',
+        plainLanguage: 'Drain on paper towels. Serve warm in pita bread with tahini sauce, lettuce, tomatoes, and cucumbers!',
+        tip: 'Amazing in pita or over salad! Tahini sauce is traditional - mix tahini with lemon juice and water'
+      }
+    ]
+  },
+  {
+    id: '18',
+    title: 'Shakshuka (Middle Eastern Eggs)',
+    description: 'Eggs poached in spiced tomato sauce. A flavorful Middle Eastern breakfast or dinner!',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 25,
+    servings: 4,
+    tags: ['middle-eastern', 'breakfast', 'vegetarian', 'one-pan'],
+    ingredients: [
+      {
+        name: 'Olive oil',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Onion',
+        amount: '1 medium, diced',
+        visual: 'One onion cut into small pieces'
+      },
+      {
+        name: 'Bell pepper',
+        amount: '1 red pepper, diced',
+        visual: 'One red pepper cut into chunks'
+      },
+      {
+        name: 'Garlic',
+        amount: '4 cloves, minced',
+        visual: '4 small pieces chopped tiny'
+      },
+      {
+        name: 'Canned diced tomatoes',
+        amount: '28 oz can',
+        visual: 'One large can'
+      },
+      {
+        name: 'Tomato paste',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Cumin',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Paprika',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Cayenne pepper (optional)',
+        amount: '1/4 teaspoon',
+        visual: 'Tiny pinch if you like spice'
+      },
+      {
+        name: 'Eggs',
+        amount: '6 eggs',
+        visual: 'Six eggs from the carton'
+      },
+      {
+        name: 'Feta cheese',
+        amount: '1/2 cup crumbled',
+        visual: 'Optional but delicious!'
+      },
+      {
+        name: 'Fresh parsley or cilantro',
+        amount: 'For garnish',
+        visual: 'Handful chopped'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season as you like'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Sauté the vegetables',
+        plainLanguage: 'Heat olive oil in a large skillet over medium heat. Add onion and bell pepper. Cook for 5-7 minutes until soft.',
+        timer: 6,
+        tip: 'A skillet with a lid works best for this dish!'
+      },
+      {
+        id: 2,
+        instruction: 'Add garlic and spices',
+        plainLanguage: 'Add garlic, cumin, paprika, and cayenne if using. Stir for 1 minute until fragrant.',
+        timer: 1,
+        tip: 'The spices smell amazing when they hit the pan!'
+      },
+      {
+        id: 3,
+        instruction: 'Add tomatoes',
+        plainLanguage: 'Pour in diced tomatoes with their juice and tomato paste. Stir well. Bring to a gentle bubble.',
+        tip: 'Tomato paste adds rich, concentrated tomato flavor'
+      },
+      {
+        id: 4,
+        instruction: 'Simmer the sauce',
+        plainLanguage: 'Turn heat to low. Let the sauce simmer for 10-15 minutes until it thickens. Stir occasionally. Season with salt and pepper.',
+        timer: 12,
+        tip: 'The sauce should be thick, not watery - this helps hold the eggs'
+      },
+      {
+        id: 5,
+        instruction: 'Make wells for eggs',
+        plainLanguage: 'Using a spoon, make 6 small wells (holes) in the sauce. These are spots where the eggs will cook.',
+        tip: 'Space them out evenly so each person gets an egg!'
+      },
+      {
+        id: 6,
+        instruction: 'Add the eggs',
+        plainLanguage: 'Crack one egg into each well. Try to keep the yolks whole. Sprinkle feta cheese around the eggs if using.',
+      },
+      {
+        id: 7,
+        instruction: 'Cover and cook',
+        plainLanguage: 'Cover the pan with a lid. Cook for 5-8 minutes until egg whites are set but yolks are still runny. Check at 5 minutes!',
+        timer: 7,
+        tip: 'Everyone has different preferences - 5 minutes for runny, 8 for more set'
+      },
+      {
+        id: 8,
+        instruction: 'Garnish and serve',
+        plainLanguage: 'Sprinkle with fresh parsley or cilantro. Serve hot with crusty bread or pita for dipping in the sauce and yolk!',
+        tip: 'The bread is essential - use it to scoop up sauce and runny egg yolk. So good!'
+      }
+    ]
+  },
+  {
+    id: '19',
+    title: 'Korean Japchae (Glass Noodles)',
+    description: 'Sweet and savory Korean noodles with colorful vegetables. A celebration dish!',
+    difficulty: 'intermediate',
+    prepTime: 20,
+    cookTime: 20,
+    servings: 4,
+    tags: ['korean', 'noodles', 'asian', 'authentic'],
+    ingredients: [
+      {
+        name: 'Sweet potato glass noodles',
+        amount: '8 oz',
+        visual: 'Korean dangmyeon - find in Asian section'
+      },
+      {
+        name: 'Beef or mushrooms',
+        amount: '8 oz thinly sliced',
+        visual: 'Half a pound - or use mushrooms for vegetarian'
+      },
+      {
+        name: 'Spinach',
+        amount: '2 cups',
+        visual: 'Fresh spinach leaves'
+      },
+      {
+        name: 'Carrot',
+        amount: '1 large, julienned',
+        visual: 'One carrot cut into thin matchsticks'
+      },
+      {
+        name: 'Bell pepper',
+        amount: '1 red pepper, sliced thin',
+        visual: 'One pepper cut into strips'
+      },
+      {
+        name: 'Onion',
+        amount: '1 small, sliced thin',
+        visual: 'One onion in thin strips'
+      },
+      {
+        name: 'Green onions',
+        amount: '3 stalks, cut in 2-inch pieces',
+        visual: 'The long green onions, chopped'
+      },
+      {
+        name: 'Garlic',
+        amount: '4 cloves, minced',
+        visual: '4 small pieces chopped tiny'
+      },
+      {
+        name: 'Soy sauce',
+        amount: '5 tablespoons',
+        visual: 'Five big spoonfuls'
+      },
+      {
+        name: 'Sugar',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Sesame oil',
+        amount: '2 tablespoons',
+        visual: 'Find in Asian section - very flavorful!'
+      },
+      {
+        name: 'Sesame seeds',
+        amount: '2 tablespoons',
+        visual: 'For garnish'
+      },
+      {
+        name: 'Vegetable oil',
+        amount: '3 tablespoons',
+        visual: 'For cooking'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Cook the noodles',
+        plainLanguage: 'Boil a large pot of water. Add glass noodles and cook for 6-7 minutes until soft and translucent. Drain and rinse with cold water. Cut with scissors into shorter lengths.',
+        timer: 7,
+        tip: 'Glass noodles turn clear when done! Cutting makes them easier to eat'
+      },
+      {
+        id: 2,
+        instruction: 'Make the sauce',
+        plainLanguage: 'In a small bowl, mix soy sauce, sugar, and 1 tablespoon sesame oil. Stir until sugar dissolves. Set aside.',
+        tip: 'This sauce flavors everything! Sweet and savory balance'
+      },
+      {
+        id: 3,
+        instruction: 'Cook the vegetables separately',
+        plainLanguage: 'Heat 1 teaspoon oil in a large pan. Cook spinach for 1 minute until wilted, remove. Repeat with carrot (2 min), bell pepper (2 min), and onion (3 min). Keep vegetables separate on a plate.',
+        tip: 'Cooking separately keeps their individual colors bright and beautiful!'
+      },
+      {
+        id: 4,
+        instruction: 'Cook the protein',
+        plainLanguage: 'In the same pan, add 1 tablespoon oil. Cook beef or mushrooms with garlic for 3-4 minutes until done. Set aside.',
+        timer: 4
+      },
+      {
+        id: 5,
+        instruction: 'Combine everything',
+        plainLanguage: 'In the large pan, add noodles, all cooked vegetables, protein, and the sauce. Add green onions. Toss everything together over medium heat for 2-3 minutes.',
+        timer: 3,
+        tip: 'Use tongs or two utensils to toss - chopsticks work great!'
+      },
+      {
+        id: 6,
+        instruction: 'Final seasoning',
+        plainLanguage: 'Drizzle remaining sesame oil over noodles. Toss again. Taste - add more soy sauce if needed.',
+        tip: 'Sesame oil at the end adds amazing nutty flavor!'
+      },
+      {
+        id: 7,
+        instruction: 'Garnish and serve',
+        plainLanguage: 'Transfer to a serving plate. Sprinkle sesame seeds on top. Can be served warm or at room temperature!',
+        tip: 'This is a traditional Korean celebration dish! Often served at parties and holidays'
+      }
+    ]
   }
 ];
