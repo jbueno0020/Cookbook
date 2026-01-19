@@ -10,7 +10,7 @@ export const recipes: Recipe[] = [
     cookTime: 5,
     servings: 2,
     tags: ['breakfast', 'quick', 'protein'],
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80',
+    image: '/images/scrambled-eggs.jpg',
     nutrition: { calories: 250, protein: 14, carbs: 3, fat: 20, fiber: 0 },
     ingredients: [
       {
@@ -88,7 +88,7 @@ export const recipes: Recipe[] = [
     cookTime: 12,
     servings: 2,
     tags: ['pasta', 'quick', 'vegetarian'],
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=800&q=80',
+    image: '/images/simple-pasta.jpg',
     nutrition: { calories: 420, protein: 12, carbs: 68, fat: 11, fiber: 3 },
     ingredients: [
       {
@@ -168,7 +168,7 @@ export const recipes: Recipe[] = [
     cookTime: 6,
     servings: 1,
     tags: ['lunch', 'quick', 'sandwich'],
-    image: 'https://images.unsplash.com/photo-1528735602780-2552fd26c69b?auto=format&fit=crop&w=800&q=80',
+    image: '/images/grilled-cheese.jpg',
     nutrition: { calories: 380, protein: 15, carbs: 35, fat: 20, fiber: 2 },
     ingredients: [
       {
@@ -248,7 +248,7 @@ export const recipes: Recipe[] = [
     cookTime: 20,
     servings: 4,
     tags: ['soup', 'vegetarian', 'comfort-food'],
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80',
+    image: '/images/tomato-soup.jpg',
     nutrition: { calories: 180, protein: 4, carbs: 24, fat: 8, fiber: 4 },
     ingredients: [
       {
@@ -361,7 +361,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['pasta', 'comfort-food', 'cheese', 'kid-friendly'],
-    image: 'https://images.unsplash.com/photo-1543826173-ec8829eb8bb7?auto=format&fit=crop&w=800&q=80',
+    image: '/images/mac-and-cheese.jpg',
     nutrition: { calories: 480, protein: 18, carbs: 52, fat: 22, fiber: 2 },
     ingredients: [
       {
@@ -432,7 +432,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['mexican', 'dinner', 'protein', 'quick'],
-    image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80',
+    image: '/images/chicken-tacos.jpg',
     nutrition: { calories: 320, protein: 28, carbs: 26, fat: 12, fiber: 3 },
     ingredients: [
       {
