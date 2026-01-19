@@ -10,6 +10,7 @@ export const recipes: Recipe[] = [
     cookTime: 5,
     servings: 2,
     tags: ['breakfast', 'quick', 'protein'],
+    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Eggs',
@@ -86,6 +87,7 @@ export const recipes: Recipe[] = [
     cookTime: 12,
     servings: 2,
     tags: ['pasta', 'quick', 'vegetarian'],
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Pasta',
@@ -164,6 +166,7 @@ export const recipes: Recipe[] = [
     cookTime: 6,
     servings: 1,
     tags: ['lunch', 'quick', 'sandwich'],
+    image: 'https://images.unsplash.com/photo-1528735602780-2552fd26c69b?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Bread',
@@ -242,6 +245,7 @@ export const recipes: Recipe[] = [
     cookTime: 20,
     servings: 4,
     tags: ['soup', 'vegetarian', 'comfort-food'],
+    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Canned crushed tomatoes',
@@ -353,6 +357,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['pasta', 'comfort-food', 'cheese', 'kid-friendly'],
+    image: 'https://images.unsplash.com/photo-1543826173-ec8829eb8bb7?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Elbow macaroni',
@@ -422,6 +427,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['mexican', 'dinner', 'protein', 'quick'],
+    image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Chicken breast',
@@ -503,6 +509,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['breakfast', 'sweet', 'weekend', 'kid-friendly'],
+    image: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'All-purpose flour',
@@ -592,6 +599,7 @@ export const recipes: Recipe[] = [
     cookTime: 10,
     servings: 3,
     tags: ['asian', 'rice', 'quick', 'leftover-friendly'],
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Cooked rice (cold)',
@@ -677,6 +685,7 @@ export const recipes: Recipe[] = [
     cookTime: 6,
     servings: 1,
     tags: ['mexican', 'quick', 'cheese', 'snack'],
+    image: 'https://images.unsplash.com/photo-1618040996337-56904b7850b9?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Flour tortillas',
@@ -757,6 +766,7 @@ export const recipes: Recipe[] = [
     cookTime: 10,
     servings: 4,
     tags: ['american', 'beef', 'dinner', 'grilling'],
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Ground beef',
@@ -846,6 +856,7 @@ export const recipes: Recipe[] = [
     cookTime: 20,
     servings: 4,
     tags: ['pasta', 'italian', 'one-pot', 'quick'],
+    image: 'https://images.unsplash.com/photo-1621510456681-2330135e5871?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Spaghetti',
@@ -947,6 +958,7 @@ export const recipes: Recipe[] = [
     cookTime: 25,
     servings: 4,
     tags: ['protein', 'healthy', 'meal-prep', 'dinner'],
+    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Chicken breasts',
@@ -1030,6 +1042,7 @@ export const recipes: Recipe[] = [
     cookTime: 30,
     servings: 6,
     tags: ['soup', 'comfort-food', 'beef', 'one-pot'],
+    image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Ground beef',
@@ -1143,6 +1156,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['mexican', 'breakfast', 'authentic', 'vegetarian-option'],
+    image: 'https://images.unsplash.com/photo-1617343267935-a67e50b590ca?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Tortilla chips',
@@ -1229,6 +1243,7 @@ export const recipes: Recipe[] = [
     cookTime: 30,
     servings: 4,
     tags: ['indian', 'curry', 'dinner', 'authentic'],
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Chicken thighs or breast',
@@ -1349,6 +1364,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 3,
     tags: ['thai', 'noodles', 'asian', 'quick'],
+    image: 'https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Rice noodles',
@@ -1475,6 +1491,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['middle-eastern', 'vegetarian', 'vegan', 'authentic'],
+    image: 'https://images.unsplash.com/photo-1593001874117-9db2e78e46a6?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Dried chickpeas',
@@ -1595,6 +1612,7 @@ export const recipes: Recipe[] = [
     cookTime: 25,
     servings: 4,
     tags: ['middle-eastern', 'breakfast', 'vegetarian', 'one-pan'],
+    image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Olive oil',
@@ -1725,6 +1743,7 @@ export const recipes: Recipe[] = [
     cookTime: 20,
     servings: 4,
     tags: ['korean', 'noodles', 'asian', 'authentic'],
+    image: 'https://images.unsplash.com/photo-1623428454614-abaf00244e52?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Sweet potato glass noodles',
@@ -1848,6 +1867,7 @@ export const recipes: Recipe[] = [
     cookTime: 0,
     servings: 4,
     tags: ['italian', 'salad', 'vegetarian', 'no-cook'],
+    image: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Fresh mozzarella',
@@ -1916,6 +1936,7 @@ export const recipes: Recipe[] = [
     cookTime: 30,
     servings: 6,
     tags: ['soup', 'comfort-food', 'chicken', 'healthy'],
+    image: 'https://images.unsplash.com/photo-1547424450-2c12a0f9dc13?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Chicken breast',
@@ -2023,6 +2044,7 @@ export const recipes: Recipe[] = [
     cookTime: 0,
     servings: 4,
     tags: ['mexican', 'dip', 'vegetarian', 'vegan', 'no-cook'],
+    image: 'https://images.unsplash.com/photo-1604467794349-0b74285de7e5?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Ripe avocados',
@@ -2108,6 +2130,7 @@ export const recipes: Recipe[] = [
     cookTime: 10,
     servings: 4,
     tags: ['breakfast', 'sweet', 'quick', 'kid-friendly'],
+    image: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Bread',
@@ -2199,6 +2222,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 6,
     tags: ['mexican', 'beef', 'quick', 'dinner'],
+    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Ground beef',
@@ -2297,6 +2321,7 @@ export const recipes: Recipe[] = [
     cookTime: 20,
     servings: 4,
     tags: ['italian', 'pasta', 'dinner'],
+    image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Spaghetti',
@@ -2390,6 +2415,7 @@ export const recipes: Recipe[] = [
     cookTime: 12,
     servings: 4,
     tags: ['asian', 'chicken', 'healthy', 'quick'],
+    image: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Chicken breast',
@@ -2481,6 +2507,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['asian', 'beef', 'dinner', 'chinese'],
+    image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Flank steak or sirloin',
@@ -2594,6 +2621,7 @@ export const recipes: Recipe[] = [
     cookTime: 30,
     servings: 6,
     tags: ['italian', 'beef', 'dinner', 'pasta'],
+    image: 'https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Ground beef',
@@ -2685,6 +2713,7 @@ export const recipes: Recipe[] = [
     cookTime: 30,
     servings: 8,
     tags: ['soup', 'vegetarian', 'healthy', 'vegan'],
+    image: 'https://images.unsplash.com/photo-1547592180-ea53db684368?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Olive oil',
@@ -2796,6 +2825,7 @@ export const recipes: Recipe[] = [
     cookTime: 60,
     servings: 10,
     tags: ['baking', 'dessert', 'sweet', 'breakfast'],
+    image: 'https://images.unsplash.com/photo-1587241321921-91a834d82fdb?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Overripe bananas',
@@ -2900,6 +2930,7 @@ export const recipes: Recipe[] = [
     cookTime: 12,
     servings: 4,
     tags: ['salad', 'chicken', 'healthy', 'lunch'],
+    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Chicken breasts',
@@ -2986,6 +3017,7 @@ export const recipes: Recipe[] = [
     cookTime: 45,
     servings: 8,
     tags: ['soup', 'beef', 'comfort-food', 'one-pot'],
+    image: 'https://images.unsplash.com/photo-1622973536968-3ead9e780960?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Ground beef',
@@ -3114,6 +3146,7 @@ export const recipes: Recipe[] = [
     cookTime: 12,
     servings: 4,
     tags: ['pasta', 'italian', 'vegetarian', 'quick'],
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Pasta',
@@ -3206,6 +3239,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['mexican', 'chicken', 'quick', 'dinner'],
+    image: 'https://images.unsplash.com/photo-1618040996337-56904b7850b9?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Cooked chicken',
@@ -3291,6 +3325,7 @@ export const recipes: Recipe[] = [
     cookTime: 12,
     servings: 24,
     tags: ['baking', 'dessert', 'sweet', 'cookies'],
+    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Butter',
@@ -3394,6 +3429,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['italian', 'pizza', 'vegetarian', 'dinner'],
+    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Pizza dough',
@@ -3486,6 +3522,7 @@ export const recipes: Recipe[] = [
     cookTime: 480,
     servings: 12,
     tags: ['american', 'pork', 'slow-cooker', 'bbq'],
+    image: 'https://images.unsplash.com/photo-1606728035253-49e8a23146de?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Pork shoulder',
@@ -3573,6 +3610,7 @@ export const recipes: Recipe[] = [
     cookTime: 45,
     servings: 6,
     tags: ['soup', 'vegetarian', 'fall', 'comfort-food'],
+    image: 'https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Butternut squash',
@@ -3687,6 +3725,7 @@ export const recipes: Recipe[] = [
     cookTime: 10,
     servings: 4,
     tags: ['seafood', 'italian', 'quick', 'dinner'],
+    image: 'https://images.unsplash.com/photo-1633964913295-ceb43826e36e?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Large shrimp',
@@ -3796,6 +3835,7 @@ export const recipes: Recipe[] = [
     cookTime: 25,
     servings: 4,
     tags: ['italian', 'chicken', 'dinner', 'comfort-food'],
+    image: 'https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?auto=format&fit=crop&w=800&q=80',
     ingredients: [
       {
         name: 'Chicken breasts',
