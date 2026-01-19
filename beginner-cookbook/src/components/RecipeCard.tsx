@@ -3,6 +3,11 @@ import type { Recipe } from '../types';
 interface RecipeCardProps {
   recipe: Recipe;
   onClick: () => void;
+  ingredientMatch?: {
+    matches: number;
+    total: number;
+    percentage: number;
+  };
 }
 
 const difficultyColors = {
@@ -17,7 +22,7 @@ const difficultyLabels = {
   'intermediate': 'Intermediate',
 };
 
-export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
+export function RecipeCard({ recipe, onClick, ingredientMatch }: RecipeCardProps) {
   const totalTime = recipe.prepTime + recipe.cookTime;
 
   return (
@@ -38,6 +43,25 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
             {difficultyLabels[recipe.difficulty]}
           </span>
         </div>
+
+        {ingredientMatch && ingredientMatch.percentage > 0 && (
+          <div className="mb-3 p-2 bg-purple-50 border border-purple-200 rounded-lg">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-sm font-semibold text-purple-900">
+                Ingredient Match: {ingredientMatch.percentage}%
+              </span>
+              <span className="text-xs text-purple-700">
+                {ingredientMatch.matches}/{ingredientMatch.total}
+              </span>
+            </div>
+            <div className="w-full bg-purple-200 rounded-full h-2">
+              <div
+                className="bg-purple-600 h-2 rounded-full transition-all"
+                style={{ width: `${ingredientMatch.percentage}%` }}
+              />
+            </div>
+          </div>
+        )}
 
         <p className="text-gray-600 text-sm mb-4 line-clamp-2">
           {recipe.description}
