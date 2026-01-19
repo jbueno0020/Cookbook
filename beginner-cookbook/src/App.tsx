@@ -14,27 +14,37 @@ function App() {
   const [showIngredientMatcher, setShowIngredientMatcher] = useState(false);
 
   // Calculate ingredient matches for each recipe
-  const getIngredientMatches = (recipe: Recipe, userIngredients: string[]): { matches: number; total: number; percentage: number } => {
+  const getIngredientMatches = (recipe: Recipe, userIngredients: string[]): { matches: number; total: number; percentage: number; missing: string[] } => {
     if (userIngredients.length === 0) {
-      return { matches: 0, total: recipe.ingredients.length, percentage: 0 };
+      return { matches: 0, total: recipe.ingredients.length, percentage: 0, missing: recipe.ingredients.map(i => i.name) };
     }
 
-    const recipeIngredients = recipe.ingredients.map(ing =>
-      ing.name.toLowerCase()
-    );
+    const recipeIngredients = recipe.ingredients.map(ing => ({
+      name: ing.name,
+      nameLower: ing.name.toLowerCase()
+    }));
 
     let matches = 0;
+    const matchedIndices = new Set<number>();
+
     userIngredients.forEach(userIng => {
       const userIngLower = userIng.toLowerCase().trim();
-      if (recipeIngredients.some(recipeIng =>
-        recipeIng.includes(userIngLower) || userIngLower.includes(recipeIng)
-      )) {
-        matches++;
-      }
+      recipeIngredients.forEach((recipeIng, idx) => {
+        if (!matchedIndices.has(idx) && (
+          recipeIng.nameLower.includes(userIngLower) || userIngLower.includes(recipeIng.nameLower)
+        )) {
+          matches++;
+          matchedIndices.add(idx);
+        }
+      });
     });
 
+    const missing = recipeIngredients
+      .filter((_, idx) => !matchedIndices.has(idx))
+      .map(ing => ing.name);
+
     const percentage = Math.round((matches / recipe.ingredients.length) * 100);
-    return { matches, total: recipe.ingredients.length, percentage };
+    return { matches, total: recipe.ingredients.length, percentage, missing };
   };
 
   // Parse user ingredients
@@ -163,46 +173,63 @@ function App() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Ingredient Matcher Section */}
-        {showIngredientMatcher && (
-          <div className="bg-purple-50 border-l-4 border-purple-600 p-6 mb-8 rounded-lg shadow-sm">
-            <div className="mb-4">
-              <h3 className="font-semibold text-purple-900 mb-2 text-lg flex items-center gap-2">
-                <span className="text-2xl">🥘</span>
-                What's in Your Kitchen?
-              </h3>
-              <p className="text-purple-800 text-sm mb-4">
-                Enter ingredients you have (separated by commas) and we'll recommend recipes you can make!
+      {/* Ingredient Matcher Sticky Panel */}
+      {showIngredientMatcher && (
+        <div className="sticky top-[220px] z-20 mb-4">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="bg-purple-600 text-white p-4 rounded-t-lg shadow-lg">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🥘</span>
+                  <h3 className="font-semibold text-lg">Ingredient Matcher</h3>
+                </div>
+                <button
+                  onClick={() => {
+                    setShowIngredientMatcher(false);
+                    setAvailableIngredients('');
+                  }}
+                  className="text-white hover:bg-purple-700 rounded px-2 py-1"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-b-lg shadow-lg border-t-0">
+              <p className="text-purple-800 text-sm mb-3">
+                Enter ingredients you have (comma-separated):
               </p>
-              <textarea
+              <input
+                type="text"
                 placeholder="e.g., chicken, rice, tomatoes, cheese, eggs..."
                 value={availableIngredients}
                 onChange={(e) => setAvailableIngredients(e.target.value)}
-                rows={3}
-                className="w-full px-4 py-3 border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+                className="w-full px-4 py-2 border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                autoFocus
               />
-            </div>
-            {userIngredientsList.length > 0 && (
-              <div className="bg-white p-4 rounded-lg border border-purple-200">
-                <h4 className="font-semibold text-purple-900 mb-2 text-sm">
-                  Your ingredients ({userIngredientsList.length}):
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {userIngredientsList.map((ing, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
-                    >
-                      {ing}
-                    </span>
-                  ))}
+              {userIngredientsList.length > 0 && (
+                <div className="mt-3 p-3 bg-purple-50 rounded-lg">
+                  <div className="text-sm font-semibold text-purple-900 mb-2">
+                    Your ingredients ({userIngredientsList.length}):
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {userIngredientsList.map((ing, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 bg-purple-200 text-purple-900 rounded-full text-xs font-medium"
+                      >
+                        {ing}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
-        )}
+        </div>
+      )}
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 py-8">
 
         {/* Info Banner */}
         {!showIngredientMatcher && (

@@ -204,8 +204,16 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
       </button>
 
       <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
-        <div className="h-64 bg-gradient-to-br from-orange-200 to-orange-300 flex items-center justify-center">
-          <span className="text-9xl">🍳</span>
+        <div className="h-64 bg-gradient-to-br from-orange-200 to-orange-300 flex items-center justify-center overflow-hidden relative">
+          {recipe.image ? (
+            <img
+              src={recipe.image}
+              alt={recipe.title}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <span className="text-9xl">🍳</span>
+          )}
         </div>
 
         <div className="p-6">
@@ -222,7 +230,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
             {recipe.description}
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mb-6">
             <div className="bg-gray-50 p-3 rounded-lg">
               <div className="text-2xl mb-1">⏱️</div>
               <div className="text-sm text-gray-600">Total Time</div>
@@ -244,6 +252,40 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
               <div className="font-semibold">{recipe.servings}</div>
             </div>
           </div>
+
+          {/* Nutrition Facts */}
+          {recipe.nutrition && (
+            <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg border border-green-200">
+              <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                <span className="text-xl">📊</span>
+                Nutrition Facts (per serving)
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-700">{recipe.nutrition.calories}</div>
+                  <div className="text-xs text-gray-600">Calories</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-700">{recipe.nutrition.protein}g</div>
+                  <div className="text-xs text-gray-600">Protein</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-orange-700">{recipe.nutrition.carbs}g</div>
+                  <div className="text-xs text-gray-600">Carbs</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-yellow-700">{recipe.nutrition.fat}g</div>
+                  <div className="text-xs text-gray-600">Fat</div>
+                </div>
+                {recipe.nutrition.fiber !== undefined && (
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-purple-700">{recipe.nutrition.fiber}g</div>
+                    <div className="text-xs text-gray-600">Fiber</div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

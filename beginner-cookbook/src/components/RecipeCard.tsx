@@ -7,6 +7,7 @@ interface RecipeCardProps {
     matches: number;
     total: number;
     percentage: number;
+    missing: string[];
   };
 }
 
@@ -52,22 +53,46 @@ export function RecipeCard({ recipe, onClick, ingredientMatch }: RecipeCardProps
           </span>
         </div>
 
-        {ingredientMatch && ingredientMatch.percentage > 0 && (
-          <div className="mb-3 p-2 bg-purple-50 border border-purple-200 rounded-lg">
+        {ingredientMatch && (
+          <div className="mb-3 p-3 bg-purple-50 border border-purple-200 rounded-lg">
             <div className="flex items-center justify-between mb-1">
               <span className="text-sm font-semibold text-purple-900">
-                Ingredient Match: {ingredientMatch.percentage}%
+                {ingredientMatch.percentage === 100 ? '✓ All ingredients!' : `Match: ${ingredientMatch.percentage}%`}
               </span>
               <span className="text-xs text-purple-700">
                 {ingredientMatch.matches}/{ingredientMatch.total}
               </span>
             </div>
-            <div className="w-full bg-purple-200 rounded-full h-2">
+            <div className="w-full bg-purple-200 rounded-full h-2 mb-2">
               <div
-                className="bg-purple-600 h-2 rounded-full transition-all"
+                className={`h-2 rounded-full transition-all ${
+                  ingredientMatch.percentage === 100 ? 'bg-green-600' : 'bg-purple-600'
+                }`}
                 style={{ width: `${ingredientMatch.percentage}%` }}
               />
             </div>
+            {ingredientMatch.missing.length > 0 && (
+              <div className="mt-2">
+                <div className="text-xs font-semibold text-red-700 mb-1">
+                  Missing ({ingredientMatch.missing.length}):
+                </div>
+                <div className="flex flex-wrap gap-1">
+                  {ingredientMatch.missing.slice(0, 3).map((ing, idx) => (
+                    <span
+                      key={idx}
+                      className="text-xs px-2 py-0.5 bg-red-100 text-red-800 rounded-full"
+                    >
+                      {ing}
+                    </span>
+                  ))}
+                  {ingredientMatch.missing.length > 3 && (
+                    <span className="text-xs px-2 py-0.5 bg-red-100 text-red-800 rounded-full">
+                      +{ingredientMatch.missing.length - 3} more
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         )}
 

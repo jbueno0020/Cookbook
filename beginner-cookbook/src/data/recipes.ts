@@ -11,6 +11,7 @@ export const recipes: Recipe[] = [
     servings: 2,
     tags: ['breakfast', 'quick', 'protein'],
     image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 250, protein: 14, carbs: 3, fat: 20, fiber: 0 },
     ingredients: [
       {
         name: 'Eggs',
@@ -88,6 +89,7 @@ export const recipes: Recipe[] = [
     servings: 2,
     tags: ['pasta', 'quick', 'vegetarian'],
     image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 420, protein: 12, carbs: 68, fat: 11, fiber: 3 },
     ingredients: [
       {
         name: 'Pasta',
@@ -167,6 +169,7 @@ export const recipes: Recipe[] = [
     servings: 1,
     tags: ['lunch', 'quick', 'sandwich'],
     image: 'https://images.unsplash.com/photo-1528735602780-2552fd26c69b?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 380, protein: 15, carbs: 35, fat: 20, fiber: 2 },
     ingredients: [
       {
         name: 'Bread',
@@ -246,6 +249,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['soup', 'vegetarian', 'comfort-food'],
     image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 180, protein: 4, carbs: 24, fat: 8, fiber: 4 },
     ingredients: [
       {
         name: 'Canned crushed tomatoes',
@@ -358,6 +362,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['pasta', 'comfort-food', 'cheese', 'kid-friendly'],
     image: 'https://images.unsplash.com/photo-1543826173-ec8829eb8bb7?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 480, protein: 18, carbs: 52, fat: 22, fiber: 2 },
     ingredients: [
       {
         name: 'Elbow macaroni',
@@ -428,6 +433,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['mexican', 'dinner', 'protein', 'quick'],
     image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 320, protein: 28, carbs: 26, fat: 12, fiber: 3 },
     ingredients: [
       {
         name: 'Chicken breast',
@@ -510,6 +516,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['breakfast', 'sweet', 'weekend', 'kid-friendly'],
     image: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 280, protein: 8, carbs: 38, fat: 10, fiber: 1 },
     ingredients: [
       {
         name: 'All-purpose flour',
@@ -600,6 +607,7 @@ export const recipes: Recipe[] = [
     servings: 3,
     tags: ['asian', 'rice', 'quick', 'leftover-friendly'],
     image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 340, protein: 12, carbs: 52, fat: 10, fiber: 2 },
     ingredients: [
       {
         name: 'Cooked rice (cold)',
@@ -686,6 +694,7 @@ export const recipes: Recipe[] = [
     servings: 1,
     tags: ['mexican', 'quick', 'cheese', 'snack'],
     image: 'https://images.unsplash.com/photo-1618040996337-56904b7850b9?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 450, protein: 18, carbs: 38, fat: 24, fiber: 3 },
     ingredients: [
       {
         name: 'Flour tortillas',
@@ -767,6 +776,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['american', 'beef', 'dinner', 'grilling'],
     image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 520, protein: 32, carbs: 35, fat: 28, fiber: 2 },
     ingredients: [
       {
         name: 'Ground beef',
@@ -857,6 +867,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['pasta', 'italian', 'one-pot', 'quick'],
     image: 'https://images.unsplash.com/photo-1621510456681-2330135e5871?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 380, protein: 12, carbs: 62, fat: 10, fiber: 4 },
     ingredients: [
       {
         name: 'Spaghetti',
@@ -959,6 +970,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['protein', 'healthy', 'meal-prep', 'dinner'],
     image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 280, protein: 42, carbs: 2, fat: 12, fiber: 0 },
     ingredients: [
       {
         name: 'Chicken breasts',
@@ -1043,6 +1055,7 @@ export const recipes: Recipe[] = [
     servings: 6,
     tags: ['soup', 'comfort-food', 'beef', 'one-pot'],
     image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 420, protein: 28, carbs: 38, fat: 16, fiber: 12 },
     ingredients: [
       {
         name: 'Ground beef',
@@ -1157,6 +1170,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['mexican', 'breakfast', 'authentic', 'vegetarian-option'],
     image: 'https://images.unsplash.com/photo-1617343267935-a67e50b590ca?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 380, protein: 18, carbs: 36, fat: 18, fiber: 4 },
     ingredients: [
       {
         name: 'Tortilla chips',
@@ -1244,6 +1258,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['indian', 'curry', 'dinner', 'authentic'],
     image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 450, protein: 35, carbs: 28, fat: 22, fiber: 3 },
     ingredients: [
       {
         name: 'Chicken thighs or breast',
@@ -1365,6 +1380,7 @@ export const recipes: Recipe[] = [
     servings: 3,
     tags: ['thai', 'noodles', 'asian', 'quick'],
     image: 'https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 420, protein: 22, carbs: 54, fat: 14, fiber: 3 },
     ingredients: [
       {
         name: 'Rice noodles',
@@ -1492,6 +1508,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['middle-eastern', 'vegetarian', 'vegan', 'authentic'],
     image: 'https://images.unsplash.com/photo-1593001874117-9db2e78e46a6?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 320, protein: 12, carbs: 38, fat: 14, fiber: 8 },
     ingredients: [
       {
         name: 'Dried chickpeas',
@@ -1613,6 +1630,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['middle-eastern', 'breakfast', 'vegetarian', 'one-pan'],
     image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 280, protein: 14, carbs: 18, fat: 18, fiber: 4 },
     ingredients: [
       {
         name: 'Olive oil',
@@ -1744,6 +1762,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['korean', 'noodles', 'asian', 'authentic'],
     image: 'https://images.unsplash.com/photo-1623428454614-abaf00244e52?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 340, protein: 18, carbs: 48, fat: 10, fiber: 4 },
     ingredients: [
       {
         name: 'Sweet potato glass noodles',
@@ -1868,6 +1887,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['italian', 'salad', 'vegetarian', 'no-cook'],
     image: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 220, protein: 12, carbs: 8, fat: 16, fiber: 2 },
     ingredients: [
       {
         name: 'Fresh mozzarella',
@@ -1937,6 +1957,7 @@ export const recipes: Recipe[] = [
     servings: 6,
     tags: ['soup', 'comfort-food', 'chicken', 'healthy'],
     image: 'https://images.unsplash.com/photo-1547424450-2c12a0f9dc13?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 240, protein: 22, carbs: 28, fat: 6, fiber: 3 },
     ingredients: [
       {
         name: 'Chicken breast',
@@ -2045,6 +2066,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['mexican', 'dip', 'vegetarian', 'vegan', 'no-cook'],
     image: 'https://images.unsplash.com/photo-1604467794349-0b74285de7e5?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 180, protein: 2, carbs: 12, fat: 15, fiber: 7 },
     ingredients: [
       {
         name: 'Ripe avocados',
@@ -2131,6 +2153,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['breakfast', 'sweet', 'quick', 'kid-friendly'],
     image: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 320, protein: 10, carbs: 42, fat: 12, fiber: 2 },
     ingredients: [
       {
         name: 'Bread',
@@ -2223,6 +2246,7 @@ export const recipes: Recipe[] = [
     servings: 6,
     tags: ['mexican', 'beef', 'quick', 'dinner'],
     image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 380, protein: 24, carbs: 28, fat: 18, fiber: 4 },
     ingredients: [
       {
         name: 'Ground beef',
@@ -2322,6 +2346,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['italian', 'pasta', 'dinner'],
     image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 580, protein: 24, carbs: 68, fat: 24, fiber: 3 },
     ingredients: [
       {
         name: 'Spaghetti',
@@ -2416,6 +2441,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['asian', 'chicken', 'healthy', 'quick'],
     image: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 340, protein: 32, carbs: 28, fat: 12, fiber: 4 },
     ingredients: [
       {
         name: 'Chicken breast',
@@ -2508,6 +2534,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['asian', 'beef', 'dinner', 'chinese'],
     image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 420, protein: 34, carbs: 24, fat: 22, fiber: 4 },
     ingredients: [
       {
         name: 'Flank steak or sirloin',
@@ -2622,6 +2649,7 @@ export const recipes: Recipe[] = [
     servings: 6,
     tags: ['italian', 'beef', 'dinner', 'pasta'],
     image: 'https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 380, protein: 26, carbs: 28, fat: 18, fiber: 4 },
     ingredients: [
       {
         name: 'Ground beef',
@@ -2714,6 +2742,7 @@ export const recipes: Recipe[] = [
     servings: 8,
     tags: ['soup', 'vegetarian', 'healthy', 'vegan'],
     image: 'https://images.unsplash.com/photo-1547592180-ea53db684368?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 160, protein: 4, carbs: 32, fat: 3, fiber: 6 },
     ingredients: [
       {
         name: 'Olive oil',
@@ -2826,6 +2855,7 @@ export const recipes: Recipe[] = [
     servings: 10,
     tags: ['baking', 'dessert', 'sweet', 'breakfast'],
     image: 'https://images.unsplash.com/photo-1587241321921-91a834d82fdb?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 280, protein: 4, carbs: 48, fat: 9, fiber: 3 },
     ingredients: [
       {
         name: 'Overripe bananas',
@@ -2931,6 +2961,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['salad', 'chicken', 'healthy', 'lunch'],
     image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 380, protein: 32, carbs: 12, fat: 24, fiber: 3 },
     ingredients: [
       {
         name: 'Chicken breasts',
@@ -3018,6 +3049,7 @@ export const recipes: Recipe[] = [
     servings: 8,
     tags: ['soup', 'beef', 'comfort-food', 'one-pot'],
     image: 'https://images.unsplash.com/photo-1622973536968-3ead9e780960?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 450, protein: 32, carbs: 38, fat: 18, fiber: 12 },
     ingredients: [
       {
         name: 'Ground beef',
@@ -3146,7 +3178,8 @@ export const recipes: Recipe[] = [
     cookTime: 12,
     servings: 4,
     tags: ['pasta', 'italian', 'vegetarian', 'quick'],
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 420, protein: 14, carbs: 64, fat: 14, fiber: 4 },
     ingredients: [
       {
         name: 'Pasta',
@@ -3239,7 +3272,8 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['mexican', 'chicken', 'quick', 'dinner'],
-    image: 'https://images.unsplash.com/photo-1618040996337-56904b7850b9?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1593759608136-45eb2ad9507f?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 420, protein: 28, carbs: 32, fat: 20, fiber: 3 },
     ingredients: [
       {
         name: 'Cooked chicken',
@@ -3326,6 +3360,7 @@ export const recipes: Recipe[] = [
     servings: 24,
     tags: ['baking', 'dessert', 'sweet', 'cookies'],
     image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 180, protein: 2, carbs: 24, fat: 9, fiber: 1 },
     ingredients: [
       {
         name: 'Butter',
@@ -3430,6 +3465,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['italian', 'pizza', 'vegetarian', 'dinner'],
     image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 520, protein: 22, carbs: 68, fat: 18, fiber: 4 },
     ingredients: [
       {
         name: 'Pizza dough',
@@ -3523,6 +3559,7 @@ export const recipes: Recipe[] = [
     servings: 12,
     tags: ['american', 'pork', 'slow-cooker', 'bbq'],
     image: 'https://images.unsplash.com/photo-1606728035253-49e8a23146de?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 580, protein: 38, carbs: 45, fat: 24, fiber: 2 },
     ingredients: [
       {
         name: 'Pork shoulder',
@@ -3611,6 +3648,7 @@ export const recipes: Recipe[] = [
     servings: 6,
     tags: ['soup', 'vegetarian', 'fall', 'comfort-food'],
     image: 'https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 220, protein: 4, carbs: 38, fat: 8, fiber: 6 },
     ingredients: [
       {
         name: 'Butternut squash',
@@ -3726,6 +3764,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['seafood', 'italian', 'quick', 'dinner'],
     image: 'https://images.unsplash.com/photo-1633964913295-ceb43826e36e?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 480, protein: 36, carbs: 52, fat: 14, fiber: 3 },
     ingredients: [
       {
         name: 'Large shrimp',
@@ -3836,6 +3875,7 @@ export const recipes: Recipe[] = [
     servings: 4,
     tags: ['italian', 'chicken', 'dinner', 'comfort-food'],
     image: 'https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 580, protein: 48, carbs: 42, fat: 24, fiber: 3 },
     ingredients: [
       {
         name: 'Chicken breasts',

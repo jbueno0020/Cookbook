@@ -16,6 +16,14 @@ export interface RecipeStep {
   tip?: string; // Optional helpful tip
 }
 
+export interface NutritionInfo {
+  calories: number;
+  protein: number; // in grams
+  carbs: number; // in grams
+  fat: number; // in grams
+  fiber?: number; // in grams (optional)
+}
+
 export interface Recipe {
   id: string;
   title: string;
@@ -28,4 +36,5 @@ export interface Recipe {
   steps: RecipeStep[];
   image?: string;
   tags: string[];
+  nutrition?: NutritionInfo; // Per serving
 }
