@@ -32,14 +32,12 @@ export function RecipeCard({ recipe, onClick, ingredientMatch }: RecipeCardProps
       className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer overflow-hidden"
     >
       <div className="h-48 bg-gradient-to-br from-orange-200 to-orange-300 flex items-center justify-center overflow-hidden relative">
-        {recipe.image ? (
+        {recipe.image && (
           <img
             src={recipe.image}
             alt={recipe.title}
             className="w-full h-full object-cover"
           />
-        ) : (
-          <span className="text-6xl">🍳</span>
         )}
       </div>
 

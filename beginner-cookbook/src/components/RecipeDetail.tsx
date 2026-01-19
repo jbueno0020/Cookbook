@@ -33,6 +33,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [swipeOffset, setSwipeOffset] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [servingMultiplier, setServingMultiplier] = useState(1);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Timer countdown effect
@@ -87,6 +88,53 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
 
   // Swipe handlers
   const minSwipeDistance = 50;
+
+  // Helper to scale ingredient amounts
+  const scaleIngredientAmount = (amount: string, multiplier: number): string => {
+    if (multiplier === 1) return amount;
+
+    // Try to find and scale numbers in the amount string
+    return amount.replace(/(\d+\.?\d*|\d*\.\d+)(\/(\d+))?/g, (_match, whole, _, denominator) => {
+      if (denominator) {
+        // Handle fractions like "1/2"
+        const fraction = parseFloat(whole) / parseFloat(denominator);
+        const scaled = fraction * multiplier;
+
+        // Try to convert back to a nice fraction if possible
+        if (scaled === 0.25) return '1/4';
+        if (scaled === 0.5) return '1/2';
+        if (scaled === 0.75) return '3/4';
+        if (scaled === 1) return '1';
+        if (scaled === 1.5) return '1 1/2';
+        if (scaled === 2) return '2';
+
+        // Otherwise return decimal
+        return scaled.toFixed(2).replace(/\.?0+$/, '');
+      } else {
+        // Regular number
+        const num = parseFloat(whole);
+        const scaled = num * multiplier;
+        // Round to 2 decimal places and remove trailing zeros
+        return scaled.toFixed(2).replace(/\.?0+$/, '');
+      }
+    });
+  };
+
+  // Calculate swooping motion - creates a parabolic arc
+  const calculateSwoopTransform = (offsetX: number) => {
+    // Calculate vertical offset (swoops down in the middle)
+    // Using a parabolic function: y = -ax^2 where a controls depth of swoop
+    const normalizedX = offsetX / 250; // Normalize based on max offset
+    const verticalOffset = -Math.abs(normalizedX) * 80 * Math.abs(normalizedX); // Parabolic swoop
+
+    // Calculate rotation (slight tilt during swoop)
+    const rotation = normalizedX * 5; // Max 5 degrees rotation
+
+    return {
+      transform: `translateX(${offsetX}px) translateY(${verticalOffset}px) rotate(${rotation}deg)`,
+      verticalOffset
+    };
+  };
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
@@ -241,19 +289,17 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
         onClick={onBack}
         className="mb-4 flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
       >
-        <span>←</span> Back to Recipes
+        Back to Recipes
       </button>
 
       <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
         <div className="h-64 bg-gradient-to-br from-orange-200 to-orange-300 flex items-center justify-center overflow-hidden relative">
-          {recipe.image ? (
+          {recipe.image && (
             <img
               src={recipe.image}
               alt={recipe.title}
               className="w-full h-full object-cover"
             />
-          ) : (
-            <span className="text-9xl">🍳</span>
           )}
         </div>
 
@@ -273,24 +319,36 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mb-6">
             <div className="bg-gray-50 p-3 rounded-lg">
-              <div className="text-2xl mb-1">⏱️</div>
-              <div className="text-sm text-gray-600">Total Time</div>
-              <div className="font-semibold">{totalTime} min</div>
+              <div className="text-sm text-gray-600 mb-1">Total Time</div>
+              <div className="font-semibold text-lg">{totalTime} min</div>
             </div>
             <div className="bg-gray-50 p-3 rounded-lg">
-              <div className="text-2xl mb-1">👨‍🍳</div>
-              <div className="text-sm text-gray-600">Prep Time</div>
-              <div className="font-semibold">{recipe.prepTime} min</div>
+              <div className="text-sm text-gray-600 mb-1">Prep Time</div>
+              <div className="font-semibold text-lg">{recipe.prepTime} min</div>
             </div>
             <div className="bg-gray-50 p-3 rounded-lg">
-              <div className="text-2xl mb-1">🔥</div>
-              <div className="text-sm text-gray-600">Cook Time</div>
-              <div className="font-semibold">{recipe.cookTime} min</div>
+              <div className="text-sm text-gray-600 mb-1">Cook Time</div>
+              <div className="font-semibold text-lg">{recipe.cookTime} min</div>
             </div>
-            <div className="bg-gray-50 p-3 rounded-lg">
-              <div className="text-2xl mb-1">🍽️</div>
-              <div className="text-sm text-gray-600">Servings</div>
-              <div className="font-semibold">{recipe.servings}</div>
+            <div className="bg-blue-50 p-3 rounded-lg border-2 border-blue-200">
+              <div className="text-sm text-gray-600 mb-2">Servings</div>
+              <div className="flex items-center justify-center gap-2">
+                <button
+                  onClick={() => setServingMultiplier(Math.max(0.5, servingMultiplier - 0.5))}
+                  className="w-7 h-7 bg-blue-500 text-white rounded-full hover:bg-blue-600 font-bold text-lg"
+                >
+                  -
+                </button>
+                <div className="font-semibold text-lg min-w-[3rem] text-center">
+                  {Math.round(recipe.servings * servingMultiplier)}
+                </div>
+                <button
+                  onClick={() => setServingMultiplier(Math.min(5, servingMultiplier + 0.5))}
+                  className="w-7 h-7 bg-blue-500 text-white rounded-full hover:bg-blue-600 font-bold text-lg"
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
 
@@ -298,7 +356,6 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
           {recipe.nutrition && (
             <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg border border-green-200">
               <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                <span className="text-xl">📊</span>
                 Nutrition Facts (per serving)
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
@@ -351,7 +408,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
       {/* Ingredients */}
       <div className="bg-white rounded-lg shadow p-6 mb-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <span>🛒</span> Ingredients
+          Ingredients
         </h2>
         <div className="space-y-3">
           {recipe.ingredients.map((ingredient, index) => (
@@ -373,11 +430,11 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                 }`}
               >
                 <div className="font-medium text-gray-900">
-                  {renderTextWithTechniqueLinks(`${ingredient.amount} ${ingredient.name}`)}
+                  {renderTextWithTechniqueLinks(`${scaleIngredientAmount(ingredient.amount, servingMultiplier)} ${ingredient.name}`)}
                 </div>
                 {ingredient.visual && (
                   <div className="text-sm text-gray-500 italic">
-                    💡 {ingredient.visual}
+                    {ingredient.visual}
                   </div>
                 )}
               </label>
@@ -390,7 +447,6 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
       {completedSteps.size === recipe.steps.length ? (
         /* Completion Message */
         <div className="bg-green-50 border-2 border-green-500 rounded-lg p-8 text-center">
-          <div className="text-6xl mb-4">🎉</div>
           <h3 className="text-3xl font-bold text-green-800 mb-3">
             Amazing Job!
           </h3>
@@ -410,7 +466,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
       ) : (
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <span>📝</span> Cooking Instructions
+            Cooking Instructions
           </h2>
           <p className="text-gray-600 mb-4 text-center">
             Swipe left to complete step • Swipe right to go back
@@ -422,7 +478,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
               className="bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-blue-100"
               style={{
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.1)',
-                transform: `translateX(${swipeOffset}px)`,
+                ...calculateSwoopTransform(swipeOffset),
                 transition: isTransitioning ? 'transform 0.3s ease-out' : 'none',
                 touchAction: 'pan-y' // Prevent default horizontal scroll
               }}
@@ -438,7 +494,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                 </span>
                 {completedSteps.has(currentStep.id) && (
                   <span className="bg-green-400 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    ✓ Done
+                    Done
                   </span>
                 )}
               </div>
@@ -456,7 +512,6 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
               {currentStep.tip && (
                 <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
                   <div className="flex items-start gap-2">
-                    <span className="text-xl">💡</span>
                     <div>
                       <div className="font-bold text-yellow-800 mb-1">Pro Tip:</div>
                       <p className="text-yellow-700">{currentStep.tip}</p>
@@ -472,7 +527,6 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                   disabled={timerSeconds !== null}
                   className="w-full mb-4 px-6 py-4 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-lg"
                 >
-                  <span>⏱️</span>
                   {timerSeconds !== null ? 'Timer Running...' : `Start ${currentStep.timer} min timer`}
                 </button>
               )}

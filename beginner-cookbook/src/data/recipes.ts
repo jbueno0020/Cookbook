@@ -606,7 +606,7 @@ export const recipes: Recipe[] = [
     cookTime: 10,
     servings: 3,
     tags: ['asian', 'rice', 'quick', 'leftover-friendly'],
-    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80',
+    image: '/images/fried-rice.jpg',
     nutrition: { calories: 340, protein: 12, carbs: 52, fat: 10, fiber: 2 },
     ingredients: [
       {
@@ -693,7 +693,7 @@ export const recipes: Recipe[] = [
     cookTime: 6,
     servings: 1,
     tags: ['mexican', 'quick', 'cheese', 'snack'],
-    image: 'https://images.unsplash.com/photo-1618040996337-56904b7850b9?auto=format&fit=crop&w=800&q=80',
+    image: '/images/cheese-quesadilla.jpg',
     nutrition: { calories: 450, protein: 18, carbs: 38, fat: 24, fiber: 3 },
     ingredients: [
       {
@@ -866,7 +866,7 @@ export const recipes: Recipe[] = [
     cookTime: 20,
     servings: 4,
     tags: ['pasta', 'italian', 'one-pot', 'quick'],
-    image: 'https://images.unsplash.com/photo-1621510456681-2330135e5871?auto=format&fit=crop&w=800&q=80',
+    image: '/images/spaghetti.jpg',
     nutrition: { calories: 380, protein: 12, carbs: 62, fat: 10, fiber: 4 },
     ingredients: [
       {
@@ -1054,7 +1054,7 @@ export const recipes: Recipe[] = [
     cookTime: 30,
     servings: 6,
     tags: ['soup', 'comfort-food', 'beef', 'one-pot'],
-    image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80',
+    image: '/images/chili.jpg',
     nutrition: { calories: 420, protein: 28, carbs: 38, fat: 16, fiber: 12 },
     ingredients: [
       {
@@ -1169,7 +1169,7 @@ export const recipes: Recipe[] = [
     cookTime: 15,
     servings: 4,
     tags: ['mexican', 'breakfast', 'authentic', 'vegetarian-option'],
-    image: 'https://images.unsplash.com/photo-1617343267935-a67e50b590ca?auto=format&fit=crop&w=800&q=80',
+    image: '/images/chilaquiles.jpg',
     nutrition: { calories: 380, protein: 18, carbs: 36, fat: 18, fiber: 4 },
     ingredients: [
       {
@@ -1886,7 +1886,7 @@ export const recipes: Recipe[] = [
     cookTime: 0,
     servings: 4,
     tags: ['italian', 'salad', 'vegetarian', 'no-cook'],
-    image: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=800&q=80',
+    image: '/images/caprese-salad.jpg',
     nutrition: { calories: 220, protein: 12, carbs: 8, fat: 16, fiber: 2 },
     ingredients: [
       {

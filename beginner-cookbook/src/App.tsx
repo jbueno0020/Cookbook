@@ -90,7 +90,6 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="text-center mb-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-2 flex items-center justify-center gap-3">
-              <span className="text-5xl">👨‍🍳</span>
               Beginner's Cookbook
             </h1>
             <p className="text-gray-600 text-lg">
@@ -106,11 +105,8 @@ function App() {
                 placeholder="Search recipes or tags..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
               />
-              <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-xl">
-                🔍
-              </span>
             </div>
           </div>
 
@@ -135,7 +131,7 @@ function App() {
                     : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
                 }`}
               >
-                🟢 Super Easy ({recipes.filter(r => r.difficulty === 'super-easy').length})
+                Super Easy ({recipes.filter(r => r.difficulty === 'super-easy').length})
               </button>
               <button
                 onClick={() => setDifficultyFilter('easy')}
@@ -145,7 +141,7 @@ function App() {
                     : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
                 }`}
               >
-                🟡 Easy ({recipes.filter(r => r.difficulty === 'easy').length})
+                Easy ({recipes.filter(r => r.difficulty === 'easy').length})
               </button>
               <button
                 onClick={() => setDifficultyFilter('intermediate')}
@@ -155,7 +151,7 @@ function App() {
                     : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
                 }`}
               >
-                🟠 Intermediate ({recipes.filter(r => r.difficulty === 'intermediate').length})
+                Intermediate ({recipes.filter(r => r.difficulty === 'intermediate').length})
               </button>
             </div>
           </div>
@@ -166,7 +162,6 @@ function App() {
               onClick={() => setShowIngredientMatcher(!showIngredientMatcher)}
               className="w-full px-4 py-2 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all shadow-md flex items-center justify-center gap-2"
             >
-              <span className="text-xl">🥘</span>
               {showIngredientMatcher ? 'Hide Ingredient Matcher' : 'Find Recipes by Ingredients'}
             </button>
           </div>
@@ -180,7 +175,6 @@ function App() {
             <div className="bg-purple-600 text-white p-4 rounded-t-lg shadow-lg">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl">🥘</span>
                   <h3 className="font-semibold text-lg">Ingredient Matcher</h3>
                 </div>
                 <button
@@ -235,7 +229,6 @@ function App() {
         {!showIngredientMatcher && (
           <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded">
             <div className="flex items-start gap-3">
-              <span className="text-2xl">💡</span>
               <div>
                 <h3 className="font-semibold text-blue-900 mb-1">
                   Welcome to Your Cooking Journey!
@@ -268,7 +261,6 @@ function App() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <span className="text-6xl mb-4 block">🔍</span>
             <h3 className="text-xl font-semibold text-gray-700 mb-2">
               No recipes found
             </h3>
@@ -282,21 +274,18 @@ function App() {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="text-3xl mb-3">🟢</div>
               <h4 className="font-semibold text-gray-900 mb-2">Super Easy</h4>
               <p className="text-sm text-gray-600">
                 Perfect for absolute beginners. Simple ingredients, minimal steps.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="text-3xl mb-3">🟡</div>
               <h4 className="font-semibold text-gray-900 mb-2">Easy</h4>
               <p className="text-sm text-gray-600">
                 A few more steps but still beginner-friendly with clear guidance.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="text-3xl mb-3">🟠</div>
               <h4 className="font-semibold text-gray-900 mb-2">Intermediate</h4>
               <p className="text-sm text-gray-600">
                 Ready to level up? These recipes introduce new techniques.
