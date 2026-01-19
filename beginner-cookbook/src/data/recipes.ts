@@ -1838,5 +1838,2133 @@ export const recipes: Recipe[] = [
         tip: 'This is a traditional Korean celebration dish! Often served at parties and holidays'
       }
     ]
+  },
+  {
+    id: '20',
+    title: 'Honey Garlic Chicken',
+    description: 'Sweet and savory chicken with an addictively delicious honey garlic sauce. Ready in 15 minutes!',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 10,
+    servings: 4,
+    tags: ['chicken', 'quick', 'asian-inspired', 'dinner'],
+    ingredients: [
+      {
+        name: 'Chicken breast',
+        amount: '1 lb, cut into bite-sized pieces',
+        visual: 'About 2 breasts cut into chunks'
+      },
+      {
+        name: 'Honey',
+        amount: '1/4 cup',
+        visual: 'Quarter of a measuring cup'
+      },
+      {
+        name: 'Soy sauce',
+        amount: '3 tablespoons',
+        visual: 'Three big spoonfuls'
+      },
+      {
+        name: 'Garlic',
+        amount: '4 cloves, minced',
+        visual: '4 small pieces chopped tiny'
+      },
+      {
+        name: 'Olive oil',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Cornstarch',
+        amount: '1 tablespoon',
+        visual: 'One big spoonful - for thickening'
+      },
+      {
+        name: 'Water',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Mix the sauce',
+        plainLanguage: 'In a small bowl, mix honey, soy sauce, and garlic together. Set aside.',
+        tip: 'This sauce is the star! Sweet and savory perfection'
+      },
+      {
+        id: 2,
+        instruction: 'Cook the chicken',
+        plainLanguage: 'Heat oil in a large pan over medium-high heat. Add chicken pieces. Cook for 5-6 minutes, stirring occasionally, until golden brown and cooked through.',
+        timer: 6,
+        tip: 'Make sure chicken is no longer pink inside'
+      },
+      {
+        id: 3,
+        instruction: 'Add the sauce',
+        plainLanguage: 'Pour the honey garlic sauce over the chicken. Stir to coat all pieces. Let it bubble for 1-2 minutes.',
+        timer: 2
+      },
+      {
+        id: 4,
+        instruction: 'Thicken the sauce',
+        plainLanguage: 'Mix cornstarch with water to make a slurry. Pour into the pan and stir for 1 minute until sauce thickens and becomes glossy.',
+        timer: 1,
+        tip: 'The sauce should coat the back of a spoon when ready'
+      },
+      {
+        id: 5,
+        instruction: 'Serve',
+        plainLanguage: 'Serve hot over rice or noodles. Garnish with sesame seeds or green onions if desired!',
+        tip: 'This sauce is so good you\'ll want to lick the plate!'
+      }
+    ]
+  },
+  {
+    id: '21',
+    title: 'Broccoli Cheddar Soup',
+    description: 'Thick, creamy, and loaded with cheese and broccoli. Ultimate comfort food!',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 25,
+    servings: 6,
+    tags: ['soup', 'vegetarian', 'comfort-food', 'cheese'],
+    ingredients: [
+      {
+        name: 'Broccoli',
+        amount: '4 cups chopped (about 2 heads)',
+        visual: 'Two heads of broccoli cut into small pieces'
+      },
+      {
+        name: 'Butter',
+        amount: '4 tablespoons',
+        visual: 'Half a stick'
+      },
+      {
+        name: 'Onion',
+        amount: '1 small, diced',
+        visual: 'One onion cut into small pieces'
+      },
+      {
+        name: 'Garlic',
+        amount: '2 cloves, minced',
+        visual: '2 small pieces chopped tiny'
+      },
+      {
+        name: 'Flour',
+        amount: '1/4 cup',
+        visual: 'Quarter cup for thickening'
+      },
+      {
+        name: 'Milk',
+        amount: '2 cups',
+        visual: 'Two full measuring cups'
+      },
+      {
+        name: 'Chicken or vegetable broth',
+        amount: '2 cups',
+        visual: 'Half a standard carton'
+      },
+      {
+        name: 'Sharp cheddar cheese',
+        amount: '2 cups shredded',
+        visual: 'About 8 oz - two big handfuls'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season to your liking'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Cook broccoli',
+        plainLanguage: 'Bring a pot of water to boil. Add broccoli and cook for 5 minutes until tender. Drain and set aside.',
+        timer: 5,
+        tip: 'Don\'t overcook! Broccoli should be bright green'
+      },
+      {
+        id: 2,
+        instruction: 'Make the roux',
+        plainLanguage: 'In a large pot, melt butter over medium heat. Add onion and garlic, cook for 3 minutes. Stir in flour and cook for 1 minute, stirring constantly.',
+        timer: 4,
+        tip: 'This flour mixture thickens the soup - keep stirring so it doesn\'t burn!'
+      },
+      {
+        id: 3,
+        instruction: 'Add liquids',
+        plainLanguage: 'Slowly pour in milk and broth while stirring. Keep stirring to prevent lumps. Bring to a gentle bubble.',
+        timer: 5,
+        tip: 'Pour slowly and stir constantly for smooth soup'
+      },
+      {
+        id: 4,
+        instruction: 'Simmer',
+        plainLanguage: 'Turn heat to low. Let it simmer for 10 minutes, stirring occasionally. It will start to thicken.',
+        timer: 10
+      },
+      {
+        id: 5,
+        instruction: 'Add cheese and broccoli',
+        plainLanguage: 'Add cooked broccoli and shredded cheese. Stir until cheese is completely melted. Season with salt and pepper.',
+        tip: 'Add cheese gradually for smoothest melting'
+      },
+      {
+        id: 6,
+        instruction: 'Serve hot',
+        plainLanguage: 'Ladle into bowls. Serve with crusty bread for dipping!',
+        tip: 'Top with extra shredded cheese and crispy bacon bits!'
+      }
+    ]
+  },
+  {
+    id: '22',
+    title: 'Spaghetti Carbonara',
+    description: 'Creamy Italian pasta with bacon and eggs. A Roman classic with just a few ingredients!',
+    difficulty: 'intermediate',
+    prepTime: 5,
+    cookTime: 15,
+    servings: 4,
+    tags: ['italian', 'pasta', 'authentic', 'quick'],
+    ingredients: [
+      {
+        name: 'Spaghetti',
+        amount: '1 lb',
+        visual: 'One box of spaghetti'
+      },
+      {
+        name: 'Bacon or pancetta',
+        amount: '8 oz, diced',
+        visual: 'About 8 strips of bacon, chopped'
+      },
+      {
+        name: 'Eggs',
+        amount: '4 large eggs',
+        visual: 'Four eggs from the carton'
+      },
+      {
+        name: 'Parmesan cheese',
+        amount: '1 cup grated',
+        visual: 'Freshly grated is best!'
+      },
+      {
+        name: 'Black pepper',
+        amount: '1 teaspoon',
+        visual: 'Lots of freshly cracked pepper'
+      },
+      {
+        name: 'Salt',
+        amount: 'For pasta water',
+        visual: 'Big spoonful for the water'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Cook the pasta',
+        plainLanguage: 'Boil salted water and cook spaghetti according to package directions. Before draining, save 1 cup of pasta water!',
+        timer: 10,
+        tip: 'IMPORTANT: Save that pasta water! You\'ll need it for the sauce'
+      },
+      {
+        id: 2,
+        instruction: 'Cook the bacon',
+        plainLanguage: 'While pasta cooks, cook bacon in a large pan over medium heat until crispy, about 5-6 minutes. Turn off heat.',
+        timer: 6
+      },
+      {
+        id: 3,
+        instruction: 'Mix eggs and cheese',
+        plainLanguage: 'In a bowl, whisk together eggs, parmesan, and lots of black pepper. Mix well.',
+        tip: 'This mixture will create the creamy sauce - no cream needed!'
+      },
+      {
+        id: 4,
+        instruction: 'Combine everything',
+        plainLanguage: 'Add drained hot pasta to the pan with bacon. Remove pan from heat! Add the egg mixture and toss quickly for 1 minute. Add pasta water a little at a time until creamy.',
+        tip: 'OFF THE HEAT! Or eggs will scramble. The hot pasta cooks the eggs gently'
+      },
+      {
+        id: 5,
+        instruction: 'Serve immediately',
+        plainLanguage: 'Serve right away with extra parmesan and black pepper on top. This doesn\'t reheat well - eat it fresh!',
+        tip: 'The sauce should be creamy, not clumpy. If too thick, add more pasta water'
+      }
+    ]
+  },
+  {
+    id: '23',
+    title: 'Beef Stew',
+    description: 'Hearty, tender beef with vegetables in rich gravy. Perfect for cold days!',
+    difficulty: 'intermediate',
+    prepTime: 20,
+    cookTime: 120,
+    servings: 6,
+    tags: ['beef', 'stew', 'comfort-food', 'slow-cooked'],
+    ingredients: [
+      {
+        name: 'Beef chuck',
+        amount: '2 lbs, cut into 1-inch cubes',
+        visual: 'Stew meat from the store'
+      },
+      {
+        name: 'Potatoes',
+        amount: '4 medium, cubed',
+        visual: 'Four potatoes cut into chunks'
+      },
+      {
+        name: 'Carrots',
+        amount: '4 large, sliced',
+        visual: 'Four carrots cut into rounds'
+      },
+      {
+        name: 'Onion',
+        amount: '1 large, chopped',
+        visual: 'One onion in pieces'
+      },
+      {
+        name: 'Garlic',
+        amount: '4 cloves, minced',
+        visual: '4 small pieces chopped tiny'
+      },
+      {
+        name: 'Beef broth',
+        amount: '4 cups',
+        visual: 'One full carton'
+      },
+      {
+        name: 'Tomato paste',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Flour',
+        amount: '3 tablespoons',
+        visual: 'For coating the beef'
+      },
+      {
+        name: 'Olive oil',
+        amount: '3 tablespoons',
+        visual: 'Three big spoonfuls'
+      },
+      {
+        name: 'Bay leaves',
+        amount: '2 leaves',
+        visual: 'Dried bay leaves'
+      },
+      {
+        name: 'Thyme',
+        amount: '1 teaspoon dried',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season well!'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Coat beef with flour',
+        plainLanguage: 'Pat beef dry with paper towels. Put flour, salt, and pepper in a bowl. Toss beef cubes in the flour mixture until coated.',
+        tip: 'Dry beef browns better! The flour helps make the gravy thick'
+      },
+      {
+        id: 2,
+        instruction: 'Brown the beef',
+        plainLanguage: 'Heat oil in a large pot over medium-high heat. Add beef in batches (don\'t crowd!). Brown on all sides, about 6-8 minutes total. Remove to a plate.',
+        timer: 8,
+        tip: 'Don\'t skip browning! This adds SO much flavor'
+      },
+      {
+        id: 3,
+        instruction: 'Cook vegetables',
+        plainLanguage: 'In the same pot, add onion and garlic. Cook for 3 minutes, scraping up the brown bits from the bottom.',
+        timer: 3,
+        tip: 'Those brown bits are pure flavor!'
+      },
+      {
+        id: 4,
+        instruction: 'Add liquids and beef back',
+        plainLanguage: 'Stir in tomato paste. Pour in beef broth. Add beef back to the pot with bay leaves and thyme. Bring to a boil.',
+        timer: 5
+      },
+      {
+        id: 5,
+        instruction: 'Simmer',
+        plainLanguage: 'Turn heat to low. Cover and let simmer for 1.5 hours, stirring occasionally. The beef should become very tender.',
+        timer: 90,
+        tip: 'Low and slow is the secret! Don\'t rush this step'
+      },
+      {
+        id: 6,
+        instruction: 'Add vegetables',
+        plainLanguage: 'Add potatoes and carrots. Simmer uncovered for another 30 minutes until vegetables are tender.',
+        timer: 30
+      },
+      {
+        id: 7,
+        instruction: 'Season and serve',
+        plainLanguage: 'Remove bay leaves. Taste and add more salt and pepper if needed. Serve hot with crusty bread!',
+        tip: 'Even better the next day! The flavors develop more'
+      }
+    ]
+  },
+  {
+    id: '24',
+    title: 'Chocolate Chip Cookies',
+    description: 'Classic chewy cookies with melty chocolate chips. The best homemade cookies!',
+    difficulty: 'easy',
+    prepTime: 15,
+    cookTime: 10,
+    servings: 24,
+    tags: ['dessert', 'baking', 'sweet', 'kid-friendly'],
+    ingredients: [
+      {
+        name: 'Butter',
+        amount: '1 cup (2 sticks), softened',
+        visual: 'Two sticks at room temperature'
+      },
+      {
+        name: 'White sugar',
+        amount: '3/4 cup',
+        visual: 'Three quarters of a cup'
+      },
+      {
+        name: 'Brown sugar',
+        amount: '3/4 cup packed',
+        visual: 'Three quarters cup, packed down'
+      },
+      {
+        name: 'Eggs',
+        amount: '2 large eggs',
+        visual: 'Two eggs from the carton'
+      },
+      {
+        name: 'Vanilla extract',
+        amount: '2 teaspoons',
+        visual: 'Two small spoonfuls'
+      },
+      {
+        name: 'All-purpose flour',
+        amount: '2 1/4 cups',
+        visual: 'About 2 and a quarter cups'
+      },
+      {
+        name: 'Baking soda',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Salt',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Chocolate chips',
+        amount: '2 cups',
+        visual: 'One 12 oz bag'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Preheat oven',
+        plainLanguage: 'Turn oven to 375°F. Let it heat up while you make the dough.',
+        timer: 10,
+        tip: 'Preheating is important for even baking!'
+      },
+      {
+        id: 2,
+        instruction: 'Cream butter and sugars',
+        plainLanguage: 'In a large bowl, beat softened butter, white sugar, and brown sugar together until fluffy and light in color, about 2-3 minutes.',
+        tip: 'Use an electric mixer if you have one, or mix by hand vigorously'
+      },
+      {
+        id: 3,
+        instruction: 'Add eggs and vanilla',
+        plainLanguage: 'Add eggs one at a time, beating well after each. Then add vanilla and mix.',
+      },
+      {
+        id: 4,
+        instruction: 'Mix dry ingredients',
+        plainLanguage: 'In another bowl, whisk together flour, baking soda, and salt.',
+      },
+      {
+        id: 5,
+        instruction: 'Combine wet and dry',
+        plainLanguage: 'Gradually add the flour mixture to the butter mixture. Mix just until combined - don\'t overmix!',
+        tip: 'Stop mixing as soon as you don\'t see flour streaks'
+      },
+      {
+        id: 6,
+        instruction: 'Add chocolate chips',
+        plainLanguage: 'Stir in chocolate chips with a spoon or spatula.',
+      },
+      {
+        id: 7,
+        instruction: 'Scoop onto baking sheets',
+        plainLanguage: 'Drop rounded tablespoons of dough onto ungreased cookie sheets, spacing them 2 inches apart.',
+        tip: 'They spread while baking, so give them space!'
+      },
+      {
+        id: 8,
+        instruction: 'Bake',
+        plainLanguage: 'Bake for 9-11 minutes until edges are golden but centers still look slightly underdone.',
+        timer: 10,
+        tip: 'Don\'t overbake! They firm up as they cool'
+      },
+      {
+        id: 9,
+        instruction: 'Cool and enjoy',
+        plainLanguage: 'Let cool on the baking sheet for 2 minutes, then transfer to a cooling rack. Enjoy warm with milk!',
+        tip: 'Best eaten warm! Store extras in an airtight container'
+      }
+    ]
+  },
+  {
+    id: '25',
+    title: 'Zuppa Toscana',
+    description: 'Italian sausage soup with potatoes and kale in a creamy broth. Restaurant copycat recipe!',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 25,
+    servings: 6,
+    tags: ['soup', 'italian', 'comfort-food', 'sausage'],
+    ingredients: [
+      {
+        name: 'Italian sausage',
+        amount: '1 lb',
+        visual: 'One package of sausage, removed from casings'
+      },
+      {
+        name: 'Bacon',
+        amount: '4 strips, chopped',
+        visual: 'Four bacon strips cut into pieces'
+      },
+      {
+        name: 'Potatoes',
+        amount: '3 medium, sliced thin',
+        visual: 'Three potatoes sliced into thin rounds'
+      },
+      {
+        name: 'Onion',
+        amount: '1 medium, diced',
+        visual: 'One onion cut into small pieces'
+      },
+      {
+        name: 'Garlic',
+        amount: '3 cloves, minced',
+        visual: '3 small pieces chopped tiny'
+      },
+      {
+        name: 'Chicken broth',
+        amount: '6 cups',
+        visual: 'One and a half cartons'
+      },
+      {
+        name: 'Kale',
+        amount: '3 cups chopped',
+        visual: 'One bunch of kale, stems removed'
+      },
+      {
+        name: 'Heavy cream',
+        amount: '1 cup',
+        visual: 'One measuring cup'
+      },
+      {
+        name: 'Red pepper flakes',
+        amount: '1/2 teaspoon',
+        visual: 'Half a small spoonful'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season as desired'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Cook bacon',
+        plainLanguage: 'In a large pot over medium heat, cook chopped bacon until crispy, about 5 minutes. Remove to a plate.',
+        timer: 5
+      },
+      {
+        id: 2,
+        instruction: 'Brown sausage',
+        plainLanguage: 'In the same pot with bacon fat, add sausage. Break it up with a spoon and cook until browned, about 6-7 minutes. Remove to the plate with bacon.',
+        timer: 7
+      },
+      {
+        id: 3,
+        instruction: 'Cook onion and garlic',
+        plainLanguage: 'Add onion to the pot. Cook for 3 minutes until soft. Add garlic and red pepper flakes, cook 1 more minute.',
+        timer: 4
+      },
+      {
+        id: 4,
+        instruction: 'Add broth and potatoes',
+        plainLanguage: 'Pour in chicken broth. Add sliced potatoes. Bring to a boil, then reduce to simmer for 10 minutes until potatoes are tender.',
+        timer: 10,
+        tip: 'Thin slices cook faster! Pierce with a fork to test'
+      },
+      {
+        id: 5,
+        instruction: 'Add meat and kale',
+        plainLanguage: 'Add sausage and bacon back to pot. Add chopped kale. Simmer for 5 minutes until kale wilts.',
+        timer: 5,
+        tip: 'Kale will shrink a lot as it cooks'
+      },
+      {
+        id: 6,
+        instruction: 'Add cream',
+        plainLanguage: 'Turn heat to low. Stir in heavy cream. Heat through for 2 minutes. Season with salt and pepper.',
+        timer: 2,
+        tip: 'Don\'t boil after adding cream or it might curdle'
+      },
+      {
+        id: 7,
+        instruction: 'Serve hot',
+        plainLanguage: 'Ladle into bowls. Serve with crusty bread and extra parmesan cheese!',
+        tip: 'Tastes like the restaurant version! So comforting'
+      }
+    ]
+  },
+  {
+    id: '26',
+    title: 'Cacio e Pepe',
+    description: 'Roman pasta with just cheese and pepper. Simple ingredients, incredible flavor!',
+    difficulty: 'intermediate',
+    prepTime: 5,
+    cookTime: 15,
+    servings: 4,
+    tags: ['italian', 'pasta', 'authentic', 'vegetarian'],
+    ingredients: [
+      {
+        name: 'Spaghetti or bucatini',
+        amount: '1 lb',
+        visual: 'One box of pasta'
+      },
+      {
+        name: 'Pecorino Romano cheese',
+        amount: '2 cups finely grated',
+        visual: 'About 8 oz - must be finely grated!'
+      },
+      {
+        name: 'Black peppercorns',
+        amount: '2 tablespoons',
+        visual: 'Whole peppercorns to crack fresh'
+      },
+      {
+        name: 'Salt',
+        amount: 'For pasta water',
+        visual: 'Big spoonful for the water'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Toast the pepper',
+        plainLanguage: 'In a large pan, toast whole peppercorns over medium heat for 1-2 minutes until fragrant. Remove from heat and coarsely crush them.',
+        timer: 2,
+        tip: 'Crushing whole peppercorns makes ALL the difference in flavor!'
+      },
+      {
+        id: 2,
+        instruction: 'Cook pasta',
+        plainLanguage: 'Cook pasta in salted boiling water until al dente (still slightly firm). Save 2 cups of pasta water before draining!',
+        timer: 9,
+        tip: 'CRITICAL: Save extra pasta water! You need it for the sauce'
+      },
+      {
+        id: 3,
+        instruction: 'Make cheese paste',
+        plainLanguage: 'In a bowl, mix grated pecorino with 1/2 cup of warm pasta water to make a thick paste. Stir until smooth.',
+        tip: 'This prevents clumps! The paste helps the cheese melt smoothly'
+      },
+      {
+        id: 4,
+        instruction: 'Combine',
+        plainLanguage: 'Return empty pasta pot to low heat. Add pasta, crushed pepper, and cheese paste. Toss vigorously while adding pasta water a little at a time until creamy.',
+        tip: 'Keep tossing! The magic happens with constant movement. Add water slowly'
+      },
+      {
+        id: 5,
+        instruction: 'Serve immediately',
+        plainLanguage: 'Serve right away topped with more pecorino and black pepper. This must be eaten hot and fresh!',
+        tip: 'The sauce should coat the pasta like silk. If it\'s clumpy, add more pasta water and toss!'
+      }
+    ]
+  },
+  {
+    id: '27',
+    title: 'Baked Feta Chickpeas',
+    description: 'Viral TikTok-inspired recipe with roasted feta, chickpeas, and tomatoes. So addictive!',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 30,
+    servings: 4,
+    tags: ['vegetarian', 'mediterranean', 'viral', 'healthy'],
+    ingredients: [
+      {
+        name: 'Feta cheese block',
+        amount: '8 oz block',
+        visual: 'One block of feta - don\'t use crumbled!'
+      },
+      {
+        name: 'Cherry tomatoes',
+        amount: '2 pints (4 cups)',
+        visual: 'Two containers of cherry tomatoes'
+      },
+      {
+        name: 'Chickpeas',
+        amount: '1 can (15 oz), drained',
+        visual: 'One can, liquid poured out'
+      },
+      {
+        name: 'Garlic',
+        amount: '4 cloves, whole',
+        visual: '4 cloves left whole'
+      },
+      {
+        name: 'Olive oil',
+        amount: '1/3 cup',
+        visual: 'Generous amount for roasting'
+      },
+      {
+        name: 'Red pepper flakes',
+        amount: '1/2 teaspoon',
+        visual: 'Half a small spoonful'
+      },
+      {
+        name: 'Oregano',
+        amount: '1 teaspoon dried',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Fresh basil',
+        amount: 'Handful',
+        visual: 'For topping'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season well'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Preheat oven',
+        plainLanguage: 'Preheat oven to 400°F.',
+        timer: 10
+      },
+      {
+        id: 2,
+        instruction: 'Arrange in baking dish',
+        plainLanguage: 'Place feta block in the center of a 9x13 baking dish. Arrange tomatoes, chickpeas, and garlic cloves around it.',
+        tip: 'Keep feta in the center - it\'s the star!'
+      },
+      {
+        id: 3,
+        instruction: 'Season and drizzle',
+        plainLanguage: 'Drizzle olive oil over everything. Sprinkle with oregano, red pepper flakes, salt, and pepper.',
+        tip: 'Don\'t skip the oil - it helps everything roast beautifully'
+      },
+      {
+        id: 4,
+        instruction: 'Bake',
+        plainLanguage: 'Bake for 30 minutes until tomatoes burst, feta is soft, and edges are golden.',
+        timer: 30,
+        tip: 'Feta should be soft and melty, tomatoes should burst'
+      },
+      {
+        id: 5,
+        instruction: 'Mash and mix',
+        plainLanguage: 'Remove from oven. Use a fork to mash the feta and garlic. Stir everything together until creamy.',
+        tip: 'The tomatoes will release juice - mix it all into a saucy mixture'
+      },
+      {
+        id: 6,
+        instruction: 'Serve',
+        plainLanguage: 'Top with fresh basil. Serve with crusty bread, over pasta, or with rice!',
+        tip: 'Amazing on toast, over noodles, or eaten straight with bread!'
+      }
+    ]
+  },
+  {
+    id: '28',
+    title: 'French Onion Soup',
+    description: 'Caramelized onions in rich broth topped with melted cheese. Classic French bistro favorite!',
+    difficulty: 'intermediate',
+    prepTime: 15,
+    cookTime: 60,
+    servings: 4,
+    tags: ['french', 'soup', 'comfort-food', 'cheese'],
+    ingredients: [
+      {
+        name: 'Yellow onions',
+        amount: '4 large, sliced thin',
+        visual: 'Four onions cut into thin half-moons'
+      },
+      {
+        name: 'Butter',
+        amount: '4 tablespoons',
+        visual: 'Half a stick'
+      },
+      {
+        name: 'Beef broth',
+        amount: '6 cups',
+        visual: 'One and a half cartons'
+      },
+      {
+        name: 'White wine',
+        amount: '1/2 cup (optional)',
+        visual: 'Can substitute with more broth'
+      },
+      {
+        name: 'Bay leaves',
+        amount: '2 leaves',
+        visual: 'Dried bay leaves'
+      },
+      {
+        name: 'Thyme',
+        amount: '1 teaspoon dried',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Baguette',
+        amount: '1 loaf, sliced',
+        visual: 'French bread sliced into rounds'
+      },
+      {
+        name: 'Gruyere cheese',
+        amount: '2 cups shredded',
+        visual: 'About 8 oz - Swiss works too'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season well'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Caramelize onions',
+        plainLanguage: 'Melt butter in a large pot over medium heat. Add sliced onions. Cook for 40-45 minutes, stirring every 5 minutes, until deep golden brown.',
+        timer: 45,
+        tip: 'This takes time but is ESSENTIAL! Don\'t rush. The onions should be sweet and golden'
+      },
+      {
+        id: 2,
+        instruction: 'Deglaze',
+        plainLanguage: 'Add wine (or extra broth) and scrape up any brown bits from the bottom of the pot. Let it bubble for 2 minutes.',
+        timer: 2,
+        tip: 'Those brown bits are pure flavor!'
+      },
+      {
+        id: 3,
+        instruction: 'Add broth and simmer',
+        plainLanguage: 'Pour in beef broth. Add bay leaves and thyme. Bring to a boil, then reduce to simmer for 15 minutes. Season with salt and pepper.',
+        timer: 15
+      },
+      {
+        id: 4,
+        instruction: 'Toast bread',
+        plainLanguage: 'While soup simmers, toast baguette slices in oven at 400°F for 5 minutes until crispy.',
+        timer: 5
+      },
+      {
+        id: 5,
+        instruction: 'Prepare for broiler',
+        plainLanguage: 'Ladle soup into oven-safe bowls. Top each with 2-3 toasted bread slices. Pile shredded cheese on top.',
+        tip: 'Use oven-safe bowls only! Regular bowls will crack'
+      },
+      {
+        id: 6,
+        instruction: 'Broil',
+        plainLanguage: 'Place bowls on a baking sheet. Broil for 2-3 minutes until cheese is melted and bubbly.',
+        timer: 3,
+        tip: 'Watch carefully! Cheese can burn quickly under the broiler'
+      },
+      {
+        id: 7,
+        instruction: 'Serve carefully',
+        plainLanguage: 'Carefully remove bowls - they\'re very hot! Let cool for 2 minutes before eating.',
+        tip: 'Classic French bistro experience at home!'
+      }
+    ]
+  },
+  {
+    id: '29',
+    title: 'Spicy Peanut Noodles',
+    description: 'Quick Asian noodles in creamy peanut sauce. Ready in 15 minutes!',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 10,
+    servings: 4,
+    tags: ['asian', 'noodles', 'vegetarian', 'quick', 'spicy'],
+    ingredients: [
+      {
+        name: 'Spaghetti or rice noodles',
+        amount: '12 oz',
+        visual: 'Three quarters of a box'
+      },
+      {
+        name: 'Peanut butter',
+        amount: '1/2 cup',
+        visual: 'Half a cup - creamy works best'
+      },
+      {
+        name: 'Soy sauce',
+        amount: '3 tablespoons',
+        visual: 'Three big spoonfuls'
+      },
+      {
+        name: 'Rice vinegar',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Sesame oil',
+        amount: '1 tablespoon',
+        visual: 'One big spoonful'
+      },
+      {
+        name: 'Honey or brown sugar',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Garlic',
+        amount: '2 cloves, minced',
+        visual: '2 small pieces chopped tiny'
+      },
+      {
+        name: 'Sriracha or chili paste',
+        amount: '1-2 teaspoons',
+        visual: 'Adjust to your spice level'
+      },
+      {
+        name: 'Green onions',
+        amount: '3 stalks, sliced',
+        visual: 'For topping'
+      },
+      {
+        name: 'Crushed peanuts',
+        amount: '1/4 cup',
+        visual: 'For topping'
+      },
+      {
+        name: 'Water',
+        amount: '1/4 cup',
+        visual: 'To thin the sauce'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Cook noodles',
+        plainLanguage: 'Cook noodles according to package directions. Drain and rinse with cold water.',
+        timer: 8
+      },
+      {
+        id: 2,
+        instruction: 'Make peanut sauce',
+        plainLanguage: 'In a bowl, whisk together peanut butter, soy sauce, vinegar, sesame oil, honey, garlic, sriracha, and water until smooth.',
+        tip: 'Sauce should be pourable. Add more water if too thick'
+      },
+      {
+        id: 3,
+        instruction: 'Toss noodles with sauce',
+        plainLanguage: 'Pour sauce over cooked noodles. Toss until noodles are completely coated.',
+      },
+      {
+        id: 4,
+        instruction: 'Add toppings',
+        plainLanguage: 'Top with sliced green onions and crushed peanuts. Serve immediately!',
+        tip: 'Great cold or warm! Add cucumber, shredded carrots, or crispy tofu'
+      }
+    ]
+  },
+  {
+    id: '30',
+    title: 'Chocolate Brownies',
+    description: 'Fudgy, rich brownies with crackly tops. Better than boxed mix!',
+    difficulty: 'easy',
+    prepTime: 15,
+    cookTime: 25,
+    servings: 16,
+    tags: ['dessert', 'baking', 'chocolate', 'sweet'],
+    ingredients: [
+      {
+        name: 'Butter',
+        amount: '1/2 cup (1 stick), melted',
+        visual: 'One stick melted in microwave'
+      },
+      {
+        name: 'Sugar',
+        amount: '1 cup',
+        visual: 'One full measuring cup'
+      },
+      {
+        name: 'Eggs',
+        amount: '2 large eggs',
+        visual: 'Two eggs from the carton'
+      },
+      {
+        name: 'Vanilla extract',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Cocoa powder',
+        amount: '1/3 cup',
+        visual: 'Third of a cup - unsweetened'
+      },
+      {
+        name: 'All-purpose flour',
+        amount: '1/2 cup',
+        visual: 'Half a cup'
+      },
+      {
+        name: 'Salt',
+        amount: '1/4 teaspoon',
+        visual: 'Quarter of a small spoonful'
+      },
+      {
+        name: 'Baking powder',
+        amount: '1/4 teaspoon',
+        visual: 'Quarter of a small spoonful'
+      },
+      {
+        name: 'Chocolate chips (optional)',
+        amount: '1/2 cup',
+        visual: 'Extra chocolate never hurts!'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Preheat oven',
+        plainLanguage: 'Preheat oven to 350°F. Grease an 8x8 inch baking pan or line with parchment paper.',
+        timer: 10
+      },
+      {
+        id: 2,
+        instruction: 'Mix wet ingredients',
+        plainLanguage: 'In a bowl, stir together melted butter and sugar. Add eggs and vanilla, mix well.',
+      },
+      {
+        id: 3,
+        instruction: 'Add dry ingredients',
+        plainLanguage: 'Add cocoa powder, flour, salt, and baking powder. Stir just until combined - don\'t overmix!',
+        tip: 'Stop as soon as you don\'t see dry ingredients'
+      },
+      {
+        id: 4,
+        instruction: 'Add chocolate chips',
+        plainLanguage: 'Fold in chocolate chips if using.',
+      },
+      {
+        id: 5,
+        instruction: 'Bake',
+        plainLanguage: 'Pour batter into prepared pan and spread evenly. Bake for 25-30 minutes. A toothpick should come out with a few moist crumbs.',
+        timer: 27,
+        tip: 'DON\'T overbake! Slightly underdone = fudgy. Overbaked = dry'
+      },
+      {
+        id: 6,
+        instruction: 'Cool and cut',
+        plainLanguage: 'Let cool completely in the pan before cutting into squares. This is hard but important!',
+        tip: 'For cleanest cuts, refrigerate for 1 hour before slicing'
+      }
+    ]
+  },
+  {
+    id: '31',
+    title: 'Chicken Tortellini Soup',
+    description: 'Comforting soup with cheese tortellini, chicken, and vegetables. One pot meal!',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 25,
+    servings: 6,
+    tags: ['soup', 'chicken', 'pasta', 'comfort-food'],
+    ingredients: [
+      {
+        name: 'Chicken breast',
+        amount: '1 lb, diced',
+        visual: 'About 2 breasts cut into bite-sized pieces'
+      },
+      {
+        name: 'Cheese tortellini',
+        amount: '1 package (9 oz)',
+        visual: 'Fresh or frozen - find in refrigerated section'
+      },
+      {
+        name: 'Carrots',
+        amount: '2 medium, sliced',
+        visual: 'Two carrots cut into rounds'
+      },
+      {
+        name: 'Celery',
+        amount: '2 stalks, diced',
+        visual: 'Two stalks chopped'
+      },
+      {
+        name: 'Onion',
+        amount: '1 medium, diced',
+        visual: 'One onion in small pieces'
+      },
+      {
+        name: 'Garlic',
+        amount: '3 cloves, minced',
+        visual: '3 small pieces chopped tiny'
+      },
+      {
+        name: 'Chicken broth',
+        amount: '8 cups',
+        visual: 'Two full cartons'
+      },
+      {
+        name: 'Spinach',
+        amount: '2 cups',
+        visual: 'Fresh spinach leaves'
+      },
+      {
+        name: 'Italian seasoning',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Olive oil',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season well'
+      },
+      {
+        name: 'Parmesan cheese',
+        amount: 'For serving',
+        visual: 'Grated on top'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Cook chicken',
+        plainLanguage: 'Heat oil in a large pot over medium-high heat. Add diced chicken, season with salt and pepper. Cook 5-6 minutes until browned. Remove to a plate.',
+        timer: 6
+      },
+      {
+        id: 2,
+        instruction: 'Sauté vegetables',
+        plainLanguage: 'In the same pot, add onion, carrots, and celery. Cook for 5 minutes until softened. Add garlic and Italian seasoning, cook 1 more minute.',
+        timer: 6
+      },
+      {
+        id: 3,
+        instruction: 'Add broth',
+        plainLanguage: 'Pour in chicken broth. Bring to a boil.',
+        timer: 5
+      },
+      {
+        id: 4,
+        instruction: 'Add tortellini',
+        plainLanguage: 'Add tortellini to the boiling broth. Cook according to package directions, usually 7-9 minutes.',
+        timer: 8,
+        tip: 'Frozen tortellini needs a few extra minutes'
+      },
+      {
+        id: 5,
+        instruction: 'Add chicken and spinach',
+        plainLanguage: 'Return cooked chicken to pot. Add spinach. Simmer for 2-3 minutes until spinach wilts.',
+        timer: 3
+      },
+      {
+        id: 6,
+        instruction: 'Serve',
+        plainLanguage: 'Taste and adjust seasoning. Ladle into bowls and top with parmesan cheese!',
+        tip: 'The tortellini makes this soup extra hearty and filling!'
+      }
+    ]
+  },
+  {
+    id: '32',
+    title: 'Lemon Garlic Pasta',
+    description: 'Light, fresh pasta with lemon and garlic. Simple and elegant!',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 15,
+    servings: 4,
+    tags: ['pasta', 'italian', 'quick', 'vegetarian'],
+    ingredients: [
+      {
+        name: 'Spaghetti',
+        amount: '1 lb',
+        visual: 'One box of spaghetti'
+      },
+      {
+        name: 'Olive oil',
+        amount: '1/3 cup',
+        visual: 'Generous amount'
+      },
+      {
+        name: 'Garlic',
+        amount: '6 cloves, sliced thin',
+        visual: '6 cloves sliced into thin pieces'
+      },
+      {
+        name: 'Lemon',
+        amount: '2 lemons',
+        visual: 'Zest and juice both lemons'
+      },
+      {
+        name: 'Red pepper flakes',
+        amount: '1/2 teaspoon',
+        visual: 'Half a small spoonful'
+      },
+      {
+        name: 'Parmesan cheese',
+        amount: '1/2 cup grated',
+        visual: 'About half a coffee cup'
+      },
+      {
+        name: 'Fresh parsley',
+        amount: '1/4 cup chopped',
+        visual: 'Handful chopped'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season well'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Cook pasta',
+        plainLanguage: 'Cook pasta in salted boiling water until al dente. Save 1 cup pasta water before draining!',
+        timer: 9,
+        tip: 'Al dente means still slightly firm - don\'t overcook'
+      },
+      {
+        id: 2,
+        instruction: 'Cook garlic',
+        plainLanguage: 'While pasta cooks, heat olive oil in a large pan over medium-low heat. Add sliced garlic and red pepper flakes. Cook 2-3 minutes until garlic is golden but not brown.',
+        timer: 3,
+        tip: 'Low heat! Garlic burns easily and turns bitter'
+      },
+      {
+        id: 3,
+        instruction: 'Add lemon',
+        plainLanguage: 'Add lemon zest and lemon juice to the garlic oil. Stir for 30 seconds.',
+        tip: 'Zest first, then juice! Zest has amazing flavor'
+      },
+      {
+        id: 4,
+        instruction: 'Combine',
+        plainLanguage: 'Add drained pasta to the pan with the lemon garlic oil. Toss well. Add pasta water a little at a time until it reaches desired consistency.',
+        tip: 'The pasta water helps create a light sauce'
+      },
+      {
+        id: 5,
+        instruction: 'Add cheese and parsley',
+        plainLanguage: 'Remove from heat. Add parmesan and parsley. Toss well. Season with salt and pepper.',
+      },
+      {
+        id: 6,
+        instruction: 'Serve',
+        plainLanguage: 'Serve immediately with extra parmesan on top!',
+        tip: 'Simple ingredients, huge flavor! Perfect light dinner'
+      }
+    ]
+  },
+  {
+    id: '33',
+    title: 'BBQ Pulled Mushrooms',
+    description: 'Vegan "pulled pork" made with oyster mushrooms. Surprisingly meaty texture!',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 25,
+    servings: 4,
+    tags: ['vegetarian', 'vegan', 'bbq', 'sandwich'],
+    ingredients: [
+      {
+        name: 'Oyster mushrooms',
+        amount: '1 lb',
+        visual: 'Large package of oyster mushrooms'
+      },
+      {
+        name: 'BBQ sauce',
+        amount: '1 cup',
+        visual: 'Your favorite BBQ sauce'
+      },
+      {
+        name: 'Olive oil',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Smoked paprika',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Garlic powder',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Onion powder',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Salt',
+        amount: '1/2 teaspoon',
+        visual: 'Half a small spoonful'
+      },
+      {
+        name: 'Burger buns',
+        amount: '4 buns',
+        visual: 'For serving'
+      },
+      {
+        name: 'Coleslaw (optional)',
+        amount: 'For topping',
+        visual: 'Store-bought works great'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Shred mushrooms',
+        plainLanguage: 'Using your hands or two forks, tear oyster mushrooms into thin strips that look like pulled meat.',
+        tip: 'The texture is amazing when shredded! Don\'t cut with a knife'
+      },
+      {
+        id: 2,
+        instruction: 'Season mushrooms',
+        plainLanguage: 'In a bowl, toss shredded mushrooms with olive oil, smoked paprika, garlic powder, onion powder, and salt.',
+      },
+      {
+        id: 3,
+        instruction: 'Roast mushrooms',
+        plainLanguage: 'Spread mushrooms on a baking sheet. Roast at 400°F for 15 minutes until edges are crispy.',
+        timer: 15,
+        tip: 'They\'ll shrink and get crispy - that\'s what you want!'
+      },
+      {
+        id: 4,
+        instruction: 'Add BBQ sauce',
+        plainLanguage: 'Transfer roasted mushrooms to a pan. Add BBQ sauce. Cook over medium heat for 5-10 minutes, stirring often, until mushrooms are coated and sauce thickens.',
+        timer: 7
+      },
+      {
+        id: 5,
+        instruction: 'Build sandwiches',
+        plainLanguage: 'Pile BBQ mushrooms onto buns. Top with coleslaw if using. Serve with pickles!',
+        tip: 'Even meat-eaters love these! The texture is spot-on'
+      }
+    ]
+  },
+  {
+    id: '34',
+    title: 'Marry Me Chicken',
+    description: 'Creamy sun-dried tomato chicken that\'s so good, it might inspire a proposal! Viral recipe!',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 25,
+    servings: 4,
+    tags: ['chicken', 'italian', 'creamy', 'viral'],
+    ingredients: [
+      {
+        name: 'Chicken breast',
+        amount: '4 breasts (about 1.5 lbs)',
+        visual: 'Four chicken breast pieces'
+      },
+      {
+        name: 'Sun-dried tomatoes',
+        amount: '1/2 cup, chopped',
+        visual: 'From a jar, drained and chopped'
+      },
+      {
+        name: 'Garlic',
+        amount: '3 cloves, minced',
+        visual: '3 small pieces chopped tiny'
+      },
+      {
+        name: 'Heavy cream',
+        amount: '1 cup',
+        visual: 'One measuring cup'
+      },
+      {
+        name: 'Chicken broth',
+        amount: '1/2 cup',
+        visual: 'Half a measuring cup'
+      },
+      {
+        name: 'Parmesan cheese',
+        amount: '1/2 cup grated',
+        visual: 'About half a coffee cup'
+      },
+      {
+        name: 'Italian seasoning',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Red pepper flakes',
+        amount: '1/4 teaspoon',
+        visual: 'Quarter of a small spoonful'
+      },
+      {
+        name: 'Olive oil',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Fresh basil',
+        amount: 'For garnish',
+        visual: 'A few leaves torn'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season the chicken'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Season and sear chicken',
+        plainLanguage: 'Season chicken with salt and pepper. Heat oil in a large skillet over medium-high heat. Sear chicken for 4-5 minutes per side until golden. Remove to a plate.',
+        timer: 10,
+        tip: 'Don\'t worry if chicken isn\'t cooked through - it finishes in the sauce'
+      },
+      {
+        id: 2,
+        instruction: 'Make the sauce',
+        plainLanguage: 'In the same pan, add garlic and sun-dried tomatoes. Cook for 1 minute. Add heavy cream, chicken broth, parmesan, Italian seasoning, and red pepper flakes. Stir well.',
+        timer: 2
+      },
+      {
+        id: 3,
+        instruction: 'Simmer',
+        plainLanguage: 'Bring sauce to a simmer. Let it bubble gently for 3-4 minutes until it starts to thicken.',
+        timer: 4,
+        tip: 'The sauce will thicken as it simmers'
+      },
+      {
+        id: 4,
+        instruction: 'Add chicken back',
+        plainLanguage: 'Return chicken to the pan, nestling it into the sauce. Simmer for 8-10 minutes until chicken is cooked through and sauce is thick.',
+        timer: 9,
+        tip: 'Spoon sauce over chicken as it cooks'
+      },
+      {
+        id: 5,
+        instruction: 'Serve',
+        plainLanguage: 'Top with fresh basil. Serve over pasta, rice, or with crusty bread to soak up the amazing sauce!',
+        tip: 'The name says it all - this dish is THAT good!'
+      }
+    ]
+  },
+  {
+    id: '35',
+    title: 'Pasta Puttanesca',
+    description: 'Bold Italian pasta with olives, capers, and anchovies. Big flavors, minimal effort!',
+    difficulty: 'easy',
+    prepTime: 5,
+    cookTime: 20,
+    servings: 4,
+    tags: ['italian', 'pasta', 'quick', 'pantry'],
+    ingredients: [
+      {
+        name: 'Spaghetti',
+        amount: '1 lb',
+        visual: 'One box of spaghetti'
+      },
+      {
+        name: 'Canned crushed tomatoes',
+        amount: '28 oz can',
+        visual: 'One large can'
+      },
+      {
+        name: 'Kalamata olives',
+        amount: '1/2 cup, pitted and halved',
+        visual: 'About 15-20 olives'
+      },
+      {
+        name: 'Capers',
+        amount: '3 tablespoons',
+        visual: 'Three big spoonfuls - small salty buds'
+      },
+      {
+        name: 'Anchovies',
+        amount: '4-6 fillets (optional but recommended)',
+        visual: 'From a tin or jar'
+      },
+      {
+        name: 'Garlic',
+        amount: '4 cloves, minced',
+        visual: '4 small pieces chopped tiny'
+      },
+      {
+        name: 'Red pepper flakes',
+        amount: '1/2 teaspoon',
+        visual: 'Half a small spoonful'
+      },
+      {
+        name: 'Olive oil',
+        amount: '1/4 cup',
+        visual: 'Quarter cup'
+      },
+      {
+        name: 'Fresh parsley',
+        amount: 'Handful chopped',
+        visual: 'For topping'
+      },
+      {
+        name: 'Salt',
+        amount: 'To taste',
+        visual: 'Capers and olives are salty, so taste first'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Start pasta',
+        plainLanguage: 'Bring a large pot of salted water to boil. Cook pasta according to package directions.',
+        timer: 10
+      },
+      {
+        id: 2,
+        instruction: 'Cook aromatics',
+        plainLanguage: 'While pasta cooks, heat olive oil in a large pan over medium heat. Add garlic, anchovies, and red pepper flakes. Cook for 2 minutes until anchovies dissolve.',
+        timer: 2,
+        tip: 'Anchovies melt away and add amazing savory flavor - not fishy!'
+      },
+      {
+        id: 3,
+        instruction: 'Add tomatoes',
+        plainLanguage: 'Pour in crushed tomatoes. Bring to a simmer and cook for 8-10 minutes.',
+        timer: 9
+      },
+      {
+        id: 4,
+        instruction: 'Add olives and capers',
+        plainLanguage: 'Stir in olives and capers. Simmer for 5 more minutes. Taste and add salt if needed (probably won\'t need much!).',
+        timer: 5,
+        tip: 'The sauce should be thick and flavorful'
+      },
+      {
+        id: 5,
+        instruction: 'Combine',
+        plainLanguage: 'Drain pasta and add to the sauce. Toss well until pasta is coated.',
+      },
+      {
+        id: 6,
+        instruction: 'Serve',
+        plainLanguage: 'Top with fresh parsley. No cheese needed - the bold flavors shine on their own!',
+        tip: 'Made with pantry staples! Ready in 20 minutes'
+      }
+    ]
+  },
+  {
+    id: '36',
+    title: 'Butter Chicken (Chicken Makhani)',
+    description: 'Creamy, mildly spiced Indian curry with tender chicken. Restaurant-quality at home!',
+    difficulty: 'intermediate',
+    prepTime: 15,
+    cookTime: 35,
+    servings: 6,
+    tags: ['indian', 'curry', 'chicken', 'authentic'],
+    ingredients: [
+      {
+        name: 'Chicken thighs',
+        amount: '2 lbs, cut into pieces',
+        visual: 'About 6-8 thighs cut into chunks'
+      },
+      {
+        name: 'Plain yogurt',
+        amount: '1 cup',
+        visual: 'One measuring cup'
+      },
+      {
+        name: 'Lemon juice',
+        amount: '2 tablespoons',
+        visual: 'Juice from half a lemon'
+      },
+      {
+        name: 'Garam masala',
+        amount: '2 teaspoons',
+        visual: 'Two small spoonfuls'
+      },
+      {
+        name: 'Curry powder',
+        amount: '1 tablespoon',
+        visual: 'One big spoonful'
+      },
+      {
+        name: 'Cumin',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Butter',
+        amount: '4 tablespoons',
+        visual: 'Half a stick'
+      },
+      {
+        name: 'Onion',
+        amount: '1 large, diced',
+        visual: 'One onion in small pieces'
+      },
+      {
+        name: 'Garlic',
+        amount: '4 cloves, minced',
+        visual: '4 small pieces chopped tiny'
+      },
+      {
+        name: 'Ginger',
+        amount: '1 inch piece, minced',
+        visual: 'Small piece of fresh ginger chopped fine'
+      },
+      {
+        name: 'Tomato sauce',
+        amount: '15 oz can',
+        visual: 'One can'
+      },
+      {
+        name: 'Heavy cream',
+        amount: '1 cup',
+        visual: 'One measuring cup'
+      },
+      {
+        name: 'Salt',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Cilantro',
+        amount: 'For garnish',
+        visual: 'Fresh green herb'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Marinate chicken',
+        plainLanguage: 'In a bowl, mix chicken with yogurt, lemon juice, 1 teaspoon garam masala, and salt. Let sit for 15 minutes (or up to overnight in fridge).',
+        timer: 15,
+        tip: 'Longer marinating = more tender chicken!'
+      },
+      {
+        id: 2,
+        instruction: 'Cook chicken',
+        plainLanguage: 'Heat 2 tablespoons butter in a large pan over medium-high heat. Add chicken (shake off excess marinade). Cook 6-7 minutes until browned. Remove to a plate.',
+        timer: 7
+      },
+      {
+        id: 3,
+        instruction: 'Make the sauce',
+        plainLanguage: 'In the same pan, add remaining 2 tablespoons butter. Add onion and cook 5 minutes. Add garlic and ginger, cook 1 minute.',
+        timer: 6
+      },
+      {
+        id: 4,
+        instruction: 'Add spices',
+        plainLanguage: 'Add curry powder, remaining garam masala, and cumin. Stir for 30 seconds until fragrant.',
+      },
+      {
+        id: 5,
+        instruction: 'Add tomato sauce',
+        plainLanguage: 'Pour in tomato sauce. Simmer for 5 minutes.',
+        timer: 5
+      },
+      {
+        id: 6,
+        instruction: 'Add cream and chicken',
+        plainLanguage: 'Stir in heavy cream. Return chicken to the pan. Simmer uncovered for 12-15 minutes until chicken is cooked through and sauce thickens.',
+        timer: 13,
+        tip: 'Stir occasionally so cream doesn\'t separate'
+      },
+      {
+        id: 7,
+        instruction: 'Serve',
+        plainLanguage: 'Garnish with cilantro. Serve with basmati rice or naan bread!',
+        tip: 'The most popular Indian restaurant dish - now you can make it at home!'
+      }
+    ]
+  },
+  {
+    id: '37',
+    title: 'Greek Salad',
+    description: 'Fresh, crisp salad with feta, olives, and tangy dressing. Perfect side dish!',
+    difficulty: 'super-easy',
+    prepTime: 15,
+    cookTime: 0,
+    servings: 4,
+    tags: ['salad', 'greek', 'vegetarian', 'healthy', 'no-cook'],
+    ingredients: [
+      {
+        name: 'Romaine lettuce',
+        amount: '1 head, chopped',
+        visual: 'One head torn into pieces'
+      },
+      {
+        name: 'Cucumber',
+        amount: '1 large, diced',
+        visual: 'One cucumber cut into chunks'
+      },
+      {
+        name: 'Cherry tomatoes',
+        amount: '2 cups, halved',
+        visual: 'One container, cut in half'
+      },
+      {
+        name: 'Red onion',
+        amount: '1/2 small, sliced thin',
+        visual: 'Half a small onion in thin slices'
+      },
+      {
+        name: 'Kalamata olives',
+        amount: '1/2 cup',
+        visual: 'About 15 olives'
+      },
+      {
+        name: 'Feta cheese',
+        amount: '1 cup crumbled',
+        visual: 'About 4 oz'
+      },
+      {
+        name: 'Olive oil',
+        amount: '1/4 cup',
+        visual: 'Quarter cup'
+      },
+      {
+        name: 'Red wine vinegar',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Oregano',
+        amount: '1 teaspoon dried',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Lemon juice',
+        amount: '1 tablespoon',
+        visual: 'One big spoonful'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season to your liking'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Prep vegetables',
+        plainLanguage: 'Chop lettuce, dice cucumber, halve tomatoes, and slice onion. Put everything in a large bowl.',
+        tip: 'Keep everything in big, bite-sized pieces'
+      },
+      {
+        id: 2,
+        instruction: 'Add olives and feta',
+        plainLanguage: 'Add olives and crumbled feta to the bowl.',
+      },
+      {
+        id: 3,
+        instruction: 'Make dressing',
+        plainLanguage: 'In a small bowl, whisk together olive oil, red wine vinegar, lemon juice, oregano, salt, and pepper.',
+        tip: 'Whisk vigorously to emulsify the dressing'
+      },
+      {
+        id: 4,
+        instruction: 'Toss and serve',
+        plainLanguage: 'Pour dressing over salad and toss well to coat. Serve immediately!',
+        tip: 'Great with grilled chicken or fish on top! Also perfect as a side'
+      }
+    ]
+  },
+  {
+    id: '38',
+    title: 'Lemon Garlic Shrimp',
+    description: 'Quick and elegant shrimp in lemon butter sauce. Ready in 10 minutes!',
+    difficulty: 'easy',
+    prepTime: 5,
+    cookTime: 8,
+    servings: 4,
+    tags: ['seafood', 'quick', 'elegant', 'low-carb'],
+    ingredients: [
+      {
+        name: 'Large shrimp',
+        amount: '1 lb, peeled and deveined',
+        visual: 'About 20-24 shrimp'
+      },
+      {
+        name: 'Butter',
+        amount: '4 tablespoons',
+        visual: 'Half a stick'
+      },
+      {
+        name: 'Garlic',
+        amount: '4 cloves, minced',
+        visual: '4 small pieces chopped tiny'
+      },
+      {
+        name: 'Lemon',
+        amount: '1 lemon',
+        visual: 'Zest and juice the whole lemon'
+      },
+      {
+        name: 'White wine or chicken broth',
+        amount: '1/4 cup',
+        visual: 'Quarter cup'
+      },
+      {
+        name: 'Red pepper flakes',
+        amount: '1/4 teaspoon',
+        visual: 'Quarter of a small spoonful'
+      },
+      {
+        name: 'Fresh parsley',
+        amount: '2 tablespoons chopped',
+        visual: 'Small handful'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season the shrimp'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Season shrimp',
+        plainLanguage: 'Pat shrimp dry with paper towels. Season with salt and pepper.',
+        tip: 'Dry shrimp = better browning!'
+      },
+      {
+        id: 2,
+        instruction: 'Cook shrimp',
+        plainLanguage: 'Melt 2 tablespoons butter in a large pan over medium-high heat. Add shrimp in a single layer. Cook 2 minutes per side until pink. Remove to a plate.',
+        timer: 4,
+        tip: 'Don\'t overcook! Shrimp cook fast - they\'re done when pink and curled'
+      },
+      {
+        id: 3,
+        instruction: 'Make sauce',
+        plainLanguage: 'In the same pan, add remaining butter. Add garlic and red pepper flakes, cook 30 seconds. Add wine, lemon zest, and lemon juice. Let bubble for 1 minute.',
+        timer: 2,
+        tip: 'Scrape up any browned bits - that\'s flavor!'
+      },
+      {
+        id: 4,
+        instruction: 'Combine',
+        plainLanguage: 'Return shrimp to the pan. Toss in the sauce for 1 minute. Sprinkle with parsley.',
+        timer: 1
+      },
+      {
+        id: 5,
+        instruction: 'Serve',
+        plainLanguage: 'Serve immediately over pasta, rice, or with crusty bread!',
+        tip: 'Fancy enough for guests, easy enough for weeknights!'
+      }
+    ]
+  },
+  {
+    id: '39',
+    title: 'Chocolate Lava Cakes',
+    description: 'Individual molten chocolate cakes with gooey centers. Impressive dessert!',
+    difficulty: 'intermediate',
+    prepTime: 10,
+    cookTime: 12,
+    servings: 4,
+    tags: ['dessert', 'chocolate', 'elegant', 'baking'],
+    ingredients: [
+      {
+        name: 'Dark chocolate',
+        amount: '6 oz, chopped',
+        visual: 'About 1 cup chocolate chips'
+      },
+      {
+        name: 'Butter',
+        amount: '6 tablespoons',
+        visual: 'About 3/4 stick'
+      },
+      {
+        name: 'Eggs',
+        amount: '2 large eggs',
+        visual: 'Two eggs from the carton'
+      },
+      {
+        name: 'Egg yolks',
+        amount: '2 additional yolks',
+        visual: 'Just the yellow part from 2 more eggs'
+      },
+      {
+        name: 'Sugar',
+        amount: '1/4 cup',
+        visual: 'Quarter cup'
+      },
+      {
+        name: 'Flour',
+        amount: '2 tablespoons',
+        visual: 'Two big spoonfuls'
+      },
+      {
+        name: 'Vanilla extract',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Butter for ramekins',
+        amount: 'For greasing',
+        visual: 'To coat the dishes'
+      },
+      {
+        name: 'Cocoa powder for dusting',
+        amount: 'For ramekins',
+        visual: 'To dust the dishes'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Prep ramekins',
+        plainLanguage: 'Butter four 6-oz ramekins generously. Dust with cocoa powder, tapping out excess. Place on a baking sheet.',
+        tip: 'Good greasing is KEY! Otherwise they won\'t unmold'
+      },
+      {
+        id: 2,
+        instruction: 'Preheat oven',
+        plainLanguage: 'Preheat oven to 450°F. Yes, that\'s hot!',
+        timer: 10,
+        tip: 'High heat creates the molten center'
+      },
+      {
+        id: 3,
+        instruction: 'Melt chocolate and butter',
+        plainLanguage: 'Combine chocolate and butter in a microwave-safe bowl. Microwave in 30-second bursts, stirring between, until melted and smooth.',
+        tip: 'Don\'t overheat! Stir well between intervals'
+      },
+      {
+        id: 4,
+        instruction: 'Mix batter',
+        plainLanguage: 'In another bowl, whisk eggs, egg yolks, and sugar until thick and pale, about 1 minute. Add melted chocolate and vanilla, whisk. Fold in flour gently.',
+        tip: 'Don\'t overmix once flour is added'
+      },
+      {
+        id: 5,
+        instruction: 'Fill ramekins',
+        plainLanguage: 'Divide batter evenly among prepared ramekins.',
+        tip: 'Can be made ahead to this point and refrigerated for up to 24 hours'
+      },
+      {
+        id: 6,
+        instruction: 'Bake',
+        plainLanguage: 'Bake for 12 minutes exactly. Edges should be set but centers will jiggle slightly.',
+        timer: 12,
+        tip: 'Don\'t overbake! Set a timer. 12 minutes is perfect'
+      },
+      {
+        id: 7,
+        instruction: 'Unmold and serve',
+        plainLanguage: 'Let cool for 1 minute. Run a knife around edges. Invert onto plates. Wait 10 seconds, then lift off ramekin. The center should ooze out!',
+        tip: 'Serve immediately with vanilla ice cream or whipped cream!'
+      }
+    ]
+  },
+  {
+    id: '40',
+    title: 'Chicken Fajitas',
+    description: 'Sizzling chicken and peppers with warm tortillas. Fun, interactive dinner!',
+    difficulty: 'easy',
+    prepTime: 15,
+    cookTime: 15,
+    servings: 4,
+    tags: ['mexican', 'chicken', 'quick', 'dinner'],
+    ingredients: [
+      {
+        name: 'Chicken breast',
+        amount: '1.5 lbs, sliced thin',
+        visual: 'About 3 breasts cut into strips'
+      },
+      {
+        name: 'Bell peppers',
+        amount: '3 peppers (mixed colors), sliced',
+        visual: 'Three peppers cut into strips'
+      },
+      {
+        name: 'Onion',
+        amount: '1 large, sliced',
+        visual: 'One onion cut into strips'
+      },
+      {
+        name: 'Lime',
+        amount: '2 limes',
+        visual: 'Juice from both limes'
+      },
+      {
+        name: 'Olive oil',
+        amount: '3 tablespoons',
+        visual: 'Three big spoonfuls'
+      },
+      {
+        name: 'Chili powder',
+        amount: '2 teaspoons',
+        visual: 'Two small spoonfuls'
+      },
+      {
+        name: 'Cumin',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Paprika',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Garlic powder',
+        amount: '1 teaspoon',
+        visual: 'One small spoonful'
+      },
+      {
+        name: 'Flour tortillas',
+        amount: '8-10 tortillas',
+        visual: 'One package'
+      },
+      {
+        name: 'Toppings: sour cream, cheese, salsa, guacamole',
+        amount: 'As desired',
+        visual: 'Set up a fajita bar!'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Season well'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Marinate chicken',
+        plainLanguage: 'In a bowl, mix chicken strips with 2 tablespoons lime juice, 1 tablespoon oil, chili powder, cumin, paprika, garlic powder, salt, and pepper. Let sit 10 minutes.',
+        timer: 10,
+        tip: 'Even 10 minutes of marinating adds tons of flavor'
+      },
+      {
+        id: 2,
+        instruction: 'Cook vegetables',
+        plainLanguage: 'Heat 1 tablespoon oil in a large skillet over medium-high heat. Add peppers and onions. Cook 6-8 minutes until softened and slightly charred. Remove to a plate.',
+        timer: 7,
+        tip: 'High heat gives nice char marks!'
+      },
+      {
+        id: 3,
+        instruction: 'Cook chicken',
+        plainLanguage: 'Add remaining oil to the pan. Add marinated chicken in a single layer. Cook 6-7 minutes, stirring occasionally, until cooked through and lightly browned.',
+        timer: 7,
+        tip: 'Don\'t crowd the pan - cook in batches if needed'
+      },
+      {
+        id: 4,
+        instruction: 'Combine',
+        plainLanguage: 'Return vegetables to the pan with chicken. Squeeze remaining lime juice over everything. Toss for 1 minute.',
+        timer: 1
+      },
+      {
+        id: 5,
+        instruction: 'Warm tortillas',
+        plainLanguage: 'Warm tortillas in microwave wrapped in damp paper towel for 30 seconds, or in a dry pan for 30 seconds per side.',
+      },
+      {
+        id: 6,
+        instruction: 'Serve',
+        plainLanguage: 'Bring the sizzling pan to the table! Let everyone build their own fajitas with their favorite toppings.',
+        tip: 'The sizzle is part of the fun! Fajitas literally means "little strips"'
+      }
+    ]
+  },
+  {
+    id: '41',
+    title: 'Caprese Salad',
+    description: 'Simple Italian salad with tomatoes, mozzarella, and basil. Fresh and beautiful!',
+    difficulty: 'super-easy',
+    prepTime: 10,
+    cookTime: 0,
+    servings: 4,
+    tags: ['italian', 'salad', 'vegetarian', 'no-cook', 'fresh'],
+    ingredients: [
+      {
+        name: 'Tomatoes',
+        amount: '4 large ripe tomatoes',
+        visual: 'Heirloom or beefsteak work great'
+      },
+      {
+        name: 'Fresh mozzarella',
+        amount: '1 lb, sliced',
+        visual: 'Usually comes in a ball - slice into rounds'
+      },
+      {
+        name: 'Fresh basil',
+        amount: '1 bunch, leaves picked',
+        visual: 'Big handful of leaves'
+      },
+      {
+        name: 'Extra virgin olive oil',
+        amount: '1/4 cup',
+        visual: 'Use your best quality oil'
+      },
+      {
+        name: 'Balsamic glaze (optional)',
+        amount: 'For drizzling',
+        visual: 'Thick, syrupy balsamic'
+      },
+      {
+        name: 'Salt and pepper',
+        amount: 'To taste',
+        visual: 'Flaky sea salt if you have it'
+      }
+    ],
+    steps: [
+      {
+        id: 1,
+        instruction: 'Slice tomatoes and mozzarella',
+        plainLanguage: 'Slice tomatoes and mozzarella into 1/4 inch thick rounds. Try to make them similar thickness.',
+        tip: 'Use the ripest tomatoes you can find - they make or break this dish!'
+      },
+      {
+        id: 2,
+        instruction: 'Arrange on platter',
+        plainLanguage: 'On a large plate, alternate tomato slices, mozzarella slices, and basil leaves in a pretty pattern. Overlap them slightly.',
+        tip: 'Classic arrangement: tomato, mozzarella, basil, repeat'
+      },
+      {
+        id: 3,
+        instruction: 'Season and drizzle',
+        plainLanguage: 'Drizzle generously with olive oil. Sprinkle with salt and pepper. Add balsamic glaze if using.',
+        tip: 'Good olive oil is key! This simple dish showcases quality ingredients'
+      },
+      {
+        id: 4,
+        instruction: 'Serve immediately',
+        plainLanguage: 'Serve at room temperature. Best eaten within 30 minutes of assembling.',
+        tip: 'The colors of the Italian flag! Fresh, simple, perfect for summer'
+      }
+    ]
   }
 ];
