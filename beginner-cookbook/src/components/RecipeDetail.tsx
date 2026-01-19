@@ -31,6 +31,8 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   const [timerPosition, setTimerPosition] = useState({ x: window.innerWidth - 180, y: window.innerHeight - 250 });
   const [isDraggingTimer, setIsDraggingTimer] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [swipeOffset, setSwipeOffset] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Timer countdown effect
@@ -89,30 +91,69 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
+    setIsTransitioning(false);
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    if (!touchStart) return;
+
+    const currentTouch = e.targetTouches[0].clientX;
+    setTouchEnd(currentTouch);
+
+    // Calculate swipe offset for visual feedback
+    const offset = currentTouch - touchStart;
+    // Limit the offset to prevent excessive dragging
+    const limitedOffset = Math.max(-150, Math.min(150, offset));
+    setSwipeOffset(limitedOffset);
+
+    // Prevent page scrolling while swiping
+    if (Math.abs(offset) > 10) {
+      e.preventDefault();
+    }
   };
 
   const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    if (!touchStart || !touchEnd) {
+      setSwipeOffset(0);
+      return;
+    }
 
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
 
-    if (isLeftSwipe && currentStepIndex < recipe.steps.length - 1) {
-      // Swipe left - mark current step complete and go to next
-      const newCompleted = new Set(completedSteps);
-      newCompleted.add(currentStep.id);
-      setCompletedSteps(newCompleted);
-      setCurrentStepIndex(currentStepIndex + 1);
-    }
+    setIsTransitioning(true);
 
-    if (isRightSwipe && currentStepIndex > 0) {
-      // Swipe right - go to previous step
-      setCurrentStepIndex(currentStepIndex - 1);
+    if (isLeftSwipe && currentStepIndex < recipe.steps.length - 1) {
+      // Animate card sliding out to the left
+      setSwipeOffset(-500);
+      setTimeout(() => {
+        // Mark current step as complete and move to next
+        const newCompleted = new Set(completedSteps);
+        newCompleted.add(currentStep.id);
+        setCompletedSteps(newCompleted);
+        setCurrentStepIndex(currentStepIndex + 1);
+        setSwipeOffset(500);
+        setTimeout(() => {
+          setSwipeOffset(0);
+          setIsTransitioning(false);
+        }, 50);
+      }, 300);
+    } else if (isRightSwipe && currentStepIndex > 0) {
+      // Animate card sliding out to the right
+      setSwipeOffset(500);
+      setTimeout(() => {
+        setCurrentStepIndex(currentStepIndex - 1);
+        setSwipeOffset(-500);
+        setTimeout(() => {
+          setSwipeOffset(0);
+          setIsTransitioning(false);
+        }, 50);
+      }, 300);
+    } else {
+      // Snap back to center if swipe wasn't far enough
+      setSwipeOffset(0);
+      setIsTransitioning(false);
     }
   };
 
@@ -375,16 +416,20 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
             Swipe left to complete step • Swipe right to go back
           </p>
 
-          {/* Step Card */}
-          <div
-            className="bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 border-4 border-blue-100"
-            style={{
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.1)'
-            }}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-          >
+          {/* Step Card with Swipe Animation */}
+          <div className="relative overflow-hidden">
+            <div
+              className="bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-blue-100"
+              style={{
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.1)',
+                transform: `translateX(${swipeOffset}px)`,
+                transition: isTransitioning ? 'transform 0.3s ease-out' : 'none',
+                touchAction: 'pan-y' // Prevent default horizontal scroll
+              }}
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
             {/* Step Header */}
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white">
               <div className="flex items-center justify-between mb-2">
@@ -467,6 +512,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                 ))}
               </div>
             </div>
+          </div>
           </div>
         </div>
       )}
