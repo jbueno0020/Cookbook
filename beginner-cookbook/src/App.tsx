@@ -3,6 +3,7 @@ import type { Recipe } from './types';
 import { recipes } from './data/recipes';
 import { RecipeCard } from './components/RecipeCard';
 import { RecipeDetail } from './components/RecipeDetail';
+import { ShoppingList } from './components/ShoppingList';
 
 type Difficulty = 'super-easy' | 'easy' | 'intermediate' | 'all';
 
@@ -12,6 +13,7 @@ function App() {
   const [difficultyFilter, setDifficultyFilter] = useState<Difficulty>('all');
   const [availableIngredients, setAvailableIngredients] = useState('');
   const [showIngredientMatcher, setShowIngredientMatcher] = useState(false);
+  const [showShoppingList, setShowShoppingList] = useState(false);
 
   // Calculate ingredient matches for each recipe
   const getIngredientMatches = (recipe: Recipe, userIngredients: string[]): { matches: number; total: number; percentage: number; missing: string[] } => {
@@ -165,13 +167,19 @@ function App() {
             </div>
           </div>
 
-          {/* Ingredient Matcher Toggle */}
-          <div className="max-w-2xl mx-auto">
+          {/* Action Buttons */}
+          <div className="max-w-2xl mx-auto space-y-2">
             <button
               onClick={() => setShowIngredientMatcher(!showIngredientMatcher)}
               className="w-full px-4 py-2 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all shadow-md flex items-center justify-center gap-2"
             >
               {showIngredientMatcher ? 'Hide Ingredient Matcher' : 'Find Recipes by Ingredients'}
+            </button>
+            <button
+              onClick={() => setShowShoppingList(true)}
+              className="w-full px-4 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-all shadow-md flex items-center justify-center gap-2"
+            >
+              🛒 Shopping List
             </button>
           </div>
         </div>
@@ -303,6 +311,11 @@ function App() {
           </div>
         </div>
       </main>
+
+      {/* Shopping List Modal */}
+      {showShoppingList && (
+        <ShoppingList onClose={() => setShowShoppingList(false)} />
+      )}
     </div>
   );
 }

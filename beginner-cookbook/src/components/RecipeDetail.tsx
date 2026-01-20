@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import type { Recipe } from '../types';
 import { CookingTechniqueModal } from './CookingTechniqueModal';
 import { cookingTechniques, detectCookingTerms } from '../utils/cookingTechniques';
+import { addToShoppingList } from './ShoppingList';
 
 interface RecipeDetailProps {
   recipe: Recipe;
@@ -34,6 +35,8 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   const [swipeOffset, setSwipeOffset] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [servingMultiplier, setServingMultiplier] = useState(1);
+  const [cookingMode, setCookingMode] = useState(false);
+  const [useMetric, setUseMetric] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Timer countdown effect
@@ -56,6 +59,24 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
       };
     }
   }, [timerSeconds]);
+
+  // Load saved progress from localStorage
+  useEffect(() => {
+    const savedProgress = localStorage.getItem(`recipe-progress-${recipe.id}`);
+    if (savedProgress) {
+      const { stepIndex, completed } = JSON.parse(savedProgress);
+      setCurrentStepIndex(stepIndex);
+      setCompletedSteps(new Set(completed));
+    }
+  }, [recipe.id]);
+
+  // Save progress to localStorage
+  useEffect(() => {
+    localStorage.setItem(`recipe-progress-${recipe.id}`, JSON.stringify({
+      stepIndex: currentStepIndex,
+      completed: Array.from(completedSteps)
+    }));
+  }, [currentStepIndex, completedSteps, recipe.id]);
 
   const toggleIngredient = (ingredientName: string) => {
     const newChecked = new Set(checkedIngredients);
@@ -118,6 +139,63 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
         return scaled.toFixed(2).replace(/\.?0+$/, '');
       }
     });
+  };
+
+  // Helper to convert measurements to metric
+  const convertToMetric = (amount: string): string => {
+    let converted = amount;
+
+    // Convert fractions to decimals for calculations
+    const evaluateFraction = (str: string): number => {
+      const parts = str.split('/');
+      if (parts.length === 2) {
+        return parseFloat(parts[0]) / parseFloat(parts[1]);
+      }
+      return parseFloat(str);
+    };
+
+    // Temperature conversions (°F to °C)
+    converted = converted.replace(/(\d+)\s*°?F/gi, (_match, temp) => {
+      const celsius = Math.round((parseFloat(temp) - 32) * 5 / 9);
+      return `${celsius}°C`;
+    });
+
+    // Volume conversions
+    // Cups to ml (1 cup = 240ml)
+    converted = converted.replace(/(\d+\.?\d*|\d*\.\d+)(\s+)?(\d+\/\d+)?\s*cups?/gi, (_match, whole, _space, fraction) => {
+      const num = (whole ? parseFloat(whole) : 0) + (fraction ? evaluateFraction(fraction) : 0);
+      const ml = Math.round(num * 240);
+      return `${ml}ml`;
+    });
+
+    // Tablespoons to ml (1 tbsp = 15ml)
+    converted = converted.replace(/(\d+\.?\d*|\d*\.\d+)(\s+)?(\d+\/\d+)?\s*(tablespoons?|tbsps?|Tbsps?)/gi, (_match, whole, _space, fraction) => {
+      const num = (whole ? parseFloat(whole) : 0) + (fraction ? evaluateFraction(fraction) : 0);
+      const ml = Math.round(num * 15);
+      return `${ml}ml`;
+    });
+
+    // Teaspoons to ml (1 tsp = 5ml)
+    converted = converted.replace(/(\d+\.?\d*|\d*\.\d+)(\s+)?(\d+\/\d+)?\s*(teaspoons?|tsps?)/gi, (_match, whole, _space, fraction) => {
+      const num = (whole ? parseFloat(whole) : 0) + (fraction ? evaluateFraction(fraction) : 0);
+      const ml = Math.round(num * 5);
+      return `${ml}ml`;
+    });
+
+    // Weight conversions
+    // Ounces to grams (1 oz = 28g)
+    converted = converted.replace(/(\d+\.?\d*|\d*\.\d+)\s*(ounces?|oz)/gi, (_match, num) => {
+      const grams = Math.round(parseFloat(num) * 28);
+      return `${grams}g`;
+    });
+
+    // Pounds to grams (1 lb = 454g)
+    converted = converted.replace(/(\d+\.?\d*|\d*\.\d+)\s*(pounds?|lbs?)/gi, (_match, num) => {
+      const grams = Math.round(parseFloat(num) * 454);
+      return grams >= 1000 ? `${(grams / 1000).toFixed(1)}kg` : `${grams}g`;
+    });
+
+    return converted;
   };
 
   // Calculate swooping motion - creates a parabolic arc
@@ -285,12 +363,30 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   return (
     <div className="max-w-4xl mx-auto">
       {/* Header */}
-      <button
-        onClick={onBack}
-        className="mb-4 flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
-      >
-        Back to Recipes
-      </button>
+      <div className="mb-4 flex items-center justify-between gap-4">
+        <button
+          onClick={onBack}
+          className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
+        >
+          Back to Recipes
+        </button>
+        <button
+          onClick={() => {
+            addToShoppingList(
+              recipe.id.toString(),
+              recipe.title,
+              recipe.ingredients.map(ing => ({
+                name: ing.name,
+                amount: ing.amount
+              }))
+            );
+            alert('Ingredients added to shopping list!');
+          }}
+          className="px-4 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-all shadow-md flex items-center gap-2"
+        >
+          🛒 Add to Shopping List
+        </button>
+      </div>
 
       <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
         <div className="h-64 bg-gradient-to-br from-orange-200 to-orange-300 flex items-center justify-center overflow-hidden relative">
@@ -387,7 +483,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
         </div>
       </div>
 
-      {/* Progress Bar */}
+      {/* Progress Bar & Cooking Mode Toggle */}
       <div className="bg-white rounded-lg shadow p-4 mb-6">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium text-gray-700">
@@ -397,19 +493,136 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
             {completedSteps.size} of {recipe.steps.length} steps completed
           </span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-3">
+        <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
           <div
             className="bg-green-500 h-3 rounded-full transition-all duration-300"
             style={{ width: `${progress}%` }}
           />
         </div>
+        <button
+          onClick={() => setCookingMode(!cookingMode)}
+          className={`w-full px-6 py-3 rounded-lg font-semibold transition-all ${
+            cookingMode
+              ? 'bg-orange-600 text-white hover:bg-orange-700'
+              : 'bg-blue-600 text-white hover:bg-blue-700'
+          }`}
+        >
+          {cookingMode ? '← Exit Cooking Mode' : '🔥 Enter Cooking Mode'}
+        </button>
       </div>
 
+      {/* Cooking Mode View */}
+      {cookingMode ? (
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
+          <div className="max-w-3xl mx-auto">
+            {/* Current Step */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-xl font-semibold text-gray-600">
+                  Step {currentStepIndex + 1} of {recipe.steps.length}
+                </span>
+                <span className="text-sm px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-medium">
+                  {Math.round(progress)}% Complete
+                </span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                {currentStep.instruction}
+              </h2>
+
+              <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-8">
+                {currentStep.plainLanguage}
+              </p>
+
+              {currentStep.tip && (
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
+                  <div className="text-xl font-semibold text-yellow-800 mb-2">Pro Tip:</div>
+                  <p className="text-xl text-yellow-700">{currentStep.tip}</p>
+                </div>
+              )}
+
+              {/* Timer in Cooking Mode */}
+              {currentStep.timer && (
+                <div className="mb-8">
+                  {timerSeconds === null ? (
+                    <button
+                      onClick={() => startTimer(currentStep.timer!)}
+                      className="w-full px-8 py-6 bg-green-600 text-white rounded-lg font-bold text-2xl hover:bg-green-700 transition-all shadow-lg"
+                    >
+                      Start {currentStep.timer} min timer
+                    </button>
+                  ) : (
+                    <div className="bg-blue-600 text-white rounded-lg p-6 text-center">
+                      <div className="text-6xl font-bold mb-2">{formatTime(timerSeconds)}</div>
+                      <button
+                        onClick={stopTimer}
+                        className="mt-4 px-6 py-3 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600"
+                      >
+                        Stop Timer
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* Large Navigation Buttons */}
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <button
+                onClick={goToPreviousStep}
+                disabled={currentStepIndex === 0}
+                className="px-8 py-6 bg-gray-200 text-gray-800 rounded-lg font-bold text-xl hover:bg-gray-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              >
+                ← Previous
+              </button>
+              <button
+                onClick={goToNextStep}
+                disabled={currentStepIndex === recipe.steps.length - 1}
+                className="px-8 py-6 bg-green-600 text-white rounded-lg font-bold text-xl hover:bg-green-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              >
+                {currentStepIndex === recipe.steps.length - 1 ? '✓ Finish' : 'Next →'}
+              </button>
+            </div>
+
+            {/* Step Quick Nav */}
+            <div className="flex flex-wrap gap-2 justify-center">
+              {recipe.steps.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentStepIndex(idx)}
+                  className={`w-12 h-12 rounded-full font-bold text-lg transition-all ${
+                    idx === currentStepIndex
+                      ? 'bg-blue-600 text-white ring-4 ring-blue-200'
+                      : completedSteps.has(recipe.steps[idx].id)
+                      ? 'bg-green-500 text-white'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  {idx + 1}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <>
       {/* Ingredients */}
       <div className="bg-white rounded-lg shadow p-6 mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-          Ingredients
-        </h2>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+            Ingredients
+          </h2>
+          <button
+            onClick={() => setUseMetric(!useMetric)}
+            className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              useMetric
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+          >
+            {useMetric ? 'Metric' : 'US/Imperial'}
+          </button>
+        </div>
         <div className="space-y-3">
           {recipe.ingredients.map((ingredient, index) => (
             <div
@@ -430,7 +643,11 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                 }`}
               >
                 <div className="font-medium text-gray-900">
-                  {renderTextWithTechniqueLinks(`${scaleIngredientAmount(ingredient.amount, servingMultiplier)} ${ingredient.name}`)}
+                  {renderTextWithTechniqueLinks(
+                    useMetric
+                      ? `${convertToMetric(scaleIngredientAmount(ingredient.amount, servingMultiplier))} ${ingredient.name}`
+                      : `${scaleIngredientAmount(ingredient.amount, servingMultiplier)} ${ingredient.name}`
+                  )}
                 </div>
                 {ingredient.visual && (
                   <div className="text-sm text-gray-500 italic">
@@ -569,6 +786,8 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
           </div>
           </div>
         </div>
+      )}
+        </>
       )}
 
       {/* Draggable Countdown Timer Display */}
