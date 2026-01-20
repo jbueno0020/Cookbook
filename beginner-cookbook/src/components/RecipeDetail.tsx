@@ -37,6 +37,10 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   const [servingMultiplier, setServingMultiplier] = useState(1);
   const [cookingMode, setCookingMode] = useState(false);
   const [useMetric, setUseMetric] = useState(false);
+  const [stepDragPosition, setStepDragPosition] = useState({ x: 0, y: 0 });
+  const [isStepDragging, setIsStepDragging] = useState(false);
+  const [stepSwipeDirection, setStepSwipeDirection] = useState<'left' | 'right' | null>(null);
+  const stepDragStartPos = useRef({ x: 0, y: 0 });
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Timer countdown effect
@@ -298,6 +302,87 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
     }
   };
 
+  // Tinder-style swipe handlers for cooking mode
+  const handleStepMouseDown = (e: React.MouseEvent) => {
+    setIsStepDragging(true);
+    stepDragStartPos.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const handleStepTouchStart = (e: React.TouchEvent) => {
+    setIsStepDragging(true);
+    stepDragStartPos.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  };
+
+  const handleStepMouseMove = (e: React.MouseEvent) => {
+    if (!isStepDragging) return;
+    const deltaX = e.clientX - stepDragStartPos.current.x;
+    const deltaY = e.clientY - stepDragStartPos.current.y;
+    setStepDragPosition({ x: deltaX, y: deltaY });
+  };
+
+  const handleStepTouchMove = (e: React.TouchEvent) => {
+    if (!isStepDragging) return;
+    const deltaX = e.touches[0].clientX - stepDragStartPos.current.x;
+    const deltaY = e.touches[0].clientY - stepDragStartPos.current.y;
+    setStepDragPosition({ x: deltaX, y: deltaY });
+  };
+
+  const handleStepRelease = () => {
+    if (!isStepDragging) return;
+    setIsStepDragging(false);
+
+    const threshold = 100;
+    if (Math.abs(stepDragPosition.x) > threshold) {
+      // Swipe detected
+      const direction = stepDragPosition.x > 0 ? 'right' : 'left';
+      setStepSwipeDirection(direction);
+
+      // Animate out and move to next/previous step
+      setTimeout(() => {
+        if (direction === 'left' && currentStepIndex < recipe.steps.length - 1) {
+          const newCompleted = new Set(completedSteps);
+          newCompleted.add(currentStep.id);
+          setCompletedSteps(newCompleted);
+          setCurrentStepIndex(currentStepIndex + 1);
+        } else if (direction === 'right' && currentStepIndex > 0) {
+          setCurrentStepIndex(currentStepIndex - 1);
+        }
+        setStepDragPosition({ x: 0, y: 0 });
+        setStepSwipeDirection(null);
+      }, 300);
+    } else {
+      // Return to center
+      setStepDragPosition({ x: 0, y: 0 });
+    }
+  };
+
+  const handleStepSwipe = (direction: 'left' | 'right') => {
+    setStepSwipeDirection(direction);
+    setTimeout(() => {
+      if (direction === 'left' && currentStepIndex < recipe.steps.length - 1) {
+        const newCompleted = new Set(completedSteps);
+        newCompleted.add(currentStep.id);
+        setCompletedSteps(newCompleted);
+        setCurrentStepIndex(currentStepIndex + 1);
+      } else if (direction === 'right' && currentStepIndex > 0) {
+        setCurrentStepIndex(currentStepIndex - 1);
+      }
+      setStepDragPosition({ x: 0, y: 0 });
+      setStepSwipeDirection(null);
+    }, 300);
+  };
+
+  const calculateStepRotation = () => {
+    return stepDragPosition.x / 20; // Max ~15 degrees at 300px
+  };
+
+  const calculateStepOpacity = (type: 'complete' | 'back') => {
+    const dragAmount = Math.abs(stepDragPosition.x);
+    if (dragAmount === 0) return 0;
+    const opacity = Math.min(dragAmount / 100, 1);
+    return type === 'complete' ? (stepDragPosition.x < 0 ? opacity : 0) : (stepDragPosition.x > 0 ? opacity : 0);
+  };
+
   // Timer drag handlers
   const onTimerTouchStart = (e: React.TouchEvent) => {
     setIsDraggingTimer(true);
@@ -511,76 +596,131 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
         </button>
       </div>
 
-      {/* Cooking Mode View */}
+      {/* Cooking Mode View - Tinder-style Swipeable Steps */}
       {cookingMode ? (
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
+        <div className="mb-6">
           <div className="max-w-3xl mx-auto">
-            {/* Current Step */}
-            <div className="mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xl font-semibold text-gray-600">
-                  Step {currentStepIndex + 1} of {recipe.steps.length}
-                </span>
-                <span className="text-sm px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-medium">
-                  {Math.round(progress)}% Complete
-                </span>
+            {/* Progress Indicator */}
+            <div className="mb-6 text-center">
+              <div className="text-xl font-semibold text-gray-700 mb-2">
+                Step {currentStepIndex + 1} of {recipe.steps.length}
               </div>
-
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                {currentStep.instruction}
-              </h2>
-
-              <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-8">
-                {currentStep.plainLanguage}
-              </p>
-
-              {currentStep.tip && (
-                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
-                  <div className="text-xl font-semibold text-yellow-800 mb-2">Pro Tip:</div>
-                  <p className="text-xl text-yellow-700">{currentStep.tip}</p>
-                </div>
-              )}
-
-              {/* Timer in Cooking Mode */}
-              {currentStep.timer && (
-                <div className="mb-8">
-                  {timerSeconds === null ? (
-                    <button
-                      onClick={() => startTimer(currentStep.timer!)}
-                      className="w-full px-8 py-6 bg-green-600 text-white rounded-lg font-bold text-2xl hover:bg-green-700 transition-all shadow-lg"
-                    >
-                      Start {currentStep.timer} min timer
-                    </button>
-                  ) : (
-                    <div className="bg-blue-600 text-white rounded-lg p-6 text-center">
-                      <div className="text-6xl font-bold mb-2">{formatTime(timerSeconds)}</div>
-                      <button
-                        onClick={stopTimer}
-                        className="mt-4 px-6 py-3 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600"
-                      >
-                        Stop Timer
-                      </button>
-                    </div>
-                  )}
-                </div>
-              )}
+              <div className="text-sm text-gray-600">
+                {Math.round(progress)}% Complete
+              </div>
             </div>
 
-            {/* Large Navigation Buttons */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <button
-                onClick={goToPreviousStep}
-                disabled={currentStepIndex === 0}
-                className="px-8 py-6 bg-gray-200 text-gray-800 rounded-lg font-bold text-xl hover:bg-gray-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+            {/* Swipeable Card Stack */}
+            <div className="relative h-[600px] mb-6">
+              {/* Next Step Card (behind) */}
+              {currentStepIndex < recipe.steps.length - 1 && (
+                <div
+                  className="absolute inset-0 z-10"
+                  style={{
+                    transform: 'scale(0.95)',
+                    transition: 'all 0.3s ease-out',
+                  }}
+                >
+                  <div className="bg-white rounded-2xl shadow-2xl p-8 h-full overflow-y-auto">
+                    <div className="text-center text-gray-400 text-lg">
+                      Next: {recipe.steps[currentStepIndex + 1].instruction}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Current Step Card (front) */}
+              <div
+                className="absolute inset-0 z-20 cursor-grab active:cursor-grabbing"
+                style={{
+                  transform: stepSwipeDirection
+                    ? `translateX(${stepSwipeDirection === 'left' ? '-1000px' : '1000px'}) rotate(${stepSwipeDirection === 'left' ? '-45deg' : '45deg'})`
+                    : `translateX(${stepDragPosition.x}px) translateY(${stepDragPosition.y}px) rotate(${calculateStepRotation()}deg)`,
+                  transition: isStepDragging ? 'none' : 'all 0.3s ease-out',
+                }}
+                onMouseDown={handleStepMouseDown}
+                onMouseMove={handleStepMouseMove}
+                onMouseUp={handleStepRelease}
+                onMouseLeave={handleStepRelease}
+                onTouchStart={handleStepTouchStart}
+                onTouchMove={handleStepTouchMove}
+                onTouchEnd={handleStepRelease}
               >
-                ← Previous
+                <div className="bg-white rounded-2xl shadow-2xl p-8 h-full overflow-y-auto relative">
+                  {/* Swipe Indicators */}
+                  <div
+                    className="absolute top-8 right-8 z-30 border-4 border-blue-500 text-blue-500 text-4xl font-bold px-6 py-3 rotate-[20deg] pointer-events-none"
+                    style={{ opacity: calculateStepOpacity('back') }}
+                  >
+                    BACK
+                  </div>
+                  <div
+                    className="absolute top-8 left-8 z-30 border-4 border-green-500 text-green-500 text-4xl font-bold px-6 py-3 rotate-[-20deg] pointer-events-none"
+                    style={{ opacity: calculateStepOpacity('complete') }}
+                  >
+                    DONE
+                  </div>
+
+                  {/* Step Content */}
+                  <div className="mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                      {currentStep.instruction}
+                    </h2>
+
+                    <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-8">
+                      {currentStep.plainLanguage}
+                    </p>
+
+                    {currentStep.tip && (
+                      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
+                        <div className="text-xl font-semibold text-yellow-800 mb-2">Pro Tip:</div>
+                        <p className="text-xl text-yellow-700">{currentStep.tip}</p>
+                      </div>
+                    )}
+
+                    {/* Timer in Cooking Mode */}
+                    {currentStep.timer && (
+                      <div className="mb-8">
+                        {timerSeconds === null ? (
+                          <button
+                            onClick={() => startTimer(currentStep.timer!)}
+                            className="w-full px-8 py-6 bg-green-600 text-white rounded-lg font-bold text-2xl hover:bg-green-700 transition-all shadow-lg"
+                          >
+                            ⏱️ Start {currentStep.timer} min timer
+                          </button>
+                        ) : (
+                          <div className="bg-blue-600 text-white rounded-lg p-6 text-center">
+                            <div className="text-6xl font-bold mb-2">{formatTime(timerSeconds)}</div>
+                            <button
+                              onClick={stopTimer}
+                              className="mt-4 px-6 py-3 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600"
+                            >
+                              Stop Timer
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex justify-center gap-8 mb-6">
+              <button
+                onClick={() => handleStepSwipe('right')}
+                disabled={currentStepIndex === 0}
+                className="w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center text-3xl hover:scale-110 transition-transform border-4 border-blue-500 text-blue-500 disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                ←
               </button>
               <button
-                onClick={goToNextStep}
+                onClick={() => handleStepSwipe('left')}
                 disabled={currentStepIndex === recipe.steps.length - 1}
-                className="px-8 py-6 bg-green-600 text-white rounded-lg font-bold text-xl hover:bg-green-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                className="w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center text-3xl hover:scale-110 transition-transform border-4 border-green-500 text-green-500 disabled:opacity-30 disabled:cursor-not-allowed"
               >
-                {currentStepIndex === recipe.steps.length - 1 ? '✓ Finish' : 'Next →'}
+                ✓
               </button>
             </div>
 
