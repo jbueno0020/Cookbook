@@ -4560,5 +4560,303 @@ export const recipes: Recipe[] = [
       { id: 4, instruction: 'Stack patties', plainLanguage: 'Stack 2 patties together for each burger (double smash!)' },
       { id: 5, instruction: 'Assemble burgers', plainLanguage: 'Toast buns in butter. Spread sauce on buns. Add pickles, stacked patties, and onions. These are INSANELY good!', tip: 'The crispy lacy edges are what make these viral!' }
     ]
+  },
+  {
+    id: '61',
+    title: 'Pesto Pasta with Burrata',
+    description: '2025 dinner party favorite! Simple elegance in 15 minutes.',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 12,
+    servings: 4,
+    tags: ['dinner', 'pasta', 'italian', 'quick', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 520, protein: 18, carbs: 58, fat: 24, fiber: 3 },
+    ingredients: [
+      { name: 'Pasta', amount: '1 lb', visual: 'One pound any shape' },
+      { name: 'Basil pesto', amount: '3/4 cup', visual: 'Store-bought or homemade' },
+      { name: 'Burrata cheese', amount: '8 oz', visual: 'Two balls burrata' },
+      { name: 'Cherry tomatoes', amount: '2 cups halved', visual: 'Two cups tomatoes' },
+      { name: 'Garlic', amount: '3 cloves minced', visual: 'Three cloves' },
+      { name: 'Olive oil', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Fresh basil', amount: '1/4 cup', visual: 'Quarter cup torn' },
+      { name: 'Lemon zest', amount: '1 tsp', visual: 'From one lemon' },
+      { name: 'Red pepper flakes', amount: '1/2 tsp', visual: 'Optional kick' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Cook pasta', plainLanguage: 'Boil salted water. Cook pasta according to package directions. Reserve 1 cup pasta water before draining.', timer: 10 },
+      { id: 2, instruction: 'Sauté tomatoes', plainLanguage: 'While pasta cooks, heat olive oil in a large pan. Add garlic and cook 30 seconds. Add tomatoes, cook 3-4 minutes until blistered.', timer: 4 },
+      { id: 3, instruction: 'Combine with pesto', plainLanguage: 'Add drained pasta to the pan with tomatoes. Toss in pesto and 1/4 cup pasta water. Toss to coat. Add more water if needed for a silky sauce.' },
+      { id: 4, instruction: 'Add burrata', plainLanguage: 'Transfer to serving bowl. Tear burrata into large pieces and place on top. It will melt slightly from the warm pasta.' },
+      { id: 5, instruction: 'Garnish and serve', plainLanguage: 'Top with fresh basil, lemon zest, and red pepper flakes. Toss at the table so everyone gets creamy burrata!', tip: 'This tastes like a $30 restaurant dish!' }
+    ]
+  },
+  {
+    id: '62',
+    title: 'Avocado Toast 3 Ways',
+    description: 'Instagram\'s breakfast essential! Three trendy variations.',
+    difficulty: 'super-easy',
+    prepTime: 10,
+    cookTime: 5,
+    servings: 2,
+    tags: ['breakfast', 'vegetarian', 'quick', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 320, protein: 12, carbs: 28, fat: 19, fiber: 8 },
+    ingredients: [
+      { name: 'Sourdough bread', amount: '4 slices', visual: 'Four thick slices' },
+      { name: 'Ripe avocados', amount: '2', visual: 'Two ripe avocados' },
+      { name: 'Eggs', amount: '2', visual: 'For classic version' },
+      { name: 'Cherry tomatoes', amount: '1 cup halved', visual: 'For Italian version' },
+      { name: 'Feta cheese', amount: '1/4 cup crumbled', visual: 'For Mediterranean version' },
+      { name: 'Everything bagel seasoning', amount: '2 tsp', visual: 'Two teaspoons' },
+      { name: 'Red pepper flakes', amount: '1/2 tsp', visual: 'Half teaspoon' },
+      { name: 'Lemon juice', amount: '1 tbsp', visual: 'From half lemon' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Toast bread', plainLanguage: 'Toast sourdough slices until golden and crispy.' },
+      { id: 2, instruction: 'Mash avocado', plainLanguage: 'In a bowl, mash avocados with lemon juice, salt, and pepper until smooth or chunky (your choice).' },
+      { id: 3, instruction: 'Version 1: Classic', plainLanguage: 'Spread avocado on 2 toasts. Top each with a fried or poached egg. Sprinkle with everything seasoning and red pepper flakes.', tip: 'Runny yolk is KEY!' },
+      { id: 4, instruction: 'Version 2: Italian', plainLanguage: 'Spread avocado on 1 toast. Top with halved cherry tomatoes, fresh basil, and balsamic glaze.' },
+      { id: 5, instruction: 'Version 3: Mediterranean', plainLanguage: 'Spread avocado on 1 toast. Top with crumbled feta, cucumber slices, and za\'atar seasoning.', tip: 'Mix and match toppings for endless combinations!' }
+    ]
+  },
+  {
+    id: '63',
+    title: 'One-Pot Chicken Alfredo',
+    description: 'Weeknight savior! Everything cooks in one pot, ready in 20 minutes.',
+    difficulty: 'easy',
+    prepTime: 5,
+    cookTime: 20,
+    servings: 4,
+    tags: ['dinner', 'pasta', 'one-pot', 'quick', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 620, protein: 42, carbs: 56, fat: 26, fiber: 3 },
+    ingredients: [
+      { name: 'Chicken breasts', amount: '1 lb sliced', visual: 'One pound, sliced thin' },
+      { name: 'Fettuccine pasta', amount: '12 oz', visual: '12 oz pasta' },
+      { name: 'Chicken broth', amount: '3 cups', visual: 'Three cups broth' },
+      { name: 'Heavy cream', amount: '1 cup', visual: 'One cup cream' },
+      { name: 'Parmesan cheese', amount: '1.5 cups grated', visual: '1.5 cups grated' },
+      { name: 'Garlic', amount: '4 cloves minced', visual: 'Four cloves' },
+      { name: 'Italian seasoning', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Fresh parsley', amount: '1/4 cup', visual: 'For garnish' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Brown chicken', plainLanguage: 'Season chicken with salt, pepper, and Italian seasoning. In a large pot, cook chicken in oil until golden. Remove and set aside.', timer: 6 },
+      { id: 2, instruction: 'Cook garlic', plainLanguage: 'In the same pot, sauté garlic for 30 seconds until fragrant.' },
+      { id: 3, instruction: 'Add pasta and liquid', plainLanguage: 'Break pasta in half and add to pot. Pour in chicken broth and heavy cream. Bring to a boil, then reduce to simmer. Stir frequently to prevent sticking.', timer: 12, tip: 'Stirring is important so pasta doesn\'t clump!' },
+      { id: 4, instruction: 'Add chicken and cheese', plainLanguage: 'When pasta is almost tender, return chicken to pot. Stir in parmesan cheese until melted and creamy.' },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Let sit 2 minutes to thicken. Garnish with parsley and more parmesan. One pot = one dish to wash!', tip: 'Leftovers thicken up - just add a splash of milk when reheating!' }
+    ]
+  },
+  {
+    id: '64',
+    title: 'Açaí Bowl',
+    description: 'Breakfast bowl trend of 2025! Healthy, Instagram-worthy, delicious.',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 0,
+    servings: 2,
+    tags: ['breakfast', 'healthy', 'no-cook', 'trending-2025', 'vegan'],
+    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 380, protein: 8, carbs: 68, fat: 12, fiber: 12 },
+    ingredients: [
+      { name: 'Frozen açaí packets', amount: '2 (100g each)', visual: 'Two frozen packets' },
+      { name: 'Frozen banana', amount: '1', visual: 'One frozen banana' },
+      { name: 'Frozen berries', amount: '1/2 cup', visual: 'Half cup mixed berries' },
+      { name: 'Apple juice', amount: '1/3 cup', visual: 'Third cup juice' },
+      { name: 'Granola', amount: '1/2 cup', visual: 'For topping' },
+      { name: 'Fresh strawberries', amount: '1 cup sliced', visual: 'For topping' },
+      { name: 'Banana', amount: '1 sliced', visual: 'For topping' },
+      { name: 'Coconut flakes', amount: '2 tbsp', visual: 'For topping' },
+      { name: 'Honey', amount: '2 tbsp', visual: 'For drizzling' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Break up açaí', plainLanguage: 'Run frozen açaí packets under warm water for 10 seconds to soften slightly. Break into chunks.' },
+      { id: 2, instruction: 'Blend base', plainLanguage: 'In a blender, combine açaí chunks, frozen banana, frozen berries, and apple juice. Blend on high until thick and smooth. It should be thicker than a smoothie - like soft serve ice cream!', tip: 'Less liquid = thicker bowl. Add more only if blender struggles.' },
+      { id: 3, instruction: 'Divide into bowls', plainLanguage: 'Pour into 2 bowls. Use a spoon to smooth the top.' },
+      { id: 4, instruction: 'Arrange toppings', plainLanguage: 'Arrange toppings in sections: granola on one side, strawberries on another, banana slices, coconut flakes. Make it pretty!', tip: 'The key is making it look good for the \'gram!' },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Drizzle with honey. Eat immediately while base is still thick and cold. So refreshing and filling!' }
+    ]
+  },
+  {
+    id: '65',
+    title: 'Buffalo Cauliflower Bites',
+    description: 'Viral vegetarian appetizer! Crispy, spicy, crowd-pleasing.',
+    difficulty: 'easy',
+    prepTime: 15,
+    cookTime: 30,
+    servings: 6,
+    tags: ['appetizer', 'vegetarian', 'viral', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1576867757862-08664c150f59?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 185, protein: 6, carbs: 22, fat: 9, fiber: 4 },
+    ingredients: [
+      { name: 'Cauliflower', amount: '1 large head', visual: 'One head cut into florets' },
+      { name: 'All-purpose flour', amount: '3/4 cup', visual: 'Three-quarters cup' },
+      { name: 'Water', amount: '3/4 cup', visual: 'Three-quarters cup' },
+      { name: 'Garlic powder', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Paprika', amount: '1/2 tsp', visual: 'Half teaspoon' },
+      { name: 'Buffalo sauce', amount: '1/2 cup', visual: 'Half cup Frank\'s RedHot' },
+      { name: 'Butter', amount: '2 tbsp melted', visual: 'Two tablespoons' },
+      { name: 'Ranch dressing', amount: 'for serving', visual: 'For dipping' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Make batter', plainLanguage: 'Preheat oven to 450°F. Mix flour, water, garlic powder, paprika, salt, and pepper until smooth.' },
+      { id: 2, instruction: 'Coat cauliflower', plainLanguage: 'Dip cauliflower florets in batter, letting excess drip off. Place on greased baking sheet.' },
+      { id: 3, instruction: 'First bake', plainLanguage: 'Bake for 20 minutes until batter is set and starting to brown.', timer: 20 },
+      { id: 4, instruction: 'Add buffalo sauce', plainLanguage: 'Mix buffalo sauce and melted butter. Brush onto baked cauliflower, coating all sides.' },
+      { id: 5, instruction: 'Second bake', plainLanguage: 'Bake another 10 minutes until crispy and caramelized. Serve hot with ranch or blue cheese!', timer: 10, tip: 'These are so good, even meat-eaters won\'t miss chicken wings!' }
+    ]
+  },
+  {
+    id: '66',
+    title: 'Lemon Blueberry Muffins',
+    description: 'Bakery-style muffins at home! Tall, fluffy, bursting with berries.',
+    difficulty: 'easy',
+    prepTime: 15,
+    cookTime: 22,
+    servings: 12,
+    tags: ['baking', 'breakfast', 'muffins', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1607920591413-4ec007e70023?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 240, protein: 4, carbs: 38, fat: 9, fiber: 1 },
+    ingredients: [
+      { name: 'All-purpose flour', amount: '2 cups', visual: 'Two cups flour' },
+      { name: 'Baking powder', amount: '2 tsp', visual: 'Two teaspoons' },
+      { name: 'Salt', amount: '1/2 tsp', visual: 'Half teaspoon' },
+      { name: 'Butter', amount: '1/2 cup softened', visual: 'One stick butter' },
+      { name: 'Sugar', amount: '1 cup', visual: 'One cup sugar' },
+      { name: 'Eggs', amount: '2 large', visual: 'Two eggs' },
+      { name: 'Vanilla extract', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Milk', amount: '1/2 cup', visual: 'Half cup milk' },
+      { name: 'Lemon zest', amount: '2 tbsp', visual: 'From 2 lemons' },
+      { name: 'Lemon juice', amount: '2 tbsp', visual: 'From 1 lemon' },
+      { name: 'Fresh blueberries', amount: '1.5 cups', visual: '1.5 cups berries' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Preheat and prep', plainLanguage: 'Preheat oven to 400°F. Line muffin tin with papers. Toss blueberries with 1 tbsp flour (prevents sinking).', tip: 'High heat gives you those beautiful domed tops!' },
+      { id: 2, instruction: 'Mix dry ingredients', plainLanguage: 'Whisk together flour, baking powder, and salt in a bowl.' },
+      { id: 3, instruction: 'Cream butter and sugar', plainLanguage: 'Beat butter and sugar until fluffy (3 minutes). Add eggs one at a time, then vanilla, lemon zest, and lemon juice.', timer: 3 },
+      { id: 4, instruction: 'Combine', plainLanguage: 'Add flour mixture and milk alternately, starting and ending with flour. Fold in blueberries gently.', tip: 'Don\'t overmix! Stir just until combined' },
+      { id: 5, instruction: 'Bake', plainLanguage: 'Fill muffin cups to the top. Bake 5 min at 400°F, then reduce to 350°F and bake 15-17 more minutes until golden.', timer: 22, tip: 'The high-to-low temp trick makes them EXTRA tall!' }
+    ]
+  },
+  {
+    id: '67',
+    title: 'Korean Beef Bowl',
+    description: 'Viral rice bowl! Sweet, savory, ready in 15 minutes.',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 10,
+    servings: 4,
+    tags: ['dinner', 'asian', 'quick', 'trending-2025', 'bowl'],
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 450, protein: 28, carbs: 52, fat: 14, fiber: 2 },
+    ingredients: [
+      { name: 'Ground beef', amount: '1 lb', visual: 'One pound ground beef' },
+      { name: 'Soy sauce', amount: '1/3 cup', visual: 'Third cup' },
+      { name: 'Brown sugar', amount: '1/4 cup', visual: 'Quarter cup' },
+      { name: 'Sesame oil', amount: '2 tsp', visual: 'Two teaspoons' },
+      { name: 'Garlic', amount: '3 cloves minced', visual: 'Three cloves' },
+      { name: 'Ginger', amount: '1 tsp minced', visual: 'One teaspoon' },
+      { name: 'Red pepper flakes', amount: '1/4 tsp', visual: 'Quarter teaspoon' },
+      { name: 'Cooked rice', amount: '4 cups', visual: 'Four cups cooked rice' },
+      { name: 'Green onions', amount: '4 sliced', visual: 'Four green onions' },
+      { name: 'Sesame seeds', amount: '1 tbsp', visual: 'For garnish' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Make sauce', plainLanguage: 'In a small bowl, whisk together soy sauce, brown sugar, sesame oil, garlic, ginger, and red pepper flakes.' },
+      { id: 2, instruction: 'Cook beef', plainLanguage: 'In a large skillet over medium-high heat, cook ground beef until browned, breaking it up as it cooks.', timer: 6 },
+      { id: 3, instruction: 'Add sauce', plainLanguage: 'Drain excess fat. Pour sauce over beef. Cook 2-3 minutes until sauce thickens and coats the beef.', timer: 3 },
+      { id: 4, instruction: 'Assemble bowls', plainLanguage: 'Divide rice among 4 bowls. Top each with beef mixture.' },
+      { id: 5, instruction: 'Garnish', plainLanguage: 'Top with sliced green onions and sesame seeds. Add sriracha if you want more heat!', tip: 'This is crazy good and costs way less than takeout!' }
+    ]
+  },
+  {
+    id: '68',
+    title: 'Chocolate Lava Cakes',
+    description: 'Restaurant dessert at home! Molten center, impressive presentation.',
+    difficulty: 'intermediate',
+    prepTime: 15,
+    cookTime: 12,
+    servings: 4,
+    tags: ['dessert', 'chocolate', 'baking', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 420, protein: 7, carbs: 48, fat: 24, fiber: 3 },
+    ingredients: [
+      { name: 'Dark chocolate', amount: '6 oz chopped', visual: 'Six oz good quality' },
+      { name: 'Butter', amount: '6 tbsp', visual: 'Six tablespoons' },
+      { name: 'Eggs', amount: '2 large', visual: 'Two whole eggs' },
+      { name: 'Egg yolks', amount: '2', visual: 'Two additional yolks' },
+      { name: 'Powdered sugar', amount: '1/4 cup', visual: 'Quarter cup' },
+      { name: 'All-purpose flour', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Vanilla extract', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Butter for ramekins', amount: '1 tbsp', visual: 'For greasing' },
+      { name: 'Cocoa powder', amount: '1 tbsp', visual: 'For dusting' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Prep ramekins', plainLanguage: 'Butter 4 ramekins really well. Dust with cocoa powder, tapping out excess. Place on a baking sheet.', tip: 'Proper greasing is ESSENTIAL for unmolding!' },
+      { id: 2, instruction: 'Melt chocolate', plainLanguage: 'Melt chocolate and butter together in microwave in 30-second bursts, stirring between. Let cool 5 minutes.', timer: 2 },
+      { id: 3, instruction: 'Mix batter', plainLanguage: 'Whisk eggs, egg yolks, and powdered sugar until thick (2 min). Fold in chocolate mixture, then flour and vanilla.', timer: 2, tip: 'Don\'t skip whisking the eggs - this creates the texture!' },
+      { id: 4, instruction: 'Bake', plainLanguage: 'Divide batter among ramekins. Bake at 425°F for 12-14 minutes. Edges should be firm but center still jiggly.', timer: 13, tip: 'Better slightly underbaked than overbaked!' },
+      { id: 5, instruction: 'Unmold and serve', plainLanguage: 'Let cool 1 minute. Run knife around edge. Invert onto plates. The center should flow out when you cut in! Serve with vanilla ice cream.', tip: 'The timing is everything - that molten center is magic!' }
+    ]
+  },
+  {
+    id: '69',
+    title: 'Loaded Sweet Potato',
+    description: 'Healthy comfort food! Nutritious base, endless topping options.',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 45,
+    servings: 4,
+    tags: ['lunch', 'dinner', 'healthy', 'vegetarian', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1645696329472-bbb00be8a3ab?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 380, protein: 18, carbs: 54, fat: 12, fiber: 10 },
+    ingredients: [
+      { name: 'Large sweet potatoes', amount: '4', visual: 'Four large sweet potatoes' },
+      { name: 'Black beans', amount: '1 can (15oz)', visual: 'One can, drained' },
+      { name: 'Corn', amount: '1 cup', visual: 'Fresh or frozen' },
+      { name: 'Shredded cheddar', amount: '1 cup', visual: 'One cup cheese' },
+      { name: 'Greek yogurt', amount: '1/2 cup', visual: 'Instead of sour cream' },
+      { name: 'Avocado', amount: '1 large diced', visual: 'One avocado' },
+      { name: 'Lime', amount: '1', visual: 'For juice' },
+      { name: 'Cilantro', amount: '1/4 cup', visual: 'Quarter cup chopped' },
+      { name: 'Taco seasoning', amount: '1 tbsp', visual: 'One tablespoon' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Bake sweet potatoes', plainLanguage: 'Poke sweet potatoes all over with a fork. Bake at 400°F for 40-45 minutes until tender. Or microwave 8-10 minutes!', timer: 45, tip: 'Microwave is way faster and just as good!' },
+      { id: 2, instruction: 'Warm toppings', plainLanguage: 'While potatoes cook, warm black beans and corn together with taco seasoning.' },
+      { id: 3, instruction: 'Split potatoes', plainLanguage: 'Cut a slit lengthwise in each potato. Gently squeeze ends to open up the center.' },
+      { id: 4, instruction: 'Load them up', plainLanguage: 'Fill each potato with black bean mixture. Top with cheese (it\'ll melt from the heat!)' },
+      { id: 5, instruction: 'Add fresh toppings', plainLanguage: 'Top with Greek yogurt, diced avocado, cilantro, and lime juice. So filling and nutritious!', tip: 'Mix up toppings: try buffalo chicken, chili, or BBQ pulled pork!' }
+    ]
+  },
+  {
+    id: '70',
+    title: 'Crispy Baked Wings',
+    description: 'Healthier wings without deep frying! Crispy skin, perfect for game day.',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 50,
+    servings: 4,
+    tags: ['appetizer', 'dinner', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 420, protein: 38, carbs: 2, fat: 28, fiber: 0 },
+    ingredients: [
+      { name: 'Chicken wings', amount: '3 lbs', visual: 'Three pounds wings' },
+      { name: 'Baking powder', amount: '2 tbsp', visual: 'NOT baking soda!' },
+      { name: 'Salt', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Garlic powder', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Buffalo sauce', amount: '1/2 cup', visual: 'For coating' },
+      { name: 'Butter', amount: '4 tbsp melted', visual: 'Four tablespoons' },
+      { name: 'Ranch or blue cheese', amount: 'for serving', visual: 'For dipping' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Dry wings', plainLanguage: 'Pat wings completely dry with paper towels. This is the secret to crispy skin!', tip: 'Seriously dry them REALLY well - wetness = soggy wings' },
+      { id: 2, instruction: 'Season', plainLanguage: 'In a large bowl, toss wings with baking powder, salt, and garlic powder until evenly coated.' },
+      { id: 3, instruction: 'Arrange on rack', plainLanguage: 'Place wings on a wire rack set over a baking sheet. Space them out so they\'re not touching.', tip: 'The rack lets air circulate for crispy skin all around!' },
+      { id: 4, instruction: 'Bake', plainLanguage: 'Bake at 250°F for 30 minutes, then increase heat to 425°F and bake 40-45 more minutes until golden and crispy.', timer: 75, tip: 'The low-then-high method renders fat and crisps skin perfectly' },
+      { id: 5, instruction: 'Sauce and serve', plainLanguage: 'Toss wings in buffalo sauce mixed with melted butter. Serve immediately with ranch or blue cheese!', tip: 'These are as crispy as fried wings but way easier!' }
+    ]
   }
 ];
