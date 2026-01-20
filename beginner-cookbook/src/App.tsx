@@ -15,6 +15,52 @@ function App() {
   const [showIngredientMatcher, setShowIngredientMatcher] = useState(false);
   const [showShoppingList, setShowShoppingList] = useState(false);
 
+  const ingredientSynonyms: Record<string, string[]> = {
+    'bell pepper': ['capsicum'],
+    'scallion': ['green onion', 'spring onion'],
+    'cilantro': ['coriander'],
+    'garbanzo bean': ['chickpea'],
+    'ground beef': ['minced beef'],
+    'powdered sugar': ['confectioners sugar', 'icing sugar']
+  };
+
+  const stripParentheticals = (value: string) => value.replace(/\([^)]*\)/g, ' ');
+
+  const normalizeToken = (token: string) => {
+    const cleaned = token.toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (cleaned.endsWith('ies')) return `${cleaned.slice(0, -3)}y`;
+    if (cleaned.endsWith('es')) return cleaned.slice(0, -2);
+    if (cleaned.endsWith('s') && cleaned.length > 3) return cleaned.slice(0, -1);
+    return cleaned;
+  };
+
+  const tokenizeIngredient = (value: string) => {
+    const base = stripParentheticals(value)
+      .replace(/[^a-z0-9\s]/gi, ' ')
+      .toLowerCase();
+    const tokens = base
+      .split(/\s+/)
+      .map(normalizeToken)
+      .filter(token => token.length > 1 && !['the', 'and', 'with', 'optional'].includes(token));
+
+    const expandedTokens = new Set(tokens);
+    Object.entries(ingredientSynonyms).forEach(([key, synonyms]) => {
+      const normalizedKey = key.split(' ').map(normalizeToken).join(' ');
+      const normalizedTokens = tokens.join(' ');
+      if (normalizedTokens.includes(normalizedKey)) {
+        synonyms.forEach(synonym => {
+          synonym.split(' ').map(normalizeToken).forEach(token => {
+            if (token) expandedTokens.add(token);
+          });
+        });
+      }
+    });
+
+    return expandedTokens;
+  };
+
+  const normalizeIngredientName = (value: string) => stripParentheticals(value).toLowerCase().trim();
+
   // Calculate ingredient matches for each recipe
   const getIngredientMatches = (recipe: Recipe, userIngredients: string[]): { matches: number; total: number; percentage: number; missing: string[] } => {
     if (userIngredients.length === 0) {
@@ -23,18 +69,24 @@ function App() {
 
     const recipeIngredients = recipe.ingredients.map(ing => ({
       name: ing.name,
-      nameLower: ing.name.toLowerCase()
+      normalizedName: normalizeIngredientName(ing.name),
+      tokens: tokenizeIngredient(ing.name)
     }));
 
     let matches = 0;
     const matchedIndices = new Set<number>();
 
     userIngredients.forEach(userIng => {
-      const userIngLower = userIng.toLowerCase().trim();
+      const normalizedUser = normalizeIngredientName(userIng);
+      const userTokens = tokenizeIngredient(userIng);
+
       recipeIngredients.forEach((recipeIng, idx) => {
-        if (!matchedIndices.has(idx) && (
-          recipeIng.nameLower.includes(userIngLower) || userIngLower.includes(recipeIng.nameLower)
-        )) {
+        if (matchedIndices.has(idx)) return;
+
+        const hasTokenOverlap = Array.from(userTokens).some(token => recipeIng.tokens.has(token));
+        const hasPhraseMatch = recipeIng.normalizedName.includes(normalizedUser) || normalizedUser.includes(recipeIng.normalizedName);
+
+        if (hasTokenOverlap || hasPhraseMatch) {
           matches++;
           matchedIndices.add(idx);
         }

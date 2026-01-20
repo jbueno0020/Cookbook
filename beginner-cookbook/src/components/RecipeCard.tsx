@@ -111,6 +111,12 @@ export function RecipeCard({ recipe, onClick, ingredientMatch }: RecipeCardProps
             <span>📝</span>
             <span>{recipe.steps.length} steps</span>
           </div>
+          {recipe.nutrition && (
+            <div className="flex items-center gap-1">
+              <span>🔥</span>
+              <span>{recipe.nutrition.calories} cal</span>
+            </div>
+          )}
         </div>
 
         <div className="mt-3 flex flex-wrap gap-2">
