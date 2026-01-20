@@ -3,6 +3,7 @@ import type { Recipe } from '../types';
 import { CookingTechniqueModal } from './CookingTechniqueModal';
 import { cookingTechniques, detectCookingTerms } from '../utils/cookingTechniques';
 import { addToShoppingList } from './ShoppingList';
+import { Toast } from './Toast';
 
 interface RecipeDetailProps {
   recipe: Recipe;
@@ -40,6 +41,8 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   const [stepDragPosition, setStepDragPosition] = useState({ x: 0, y: 0 });
   const [isStepDragging, setIsStepDragging] = useState(false);
   const [stepSwipeDirection, setStepSwipeDirection] = useState<'left' | 'right' | null>(null);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [toastTone, setToastTone] = useState<'success' | 'info' | 'warning'>('info');
   const stepDragStartPos = useRef({ x: 0, y: 0 });
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -51,7 +54,8 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
           if (prev === null || prev <= 1) {
             // Timer completed
             if (timerRef.current) clearInterval(timerRef.current);
-            alert('⏰ Timer completed!');
+            setToastTone('success');
+            setToastMessage('⏰ Timer completed!');
             return null;
           }
           return prev - 1;
@@ -67,10 +71,17 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   // Load saved progress from localStorage
   useEffect(() => {
     const savedProgress = localStorage.getItem(`recipe-progress-${recipe.id}`);
-    if (savedProgress) {
-      const { stepIndex, completed } = JSON.parse(savedProgress);
+    if (!savedProgress) return;
+
+    try {
+      const parsed = JSON.parse(savedProgress) as { stepIndex?: number; completed?: number[] };
+      const stepIndex = typeof parsed.stepIndex === 'number' ? parsed.stepIndex : 0;
+      const completed = Array.isArray(parsed.completed) ? parsed.completed : [];
       setCurrentStepIndex(stepIndex);
       setCompletedSteps(new Set(completed));
+    } catch {
+      setCurrentStepIndex(0);
+      setCompletedSteps(new Set());
     }
   }, [recipe.id]);
 
@@ -110,6 +121,8 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
   const currentStep = recipe.steps[currentStepIndex];
   const progress = (completedSteps.size / recipe.steps.length) * 100;
   const totalTime = recipe.prepTime + recipe.cookTime;
+
+  const scaleNutrition = (value: number) => Math.round(value * servingMultiplier);
 
   // Swipe handlers
   const minSwipeDistance = 50;
@@ -465,6 +478,11 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
     return <>{result}</>;
   };
 
+  const announce = (message: string, tone: 'success' | 'info' | 'warning' = 'info') => {
+    setToastTone(tone);
+    setToastMessage(message);
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       {/* Header */}
@@ -485,7 +503,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                 amount: ing.amount
               }))
             );
-            alert('Ingredients added to shopping list!');
+            announce('Ingredients added to shopping list!', 'success');
           }}
           className="px-4 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-all shadow-md flex items-center gap-2"
         >
@@ -557,28 +575,28 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
           {recipe.nutrition && (
             <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg border border-green-200">
               <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                Nutrition Facts (per serving)
+                Nutrition Facts (scaled for servings)
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-700">{recipe.nutrition.calories}</div>
+                  <div className="text-2xl font-bold text-green-700">{scaleNutrition(recipe.nutrition.calories)}</div>
                   <div className="text-xs text-gray-600">Calories</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-700">{recipe.nutrition.protein}g</div>
+                  <div className="text-2xl font-bold text-blue-700">{scaleNutrition(recipe.nutrition.protein)}g</div>
                   <div className="text-xs text-gray-600">Protein</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-700">{recipe.nutrition.carbs}g</div>
+                  <div className="text-2xl font-bold text-orange-700">{scaleNutrition(recipe.nutrition.carbs)}g</div>
                   <div className="text-xs text-gray-600">Carbs</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-yellow-700">{recipe.nutrition.fat}g</div>
+                  <div className="text-2xl font-bold text-yellow-700">{scaleNutrition(recipe.nutrition.fat)}g</div>
                   <div className="text-xs text-gray-600">Fat</div>
                 </div>
                 {recipe.nutrition.fiber !== undefined && (
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-700">{recipe.nutrition.fiber}g</div>
+                    <div className="text-2xl font-bold text-purple-700">{scaleNutrition(recipe.nutrition.fiber)}g</div>
                     <div className="text-xs text-gray-600">Fiber</div>
                   </div>
                 )}
@@ -692,11 +710,11 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                   {/* Step Content */}
                   <div className="mb-6">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                      {currentStep.instruction}
+                      {renderTextWithTechniqueLinks(currentStep.instruction)}
                     </h2>
 
                     <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
-                      {currentStep.plainLanguage}
+                      {renderTextWithTechniqueLinks(currentStep.plainLanguage)}
                     </p>
 
                     {/* Ingredients Section - Only show ingredients for this step */}
@@ -709,12 +727,19 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                             {stepIngredients.map((ingredient, index) => (
                               <div key={index} className="flex items-start gap-2">
                                 <span className="text-blue-600 mt-1">•</span>
-                                <span className="text-base text-gray-800">
-                                  {useMetric
-                                    ? `${convertToMetric(scaleIngredientAmount(ingredient.amount, servingMultiplier))} ${ingredient.name}`
-                                    : `${scaleIngredientAmount(ingredient.amount, servingMultiplier)} ${ingredient.name}`
-                                  }
-                                </span>
+                                <div className="text-base text-gray-800">
+                                  <div>
+                                    {useMetric
+                                      ? `${convertToMetric(scaleIngredientAmount(ingredient.amount, servingMultiplier))} ${ingredient.name}`
+                                      : `${scaleIngredientAmount(ingredient.amount, servingMultiplier)} ${ingredient.name}`
+                                    }
+                                  </div>
+                                  {ingredient.visual && (
+                                    <div className="text-sm text-blue-700 italic">
+                                      {ingredient.visual}
+                                    </div>
+                                  )}
+                                </div>
                               </div>
                             ))}
                           </div>
@@ -907,14 +932,14 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                 )}
               </div>
               <h3 className="text-2xl font-bold">
-                {currentStep.instruction}
+                {renderTextWithTechniqueLinks(currentStep.instruction)}
               </h3>
             </div>
 
             {/* Step Content */}
             <div className="p-6">
               <p className="text-gray-800 text-lg leading-relaxed mb-6">
-                {currentStep.plainLanguage}
+                {renderTextWithTechniqueLinks(currentStep.plainLanguage)}
               </p>
 
               {currentStep.tip && (
@@ -1008,6 +1033,14 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
             Stop Timer
           </button>
         </div>
+      )}
+
+      {toastMessage && (
+        <Toast
+          message={toastMessage}
+          tone={toastTone}
+          onDismiss={() => setToastMessage(null)}
+        />
       )}
 
       {/* Cooking Technique Modal */}

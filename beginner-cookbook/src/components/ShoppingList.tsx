@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Toast } from './Toast';
 
 interface ShoppingItem {
   id: string;
@@ -15,12 +16,21 @@ interface ShoppingListProps {
 export function ShoppingList({ onClose }: ShoppingListProps) {
   const [items, setItems] = useState<ShoppingItem[]>([]);
   const [customItem, setCustomItem] = useState('');
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [toastTone, setToastTone] = useState<'success' | 'info' | 'warning'>('info');
 
   // Load shopping list from localStorage
   useEffect(() => {
     const saved = localStorage.getItem('shopping-list');
-    if (saved) {
-      setItems(JSON.parse(saved));
+    if (!saved) return;
+
+    try {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed)) {
+        setItems(parsed);
+      }
+    } catch {
+      setItems([]);
     }
   }, []);
 
@@ -72,10 +82,11 @@ export function ShoppingList({ onClose }: ShoppingListProps) {
 
     // Copy to clipboard
     navigator.clipboard.writeText(text).then(() => {
-      alert('Shopping list copied to clipboard!');
+      setToastTone('success');
+      setToastMessage('Shopping list copied to clipboard!');
     }).catch(() => {
-      // Fallback: show in alert
-      alert('Shopping List:\n\n' + text);
+      setToastTone('warning');
+      setToastMessage('Unable to copy. Open list and copy manually.');
     });
   };
 
@@ -201,6 +212,14 @@ export function ShoppingList({ onClose }: ShoppingListProps) {
           </div>
         )}
       </div>
+
+      {toastMessage && (
+        <Toast
+          message={toastMessage}
+          tone={toastTone}
+          onDismiss={() => setToastMessage(null)}
+        />
+      )}
     </div>
   );
 }
@@ -208,7 +227,18 @@ export function ShoppingList({ onClose }: ShoppingListProps) {
 // Helper function to add recipe ingredients to shopping list
 export function addToShoppingList(recipeId: string, recipeTitle: string, ingredients: { name: string; amount: string }[]) {
   const saved = localStorage.getItem('shopping-list');
-  const currentItems: ShoppingItem[] = saved ? JSON.parse(saved) : [];
+  let currentItems: ShoppingItem[] = [];
+
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed)) {
+        currentItems = parsed;
+      }
+    } catch {
+      currentItems = [];
+    }
+  }
 
   const newItems = ingredients.map(ing => ({
     id: `${recipeId}-${ing.name}-${Date.now()}`,
