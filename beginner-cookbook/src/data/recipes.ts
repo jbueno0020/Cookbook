@@ -4858,5 +4858,68 @@ export const recipes: Recipe[] = [
       { id: 4, instruction: 'Bake', plainLanguage: 'Bake at 250°F for 30 minutes, then increase heat to 425°F and bake 40-45 more minutes until golden and crispy.', timer: 75, tip: 'The low-then-high method renders fat and crisps skin perfectly' },
       { id: 5, instruction: 'Sauce and serve', plainLanguage: 'Toss wings in buffalo sauce mixed with melted butter. Serve immediately with ranch or blue cheese!', tip: 'These are as crispy as fried wings but way easier!' }
     ]
+  },
+  {
+    id: '71',
+    title: 'Sheet Pan Gnocchi',
+    description: 'Viral TikTok recipe! Crispy gnocchi, veggies, all on one pan.',
+    difficulty: 'super-easy',
+    prepTime: 10,
+    cookTime: 25,
+    servings: 4,
+    tags: ['dinner', 'sheet-pan', 'vegetarian', 'viral', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 420, protein: 12, carbs: 58, fat: 16, fiber: 6 },
+    ingredients: [
+      { name: 'Shelf-stable gnocchi', amount: '2 lbs', visual: 'Two packages gnocchi' },
+      { name: 'Cherry tomatoes', amount: '2 cups', visual: 'Two cups tomatoes' },
+      { name: 'Zucchini', amount: '2 medium diced', visual: 'Two zucchini' },
+      { name: 'Red onion', amount: '1 large sliced', visual: 'One onion' },
+      { name: 'Olive oil', amount: '1/4 cup', visual: 'Quarter cup' },
+      { name: 'Italian seasoning', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Garlic', amount: '4 cloves minced', visual: 'Four cloves' },
+      { name: 'Mozzarella', amount: '1 cup shredded', visual: 'One cup' },
+      { name: 'Fresh basil', amount: '1/4 cup', visual: 'For garnish' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Prep sheet pan', plainLanguage: 'Preheat oven to 450°F. Line a large sheet pan with parchment.' },
+      { id: 2, instruction: 'Toss everything', plainLanguage: 'Add gnocchi, tomatoes, zucchini, and onion to pan. Drizzle with olive oil, sprinkle with Italian seasoning, garlic, salt, and pepper. Toss to coat.', tip: 'Use shelf-stable gnocchi - no need to boil!' },
+      { id: 3, instruction: 'Roast', plainLanguage: 'Spread in single layer. Roast 20 minutes, stirring halfway through.', timer: 20 },
+      { id: 4, instruction: 'Add cheese', plainLanguage: 'Sprinkle mozzarella over everything. Return to oven for 3-5 minutes until cheese melts.', timer: 5 },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Garnish with fresh basil. The gnocchi gets crispy on the outside and stays pillowy inside!', tip: 'This went viral for a reason - it\'s SO easy and delicious!' }
+    ]
+  },
+  {
+    id: '72',
+    title: 'Cinnamon Roll Muffins',
+    description: 'Cinnamon roll + muffin hybrid! Quick version of the classic.',
+    difficulty: 'easy',
+    prepTime: 15,
+    cookTime: 18,
+    servings: 12,
+    tags: ['baking', 'breakfast', 'muffins', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1612182062384-6d7e16dee937?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 280, protein: 4, carbs: 42, fat: 11, fiber: 1 },
+    ingredients: [
+      { name: 'All-purpose flour', amount: '2 cups', visual: 'Two cups flour' },
+      { name: 'Baking powder', amount: '2 tsp', visual: 'Two teaspoons' },
+      { name: 'Salt', amount: '1/2 tsp', visual: 'Half teaspoon' },
+      { name: 'Butter', amount: '1/2 cup melted', visual: 'One stick melted' },
+      { name: 'Sugar', amount: '3/4 cup', visual: 'Three-quarters cup' },
+      { name: 'Eggs', amount: '2 large', visual: 'Two eggs' },
+      { name: 'Milk', amount: '3/4 cup', visual: 'Three-quarters cup' },
+      { name: 'Vanilla extract', amount: '2 tsp', visual: 'Two teaspoons' },
+      { name: 'Brown sugar', amount: '1/2 cup', visual: 'For swirl' },
+      { name: 'Cinnamon', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Cream cheese', amount: '4 oz softened', visual: 'For frosting' },
+      { name: 'Powdered sugar', amount: '1 cup', visual: 'For frosting' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Make batter', plainLanguage: 'Preheat oven to 375°F. Line muffin tin. Mix flour, baking powder, salt. In another bowl, whisk melted butter, sugar, eggs, milk, vanilla. Combine wet and dry.' },
+      { id: 2, instruction: 'Make cinnamon swirl', plainLanguage: 'Mix brown sugar and cinnamon in a small bowl.' },
+      { id: 3, instruction: 'Layer muffins', plainLanguage: 'Fill each muffin cup 1/3 full. Sprinkle with cinnamon sugar. Add more batter to fill 2/3 full. Swirl with a knife.', tip: 'The swirl is what makes them special!' },
+      { id: 4, instruction: 'Bake', plainLanguage: 'Bake 16-18 minutes until golden and a toothpick comes out clean.', timer: 18 },
+      { id: 5, instruction: 'Make frosting', plainLanguage: 'Beat cream cheese with powdered sugar and 1 tbsp milk until smooth. Drizzle over warm muffins. Heaven!', tip: 'These taste like cinnamon rolls but way less work!' }
+    ]
   }
 ];
