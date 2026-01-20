@@ -85,6 +85,15 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Hero Header Image */}
+      <div className="w-full h-64 md:h-80 lg:h-96 overflow-hidden">
+        <img
+          src="/IMG_0990.jpeg"
+          alt="Cookbook Header"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-6">
