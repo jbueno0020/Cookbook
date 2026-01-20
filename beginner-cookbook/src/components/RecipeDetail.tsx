@@ -202,6 +202,26 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
     return converted;
   };
 
+  // Helper to get ingredients mentioned in a specific step
+  const getStepIngredients = (step: typeof currentStep) => {
+    const stepText = `${step.instruction} ${step.plainLanguage}`.toLowerCase();
+
+    return recipe.ingredients.filter(ingredient => {
+      const ingredientName = ingredient.name.toLowerCase();
+      // Split ingredient name into words to match partial names
+      const ingredientWords = ingredientName.split(' ');
+
+      // Check if any word from the ingredient name appears in the step text
+      return ingredientWords.some(word => {
+        // Remove common words that might cause false matches
+        if (word.length < 3 || ['the', 'and', 'with', 'optional'].includes(word)) {
+          return false;
+        }
+        return stepText.includes(word);
+      }) || stepText.includes(ingredientName);
+    });
+  };
+
   // Calculate swooping motion - creates a parabolic arc
   const calculateSwoopTransform = (offsetX: number) => {
     // Calculate vertical offset (swoops down in the middle)
@@ -679,23 +699,28 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
                       {currentStep.plainLanguage}
                     </p>
 
-                    {/* Ingredients Section */}
-                    <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6">
-                      <h3 className="text-lg font-bold text-gray-900 mb-3">Ingredients for this recipe:</h3>
-                      <div className="space-y-2">
-                        {recipe.ingredients.map((ingredient, index) => (
-                          <div key={index} className="flex items-start gap-2">
-                            <span className="text-blue-600 mt-1">•</span>
-                            <span className="text-base text-gray-800">
-                              {useMetric
-                                ? `${convertToMetric(scaleIngredientAmount(ingredient.amount, servingMultiplier))} ${ingredient.name}`
-                                : `${scaleIngredientAmount(ingredient.amount, servingMultiplier)} ${ingredient.name}`
-                              }
-                            </span>
+                    {/* Ingredients Section - Only show ingredients for this step */}
+                    {(() => {
+                      const stepIngredients = getStepIngredients(currentStep);
+                      return stepIngredients.length > 0 ? (
+                        <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6">
+                          <h3 className="text-lg font-bold text-gray-900 mb-3">Ingredients for this step:</h3>
+                          <div className="space-y-2">
+                            {stepIngredients.map((ingredient, index) => (
+                              <div key={index} className="flex items-start gap-2">
+                                <span className="text-blue-600 mt-1">•</span>
+                                <span className="text-base text-gray-800">
+                                  {useMetric
+                                    ? `${convertToMetric(scaleIngredientAmount(ingredient.amount, servingMultiplier))} ${ingredient.name}`
+                                    : `${scaleIngredientAmount(ingredient.amount, servingMultiplier)} ${ingredient.name}`
+                                  }
+                                </span>
+                              </div>
+                            ))}
                           </div>
-                        ))}
-                      </div>
-                    </div>
+                        </div>
+                      ) : null;
+                    })()}
 
                     {currentStep.tip && (
                       <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
