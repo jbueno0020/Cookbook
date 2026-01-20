@@ -4262,5 +4262,303 @@ export const recipes: Recipe[] = [
       { id: 4, instruction: 'Finish chicken', plainLanguage: 'Return chicken to pan. Coat with sauce and cook 2-3 minutes until chicken is cooked through and glazed.', timer: 3 },
       { id: 5, instruction: 'Serve', plainLanguage: 'Garnish with sesame seeds and green onions. Serve over rice with the extra sauce!', tip: 'Make extra sauce - you\'ll want it for the rice!' }
     ]
+  },
+  // BAKING RECIPES - Trending 2025-2026
+  {
+    id: '51',
+    title: 'Sourdough Discard Crackers',
+    description: '2025\'s top trending baked good! Zero waste, maximum flavor.',
+    difficulty: 'easy',
+    prepTime: 15,
+    cookTime: 20,
+    servings: 8,
+    tags: ['baking', 'sourdough', 'snack', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 120, protein: 3, carbs: 18, fat: 4, fiber: 1 },
+    ingredients: [
+      { name: 'Sourdough discard', amount: '1 cup', visual: 'One cup unfed starter' },
+      { name: 'All-purpose flour', amount: '1 cup', visual: 'One cup flour' },
+      { name: 'Olive oil', amount: '1/4 cup', visual: 'Quarter cup' },
+      { name: 'Salt', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Everything bagel seasoning', amount: '2 tbsp', visual: 'Two tablespoons' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Make dough', plainLanguage: 'Mix sourdough discard, flour, olive oil, and salt until a dough forms. Knead briefly until smooth.' },
+      { id: 2, instruction: 'Roll thin', plainLanguage: 'Divide dough in half. Roll each half very thin (1/16 inch) between parchment paper.', tip: 'The thinner, the crispier!' },
+      { id: 3, instruction: 'Cut and season', plainLanguage: 'Transfer parchment to baking sheets. Cut into squares or rectangles. Brush with water and sprinkle with everything seasoning.' },
+      { id: 4, instruction: 'Bake', plainLanguage: 'Bake at 350°F for 18-22 minutes until golden and crispy. Watch carefully - they can burn quickly!', timer: 20 },
+      { id: 5, instruction: 'Cool and store', plainLanguage: 'Let cool completely on the pan. Store in airtight container for up to 2 weeks!', tip: 'These are dangerously addictive with cheese!' }
+    ]
+  },
+  {
+    id: '52',
+    title: 'Cruffins (Croissant Muffins)',
+    description: 'Hybrid pastry trend of 2025! Croissant meets muffin in the best way.',
+    difficulty: 'intermediate',
+    prepTime: 30,
+    cookTime: 25,
+    servings: 12,
+    tags: ['baking', 'pastry', 'breakfast', 'trending-2025', 'hybrid'],
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 280, protein: 5, carbs: 32, fat: 15, fiber: 1 },
+    ingredients: [
+      { name: 'Puff pastry', amount: '2 sheets', visual: 'Two frozen sheets, thawed' },
+      { name: 'Butter', amount: '4 tbsp melted', visual: 'Four tablespoons' },
+      { name: 'Cinnamon sugar', amount: '1/2 cup', visual: 'Half cup sugar + 1 tbsp cinnamon' },
+      { name: 'Cream cheese', amount: '4 oz', visual: 'Half a block, softened' },
+      { name: 'Powdered sugar', amount: '1/2 cup', visual: 'For filling and dusting' },
+      { name: 'Vanilla extract', amount: '1 tsp', visual: 'One teaspoon' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Prep pastry', plainLanguage: 'Roll out puff pastry sheets. Brush with melted butter and sprinkle generously with cinnamon sugar.' },
+      { id: 2, instruction: 'Cut and roll', plainLanguage: 'Cut each sheet into 6 strips lengthwise. Roll each strip into a spiral, like a cinnamon roll.', tip: 'Keep them tight for best layers!' },
+      { id: 3, instruction: 'Place in muffin tin', plainLanguage: 'Grease a muffin tin well. Place each spiral upright in a cup. They should stand up on their swirled edge.' },
+      { id: 4, instruction: 'Bake', plainLanguage: 'Bake at 375°F for 22-25 minutes until golden, puffed, and flaky.', timer: 25 },
+      { id: 5, instruction: 'Fill and serve', plainLanguage: 'Make filling by mixing cream cheese, powdered sugar, and vanilla. Fill the center of each cruffin. Dust with more powdered sugar!', tip: 'Fill while still warm for the best experience!' }
+    ]
+  },
+  {
+    id: '53',
+    title: 'Brown Butter Chocolate Chip Cookies',
+    description: 'Viral 2025 upgrade to classic cookies. Game-changer nutty flavor!',
+    difficulty: 'easy',
+    prepTime: 15,
+    cookTime: 12,
+    servings: 24,
+    tags: ['baking', 'cookies', 'dessert', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 180, protein: 2, carbs: 22, fat: 10, fiber: 1 },
+    ingredients: [
+      { name: 'Butter', amount: '1 cup', visual: 'Two sticks butter' },
+      { name: 'Brown sugar', amount: '1 cup packed', visual: 'One cup' },
+      { name: 'White sugar', amount: '1/2 cup', visual: 'Half cup' },
+      { name: 'Eggs', amount: '2 large', visual: 'Two eggs' },
+      { name: 'Vanilla extract', amount: '2 tsp', visual: 'Two teaspoons' },
+      { name: 'All-purpose flour', amount: '2.5 cups', visual: '2.5 cups flour' },
+      { name: 'Baking soda', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Salt', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Chocolate chips', amount: '2 cups', visual: 'One 12oz bag' },
+      { name: 'Flaky sea salt', amount: 'for topping', visual: 'For sprinkling' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Brown the butter', plainLanguage: 'Melt butter in a saucepan over medium heat. Keep cooking, stirring often, until it turns golden brown and smells nutty (8-10 min). Let cool 15 min.', timer: 10, tip: 'Watch carefully - it goes from brown to burnt quickly!' },
+      { id: 2, instruction: 'Mix wet ingredients', plainLanguage: 'In a large bowl, mix cooled brown butter with both sugars. Beat in eggs and vanilla.' },
+      { id: 3, instruction: 'Add dry ingredients', plainLanguage: 'Mix in flour, baking soda, and salt until just combined. Fold in chocolate chips.' },
+      { id: 4, instruction: 'Chill dough', plainLanguage: 'Cover and refrigerate for at least 30 minutes (or overnight for even better flavor).', timer: 30, tip: 'Cold dough = thicker cookies!' },
+      { id: 5, instruction: 'Bake', plainLanguage: 'Scoop dough into balls on lined baking sheets. Bake at 350°F for 10-12 minutes until edges are golden. Sprinkle with flaky salt right when they come out!', timer: 12, tip: 'They look underdone but will firm up as they cool!' }
+    ]
+  },
+  {
+    id: '54',
+    title: 'Focaccia Bread',
+    description: 'Instagram\'s favorite bread! Easy, impressive, infinitely customizable.',
+    difficulty: 'easy',
+    prepTime: 20,
+    cookTime: 25,
+    servings: 12,
+    tags: ['baking', 'bread', 'italian', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1600214995207-c5448fbb807a?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 210, protein: 5, carbs: 35, fat: 6, fiber: 1 },
+    ingredients: [
+      { name: 'Warm water', amount: '1.5 cups', visual: '1.5 cups at 110°F' },
+      { name: 'Active dry yeast', amount: '2 tsp', visual: 'Two teaspoons' },
+      { name: 'Honey', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'All-purpose flour', amount: '4 cups', visual: 'Four cups flour' },
+      { name: 'Salt', amount: '2 tsp', visual: 'Two teaspoons' },
+      { name: 'Olive oil', amount: '1/3 cup + more', visual: 'Plus extra for pan' },
+      { name: 'Fresh rosemary', amount: '2 tbsp', visual: 'Fresh sprigs' },
+      { name: 'Flaky sea salt', amount: '2 tsp', visual: 'For topping' },
+      { name: 'Cherry tomatoes', amount: '1 cup halved', visual: 'Optional topping' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Proof yeast', plainLanguage: 'Mix warm water, yeast, and honey in a bowl. Let sit 5 minutes until foamy.', timer: 5 },
+      { id: 2, instruction: 'Make dough', plainLanguage: 'Add flour, salt, and olive oil. Mix until a sticky dough forms. Knead 5 minutes until smooth.', tip: 'Dough will be wetter than regular bread dough!' },
+      { id: 3, instruction: 'First rise', plainLanguage: 'Place in oiled bowl, cover, and let rise in warm spot for 1-2 hours until doubled.', timer: 90 },
+      { id: 4, instruction: 'Shape and dimple', plainLanguage: 'Oil a 9x13 pan. Spread dough in pan. Use fingers to make deep dimples all over. Drizzle with more olive oil. Add rosemary, tomatoes, and salt. Let rest 20 min.', timer: 20, tip: 'Those dimples hold all that delicious olive oil!' },
+      { id: 5, instruction: 'Bake', plainLanguage: 'Bake at 425°F for 22-25 minutes until golden brown on top. Let cool 10 minutes before slicing.', timer: 25 }
+    ]
+  },
+  {
+    id: '55',
+    title: 'Protein Banana Bread',
+    description: '2025 healthy baking trend! Moist, delicious, 10g protein per slice.',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 50,
+    servings: 12,
+    tags: ['baking', 'breakfast', 'protein', 'healthy', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 195, protein: 10, carbs: 28, fat: 5, fiber: 3 },
+    ingredients: [
+      { name: 'Ripe bananas', amount: '4 large mashed', visual: 'Four very ripe bananas' },
+      { name: 'Greek yogurt', amount: '1/2 cup', visual: 'Half cup plain yogurt' },
+      { name: 'Eggs', amount: '2 large', visual: 'Two eggs' },
+      { name: 'Vanilla protein powder', amount: '1/2 cup', visual: 'About 2 scoops' },
+      { name: 'Whole wheat flour', amount: '1.5 cups', visual: '1.5 cups flour' },
+      { name: 'Baking soda', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Cinnamon', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Honey', amount: '1/4 cup', visual: 'Quarter cup' },
+      { name: 'Walnuts', amount: '1/2 cup chopped', visual: 'Half cup (optional)' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Preheat and prep', plainLanguage: 'Preheat oven to 350°F. Grease a 9x5 loaf pan or line with parchment paper.' },
+      { id: 2, instruction: 'Mix wet ingredients', plainLanguage: 'In a large bowl, mash bananas well. Add Greek yogurt, eggs, and honey. Mix until combined.' },
+      { id: 3, instruction: 'Add dry ingredients', plainLanguage: 'Add protein powder, flour, baking soda, and cinnamon. Stir gently until just combined. Fold in walnuts if using.', tip: 'Don\'t overmix or bread will be dense!' },
+      { id: 4, instruction: 'Bake', plainLanguage: 'Pour into prepared pan. Bake 45-50 minutes until a toothpick comes out clean.', timer: 50, tip: 'Cover with foil after 30 min if top is browning too quickly' },
+      { id: 5, instruction: 'Cool and slice', plainLanguage: 'Let cool in pan 10 minutes, then transfer to wire rack. Cool completely before slicing for clean cuts!' }
+    ]
+  },
+  // MORE TRENDING RECIPES 2025-2026
+  {
+    id: '56',
+    title: 'Birria Tacos',
+    description: 'The TikTok sensation! Cheesy, dippable, impossibly flavorful.',
+    difficulty: 'intermediate',
+    prepTime: 20,
+    cookTime: 180,
+    servings: 6,
+    tags: ['dinner', 'mexican', 'viral', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 520, protein: 35, carbs: 32, fat: 28, fiber: 4 },
+    ingredients: [
+      { name: 'Beef chuck roast', amount: '3 lbs', visual: 'Three pounds chuck roast' },
+      { name: 'Dried guajillo chiles', amount: '6', visual: 'Six dried chiles' },
+      { name: 'Dried ancho chiles', amount: '3', visual: 'Three dried chiles' },
+      { name: 'Beef broth', amount: '3 cups', visual: 'Three cups broth' },
+      { name: 'Onion', amount: '1 large quartered', visual: 'One large onion' },
+      { name: 'Garlic', amount: '6 cloves', visual: 'Six cloves' },
+      { name: 'Tomato', amount: '1 large', visual: 'One tomato' },
+      { name: 'Cumin', amount: '2 tsp', visual: 'Two teaspoons' },
+      { name: 'Mexican oregano', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Corn tortillas', amount: '18', visual: '18 small tortillas' },
+      { name: 'Oaxaca cheese', amount: '2 cups shredded', visual: 'Two cups' },
+      { name: 'Cilantro', amount: '1/2 cup', visual: 'For serving' },
+      { name: 'Lime', amount: '2', visual: 'Two limes' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Make chile sauce', plainLanguage: 'Remove stems and seeds from chiles. Toast in dry pan 30 seconds. Soak in hot broth 15 min. Blend with onion, garlic, tomato, cumin, and oregano until smooth.', timer: 15 },
+      { id: 2, instruction: 'Cook the beef', plainLanguage: 'Place beef in slow cooker or dutch oven. Pour chile sauce over. Cook on low 6-8 hours (slow cooker) or simmer covered 3 hours (stovetop) until beef shreds easily.', timer: 180 },
+      { id: 3, instruction: 'Shred meat', plainLanguage: 'Remove beef, shred with forks. Skim fat from the braising liquid (consommé). Return shredded beef to liquid to keep warm.' },
+      { id: 4, instruction: 'Fry the tacos', plainLanguage: 'Dip tortilla in consommé. Place in hot skillet. Add cheese and beef. Fold in half. Fry 2-3 min per side until crispy and cheese melts.', timer: 5, tip: 'The dipped tortilla is KEY to authentic birria tacos!' },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Serve tacos with a cup of warm consommé for dipping. Top with cilantro, onion, and lime!', tip: 'Dipping the crispy taco in the broth is EVERYTHING!' }
+    ]
+  },
+  {
+    id: '57',
+    title: 'Greek Yogurt Pancakes',
+    description: '2025\'s protein-packed breakfast! Fluffy, filling, and delicious.',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 15,
+    servings: 4,
+    tags: ['breakfast', 'protein', 'quick', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 285, protein: 18, carbs: 38, fat: 6, fiber: 2 },
+    ingredients: [
+      { name: 'Greek yogurt', amount: '1 cup', visual: 'One cup plain yogurt' },
+      { name: 'Eggs', amount: '2 large', visual: 'Two eggs' },
+      { name: 'All-purpose flour', amount: '1 cup', visual: 'One cup flour' },
+      { name: 'Baking powder', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Baking soda', amount: '1/2 tsp', visual: 'Half teaspoon' },
+      { name: 'Vanilla extract', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Honey', amount: '2 tbsp', visual: 'Two tablespoons' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Mix wet ingredients', plainLanguage: 'In a bowl, whisk together Greek yogurt, eggs, vanilla, and honey until smooth.' },
+      { id: 2, instruction: 'Add dry ingredients', plainLanguage: 'Add flour, baking powder, and baking soda. Stir gently until just combined. Small lumps are okay!', tip: 'Don\'t overmix - lumpy batter = fluffy pancakes!' },
+      { id: 3, instruction: 'Heat griddle', plainLanguage: 'Heat a non-stick griddle or pan to medium heat. Lightly grease with butter or oil.' },
+      { id: 4, instruction: 'Cook pancakes', plainLanguage: 'Pour 1/4 cup batter for each pancake. Cook until bubbles form and edges look set (2-3 min). Flip and cook another 2 min until golden.', timer: 5 },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Stack high! Serve with fresh berries, maple syrup, or Greek yogurt on top. Each serving has 18g protein!', tip: 'These keep you full for hours!' }
+    ]
+  },
+  {
+    id: '58',
+    title: 'Bang Bang Salmon',
+    description: 'Viral air fryer recipe! Crispy, sweet, spicy perfection.',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 12,
+    servings: 4,
+    tags: ['dinner', 'seafood', 'viral', 'air-fryer', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1485921325833-c519f76c4927?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 340, protein: 34, carbs: 18, fat: 16, fiber: 1 },
+    ingredients: [
+      { name: 'Salmon fillets', amount: '4 (6oz each)', visual: 'Four salmon fillets' },
+      { name: 'Panko breadcrumbs', amount: '1 cup', visual: 'One cup panko' },
+      { name: 'Mayonnaise', amount: '1/2 cup', visual: 'Half cup mayo' },
+      { name: 'Sweet chili sauce', amount: '1/3 cup', visual: 'Third cup' },
+      { name: 'Sriracha', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Honey', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Garlic powder', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Green onions', amount: '2 sliced', visual: 'For garnish' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Make bang bang sauce', plainLanguage: 'In a bowl, mix mayo, sweet chili sauce, sriracha, and honey. Set aside half for serving.' },
+      { id: 2, instruction: 'Coat salmon', plainLanguage: 'Brush salmon with half the sauce. Press panko breadcrumbs on top to coat well. Spray with cooking spray.' },
+      { id: 3, instruction: 'Air fry', plainLanguage: 'Place salmon in air fryer basket skin-side down. Air fry at 400°F for 10-12 minutes until crispy and cooked through.', timer: 12, tip: 'No air fryer? Bake at 425°F for 12-15 min!' },
+      { id: 4, instruction: 'Drizzle sauce', plainLanguage: 'Transfer to plates. Drizzle with reserved bang bang sauce.' },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Garnish with green onions. Serve over rice with steamed broccoli. The crispy-creamy-spicy combo is unreal!', tip: 'This is restaurant-quality at home!' }
+    ]
+  },
+  {
+    id: '59',
+    title: 'Shakshuka',
+    description: 'Middle Eastern breakfast trend! Eggs poached in spiced tomato sauce.',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 20,
+    servings: 4,
+    tags: ['breakfast', 'middle-eastern', 'vegetarian', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 245, protein: 14, carbs: 18, fat: 14, fiber: 5 },
+    ingredients: [
+      { name: 'Olive oil', amount: '3 tbsp', visual: 'Three tablespoons' },
+      { name: 'Onion', amount: '1 large diced', visual: 'One onion' },
+      { name: 'Red bell pepper', amount: '1 large diced', visual: 'One pepper' },
+      { name: 'Garlic', amount: '4 cloves minced', visual: 'Four cloves' },
+      { name: 'Crushed tomatoes', amount: '1 can (28oz)', visual: 'One large can' },
+      { name: 'Cumin', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Paprika', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Cayenne', amount: '1/4 tsp', visual: 'Quarter teaspoon' },
+      { name: 'Eggs', amount: '6 large', visual: 'Six eggs' },
+      { name: 'Feta cheese', amount: '1/2 cup crumbled', visual: 'Half cup' },
+      { name: 'Fresh parsley', amount: '1/4 cup', visual: 'Quarter cup chopped' },
+      { name: 'Pita bread', amount: 'for serving', visual: 'For dipping' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Sauté vegetables', plainLanguage: 'Heat olive oil in a large skillet. Cook onion and pepper until soft (5 min). Add garlic, cook 1 min.', timer: 6 },
+      { id: 2, instruction: 'Add spices and tomatoes', plainLanguage: 'Stir in cumin, paprika, and cayenne. Add crushed tomatoes. Simmer 10 minutes until sauce thickens.', timer: 10 },
+      { id: 3, instruction: 'Make wells for eggs', plainLanguage: 'Use a spoon to make 6 small wells in the sauce. Crack an egg into each well.', tip: 'Try to keep yolks intact!' },
+      { id: 4, instruction: 'Cook eggs', plainLanguage: 'Cover pan and cook 5-8 minutes until egg whites are set but yolks are still runny.', timer: 7, tip: 'Cook longer if you prefer hard yolks' },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Sprinkle with feta and parsley. Serve family-style with warm pita for dipping. Brunch perfection!' }
+    ]
+  },
+  {
+    id: '60',
+    title: 'Crispy Smash Burgers',
+    description: 'TikTok\'s favorite burger method! Crispy edges, juicy center.',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 10,
+    servings: 4,
+    tags: ['dinner', 'burger', 'viral', 'trending-2025', 'quick'],
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 580, protein: 32, carbs: 35, fat: 34, fiber: 2 },
+    ingredients: [
+      { name: 'Ground beef', amount: '1 lb (80/20)', visual: 'One pound ground beef' },
+      { name: 'Burger buns', amount: '4', visual: 'Four buns' },
+      { name: 'American cheese', amount: '8 slices', visual: 'Eight cheese slices' },
+      { name: 'Onion', amount: '1 small sliced thin', visual: 'One onion' },
+      { name: 'Pickles', amount: '12 slices', visual: 'Dill pickles' },
+      { name: 'Burger sauce', amount: '1/2 cup', visual: 'Mayo + ketchup + pickles' },
+      { name: 'Butter', amount: '2 tbsp', visual: 'For toasting buns' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Make sauce', plainLanguage: 'Mix 1/4 cup mayo, 2 tbsp ketchup, 1 tbsp relish, 1 tsp mustard. Set aside.' },
+      { id: 2, instruction: 'Form balls', plainLanguage: 'Divide beef into 8 portions (2oz each). Roll into balls. Season balls with salt and pepper.', tip: 'Don\'t form patties - you want balls to smash!' },
+      { id: 3, instruction: 'Smash and cook', plainLanguage: 'Heat griddle or cast iron to HIGH. Place ball on griddle. Immediately smash HARD with spatula for 10 seconds. Cook 2 min until crispy crust forms. Flip, add cheese, cook 1 min.', timer: 3, tip: 'REALLY smash it! That\'s how you get the crispy edges!' },
+      { id: 4, instruction: 'Stack patties', plainLanguage: 'Stack 2 patties together for each burger (double smash!)' },
+      { id: 5, instruction: 'Assemble burgers', plainLanguage: 'Toast buns in butter. Spread sauce on buns. Add pickles, stacked patties, and onions. These are INSANELY good!', tip: 'The crispy lacy edges are what make these viral!' }
+    ]
   }
 ];
