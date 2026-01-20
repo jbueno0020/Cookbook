@@ -568,38 +568,46 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
         </div>
       </div>
 
-      {/* Progress Bar & Cooking Mode Toggle */}
-      <div className="bg-white rounded-lg shadow p-4 mb-6">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-gray-700">
-            Your Progress
-          </span>
-          <span className="text-sm text-gray-600">
-            {completedSteps.size} of {recipe.steps.length} steps completed
-          </span>
+      {/* Progress Bar & Cooking Mode Toggle - Only show when NOT in cooking mode */}
+      {!cookingMode && (
+        <div className="bg-white rounded-lg shadow p-4 mb-6">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-medium text-gray-700">
+              Your Progress
+            </span>
+            <span className="text-sm text-gray-600">
+              {completedSteps.size} of {recipe.steps.length} steps completed
+            </span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
+            <div
+              className="bg-green-500 h-3 rounded-full transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <button
+            onClick={() => setCookingMode(true)}
+            className="w-full px-6 py-3 rounded-lg font-semibold transition-all bg-blue-600 text-white hover:bg-blue-700"
+          >
+            🔥 Enter Cooking Mode
+          </button>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
-          <div
-            className="bg-green-500 h-3 rounded-full transition-all duration-300"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-        <button
-          onClick={() => setCookingMode(!cookingMode)}
-          className={`w-full px-6 py-3 rounded-lg font-semibold transition-all ${
-            cookingMode
-              ? 'bg-orange-600 text-white hover:bg-orange-700'
-              : 'bg-blue-600 text-white hover:bg-blue-700'
-          }`}
-        >
-          {cookingMode ? '← Exit Cooking Mode' : '🔥 Enter Cooking Mode'}
-        </button>
-      </div>
+      )}
 
       {/* Cooking Mode View - Tinder-style Swipeable Steps */}
       {cookingMode ? (
         <div className="mb-6">
           <div className="max-w-3xl mx-auto">
+            {/* Exit Cooking Mode Button */}
+            <div className="mb-4">
+              <button
+                onClick={() => setCookingMode(false)}
+                className="w-full px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-all shadow-md"
+              >
+                ← Exit Cooking Mode
+              </button>
+            </div>
+
             {/* Progress Indicator */}
             <div className="mb-6 text-center">
               <div className="text-xl font-semibold text-gray-700 mb-2">
@@ -611,7 +619,7 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
             </div>
 
             {/* Swipeable Card Stack */}
-            <div className="relative h-[600px] mb-6">
+            <div className="relative h-[700px] mb-6">
               {/* Next Step Card (behind) */}
               {currentStepIndex < recipe.steps.length - 1 && (
                 <div
@@ -663,37 +671,55 @@ export function RecipeDetail({ recipe, onBack }: RecipeDetailProps) {
 
                   {/* Step Content */}
                   <div className="mb-6">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                       {currentStep.instruction}
                     </h2>
 
-                    <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-8">
+                    <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
                       {currentStep.plainLanguage}
                     </p>
 
+                    {/* Ingredients Section */}
+                    <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6">
+                      <h3 className="text-lg font-bold text-gray-900 mb-3">Ingredients for this recipe:</h3>
+                      <div className="space-y-2">
+                        {recipe.ingredients.map((ingredient, index) => (
+                          <div key={index} className="flex items-start gap-2">
+                            <span className="text-blue-600 mt-1">•</span>
+                            <span className="text-base text-gray-800">
+                              {useMetric
+                                ? `${convertToMetric(scaleIngredientAmount(ingredient.amount, servingMultiplier))} ${ingredient.name}`
+                                : `${scaleIngredientAmount(ingredient.amount, servingMultiplier)} ${ingredient.name}`
+                              }
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
                     {currentStep.tip && (
-                      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
-                        <div className="text-xl font-semibold text-yellow-800 mb-2">Pro Tip:</div>
-                        <p className="text-xl text-yellow-700">{currentStep.tip}</p>
+                      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                        <div className="text-base font-semibold text-yellow-800 mb-1">Pro Tip:</div>
+                        <p className="text-base text-yellow-700">{currentStep.tip}</p>
                       </div>
                     )}
 
                     {/* Timer in Cooking Mode */}
                     {currentStep.timer && (
-                      <div className="mb-8">
+                      <div className="mb-6">
                         {timerSeconds === null ? (
                           <button
                             onClick={() => startTimer(currentStep.timer!)}
-                            className="w-full px-8 py-6 bg-green-600 text-white rounded-lg font-bold text-2xl hover:bg-green-700 transition-all shadow-lg"
+                            className="w-full px-6 py-4 bg-green-600 text-white rounded-lg font-bold text-xl hover:bg-green-700 transition-all shadow-lg"
                           >
                             ⏱️ Start {currentStep.timer} min timer
                           </button>
                         ) : (
-                          <div className="bg-blue-600 text-white rounded-lg p-6 text-center">
-                            <div className="text-6xl font-bold mb-2">{formatTime(timerSeconds)}</div>
+                          <div className="bg-blue-600 text-white rounded-lg p-4 text-center">
+                            <div className="text-5xl font-bold mb-2">{formatTime(timerSeconds)}</div>
                             <button
                               onClick={stopTimer}
-                              className="mt-4 px-6 py-3 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600"
+                              className="mt-3 px-5 py-2 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600"
                             >
                               Stop Timer
                             </button>

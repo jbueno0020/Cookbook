@@ -4,7 +4,6 @@ import { recipes } from './data/recipes';
 import { RecipeCard } from './components/RecipeCard';
 import { RecipeDetail } from './components/RecipeDetail';
 import { ShoppingList } from './components/ShoppingList';
-import { TinderSwipeStack } from './components/TinderSwipeStack';
 
 type Difficulty = 'super-easy' | 'easy' | 'intermediate' | 'all';
 
@@ -15,7 +14,6 @@ function App() {
   const [availableIngredients, setAvailableIngredients] = useState('');
   const [showIngredientMatcher, setShowIngredientMatcher] = useState(false);
   const [showShoppingList, setShowShoppingList] = useState(false);
-  const [viewMode, setViewMode] = useState<'grid' | 'swipe'>('grid');
 
   // Calculate ingredient matches for each recipe
   const getIngredientMatches = (recipe: Recipe, userIngredients: string[]): { matches: number; total: number; percentage: number; missing: string[] } => {
@@ -183,12 +181,6 @@ function App() {
             >
               🛒 Shopping List
             </button>
-            <button
-              onClick={() => setViewMode(viewMode === 'grid' ? 'swipe' : 'grid')}
-              className="w-full px-4 py-2 bg-orange-600 text-white rounded-lg font-medium hover:bg-orange-700 transition-all shadow-md flex items-center justify-center gap-2"
-            >
-              {viewMode === 'grid' ? '💳 Swipe View' : '📋 Grid View'}
-            </button>
           </div>
         </div>
       </header>
@@ -268,37 +260,22 @@ function App() {
           </div>
         )}
 
-        {/* Recipe Display */}
+        {/* Recipe Grid */}
         {filteredRecipes.length > 0 ? (
-          viewMode === 'swipe' ? (
-            <TinderSwipeStack
-              recipes={filteredRecipes}
-              onRecipeSelect={setSelectedRecipe}
-              ingredientMatch={
-                showIngredientMatcher && userIngredientsList.length > 0
-                  ? (recipe: Recipe) => {
-                      const match = getIngredientMatches(recipe, userIngredientsList);
-                      return { matched: [], total: match.total, percentage: match.percentage };
-                    }
-                  : undefined
-              }
-            />
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredRecipes.map((recipe) => (
-                <RecipeCard
-                  key={recipe.id}
-                  recipe={recipe}
-                  onClick={() => setSelectedRecipe(recipe)}
-                  ingredientMatch={
-                    showIngredientMatcher && userIngredientsList.length > 0
-                      ? getIngredientMatches(recipe, userIngredientsList)
-                      : undefined
-                  }
-                />
-              ))}
-            </div>
-          )
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredRecipes.map((recipe) => (
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                onClick={() => setSelectedRecipe(recipe)}
+                ingredientMatch={
+                  showIngredientMatcher && userIngredientsList.length > 0
+                    ? getIngredientMatches(recipe, userIngredientsList)
+                    : undefined
+                }
+              />
+            ))}
+          </div>
         ) : (
           <div className="text-center py-12">
             <h3 className="text-xl font-semibold text-gray-700 mb-2">
