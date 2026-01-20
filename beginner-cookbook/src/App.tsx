@@ -97,7 +97,7 @@ function App() {
       </div>
 
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-10">
+      <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="text-center mb-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-2 flex items-center justify-center gap-3">
@@ -185,9 +185,9 @@ function App() {
         </div>
       </header>
 
-      {/* Ingredient Matcher Sticky Panel */}
+      {/* Ingredient Matcher Panel */}
       {showIngredientMatcher && (
-        <div className="sticky top-[220px] z-20 mb-4">
+        <div className="mb-4">
           <div className="max-w-7xl mx-auto px-4">
             <div className="bg-purple-600 text-white p-4 rounded-t-lg shadow-lg">
               <div className="flex items-center justify-between">
