@@ -3979,5 +3979,288 @@ export const recipes: Recipe[] = [
         tip: 'Let it rest 2-3 minutes before serving so the cheese sets slightly'
       }
     ]
+  },
+  // ===== TRENDING 2025-2026 RECIPES =====
+  // BREAKFAST RECIPES
+  {
+    id: '41',
+    title: 'Protein Cottage Cheese Muffins',
+    description: 'Viral 2025 high-protein muffins with cottage cheese. Meal prep perfection!',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 20,
+    servings: 12,
+    tags: ['breakfast', 'protein', 'meal-prep', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1607958996719-66d972469227?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 180, protein: 12, carbs: 22, fat: 5, fiber: 2 },
+    ingredients: [
+      { name: 'Cottage cheese', amount: '1 cup', visual: 'One cup of cottage cheese' },
+      { name: 'Eggs', amount: '2 large', visual: 'Two eggs' },
+      { name: 'Banana', amount: '1 mashed', visual: 'One ripe banana' },
+      { name: 'Oats', amount: '1.5 cups', visual: 'About 1.5 cups rolled oats' },
+      { name: 'Protein powder', amount: '2 scoops', visual: 'About 1/3 cup protein powder' },
+      { name: 'Baking powder', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Vanilla extract', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Blueberries', amount: '1 cup', visual: 'One cup fresh or frozen' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Preheat and prep', plainLanguage: 'Preheat oven to 350°F. Line a muffin tin with paper liners or spray with oil.', timer: 2 },
+      { id: 2, instruction: 'Blend wet ingredients', plainLanguage: 'In a blender, combine cottage cheese, eggs, banana, and vanilla. Blend until smooth.', tip: 'Blending the cottage cheese makes it smooth - no lumps!' },
+      { id: 3, instruction: 'Mix dry ingredients', plainLanguage: 'In a bowl, mix oats, protein powder, and baking powder together.' },
+      { id: 4, instruction: 'Combine and fold', plainLanguage: 'Pour wet ingredients into dry. Stir gently just until combined. Fold in blueberries.', tip: 'Don\'t overmix! Lumps are okay' },
+      { id: 5, instruction: 'Bake', plainLanguage: 'Divide batter among 12 muffin cups. Bake 18-20 minutes until a toothpick comes out clean.', timer: 20, tip: 'These deliver 12g protein each!' }
+    ]
+  },
+  {
+    id: '42',
+    title: 'Spinach Cottage Cheese Bagels',
+    description: '5-ingredient viral flagels! High-protein, no yeast needed.',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 25,
+    servings: 6,
+    tags: ['breakfast', 'protein', 'no-yeast', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 220, protein: 18, carbs: 28, fat: 4, fiber: 4 },
+    ingredients: [
+      { name: 'Self-rising flour', amount: '2 cups', visual: 'Two cups flour' },
+      { name: 'Cottage cheese', amount: '1.5 cups', visual: '1.5 cups cottage cheese' },
+      { name: 'Spinach', amount: '2 cups fresh', visual: 'Two big handfuls' },
+      { name: 'Egg', amount: '1 for wash', visual: 'One egg beaten' },
+      { name: 'Everything bagel seasoning', amount: '2 tbsp', visual: 'Two tablespoons' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Prepare spinach', plainLanguage: 'Blend or finely chop spinach. Squeeze out excess liquid with paper towels.' },
+      { id: 2, instruction: 'Mix dough', plainLanguage: 'In a bowl, mix flour, cottage cheese, and spinach until a dough forms. Knead 2-3 minutes.', tip: 'Dough will be sticky at first!' },
+      { id: 3, instruction: 'Shape bagels', plainLanguage: 'Divide into 6 pieces. Roll each into a rope and connect ends to form a bagel shape.' },
+      { id: 4, instruction: 'Brush and season', plainLanguage: 'Place on lined baking sheet. Brush with beaten egg. Sprinkle with everything seasoning.' },
+      { id: 5, instruction: 'Bake', plainLanguage: 'Bake at 375°F for 23-25 minutes until golden. Let cool 5 minutes before eating!', timer: 25 }
+    ]
+  },
+  {
+    id: '43',
+    title: 'Marry Me Chicken',
+    description: 'The viral recipe that broke the internet! Creamy sun-dried tomato chicken.',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 25,
+    servings: 4,
+    tags: ['dinner', 'viral', 'creamy', 'trending-2025', 'italian'],
+    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 420, protein: 38, carbs: 8, fat: 26, fiber: 2 },
+    ingredients: [
+      { name: 'Chicken breasts', amount: '4 medium', visual: 'Four chicken breasts' },
+      { name: 'Sun-dried tomatoes', amount: '1/2 cup', visual: 'Half cup chopped' },
+      { name: 'Heavy cream', amount: '1 cup', visual: 'One cup cream' },
+      { name: 'Chicken broth', amount: '1/2 cup', visual: 'Half cup broth' },
+      { name: 'Parmesan cheese', amount: '1/2 cup grated', visual: 'Half cup grated' },
+      { name: 'Garlic', amount: '3 cloves minced', visual: 'Three cloves' },
+      { name: 'Italian seasoning', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Fresh basil', amount: '1/4 cup', visual: 'Quarter cup chopped' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Season and sear', plainLanguage: 'Season chicken with salt, pepper, and Italian seasoning. Sear in hot oil 4 minutes per side until golden. Remove and set aside.', timer: 8 },
+      { id: 2, instruction: 'Make the sauce', plainLanguage: 'In same pan, sauté garlic 30 seconds. Add sun-dried tomatoes, cream, and broth. Stir and bring to simmer.', tip: 'Don\'t skip scraping up those brown bits!' },
+      { id: 3, instruction: 'Add cheese', plainLanguage: 'Reduce heat to low. Stir in parmesan until melted and sauce is creamy.' },
+      { id: 4, instruction: 'Finish cooking', plainLanguage: 'Return chicken to pan. Simmer 8-10 minutes until chicken reaches 165°F internal temp.', timer: 10 },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Garnish with fresh basil. Serve over pasta, rice, or with crusty bread to soak up that incredible sauce!', tip: 'This sauce is so good you\'ll want to marry it!' }
+    ]
+  },
+  {
+    id: '44',
+    title: 'Hot Honey Protein Bowl',
+    description: 'Google\'s #1 most searched recipe of 2025! Sweet, spicy, protein-packed.',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 15,
+    servings: 2,
+    tags: ['lunch', 'dinner', 'viral', 'protein', 'trending-2025', 'bowl'],
+    image: 'https://images.unsplash.com/photo-1623428454614-abaf00244e52?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 485, protein: 42, carbs: 38, fat: 18, fiber: 8 },
+    ingredients: [
+      { name: 'Ground beef', amount: '8 oz', visual: 'Half pound lean ground beef' },
+      { name: 'Sweet potato', amount: '1 large cubed', visual: 'One large sweet potato' },
+      { name: 'Cottage cheese', amount: '1/2 cup', visual: 'Half cup' },
+      { name: 'Avocado', amount: '1 sliced', visual: 'One avocado' },
+      { name: 'Hot honey', amount: '3 tbsp', visual: 'Three tablespoons' },
+      { name: 'Olive oil', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Taco seasoning', amount: '2 tsp', visual: 'Two teaspoons' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Roast sweet potato', plainLanguage: 'Toss cubed sweet potato with olive oil and salt. Roast at 425°F for 20 minutes until tender.', timer: 20 },
+      { id: 2, instruction: 'Cook beef', plainLanguage: 'While potatoes roast, brown ground beef in a pan. Add taco seasoning and 1/4 cup water. Simmer 5 minutes.', timer: 8 },
+      { id: 3, instruction: 'Assemble bowls', plainLanguage: 'Divide roasted sweet potato and seasoned beef between 2 bowls.' },
+      { id: 4, instruction: 'Add toppings', plainLanguage: 'Top each bowl with cottage cheese and sliced avocado.' },
+      { id: 5, instruction: 'Drizzle hot honey', plainLanguage: 'Generously drizzle hot honey over everything. The sweet-spicy combo is ADDICTIVE!', tip: 'This went viral for a reason - the flavor combo is incredible!' }
+    ]
+  },
+  {
+    id: '45',
+    title: 'Smashed Gyoza',
+    description: 'TikTok\'s viral smashed gyoza! Crispy, juicy, and so satisfying.',
+    difficulty: 'easy',
+    prepTime: 5,
+    cookTime: 10,
+    servings: 2,
+    tags: ['dinner', 'viral', 'asian', 'trending-2025', 'quick'],
+    image: 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 320, protein: 16, carbs: 38, fat: 12, fiber: 2 },
+    ingredients: [
+      { name: 'Frozen gyoza', amount: '12 pieces', visual: 'One package frozen dumplings' },
+      { name: 'Vegetable oil', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Soy sauce', amount: '3 tbsp', visual: 'Three tablespoons' },
+      { name: 'Rice vinegar', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Sesame oil', amount: '1 tsp', visual: 'One teaspoon' },
+      { name: 'Chili crisp', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Green onions', amount: '2 chopped', visual: 'Two green onions' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Pan fry gyoza', plainLanguage: 'Heat oil in a non-stick pan over medium-high. Add frozen gyoza and cook 2-3 minutes until bottoms are golden.', timer: 3 },
+      { id: 2, instruction: 'Smash them!', plainLanguage: 'Use a spatula to firmly press down and smash each gyoza flat. They should be crispy!', tip: 'Don\'t be shy - really smash them!' },
+      { id: 3, instruction: 'Make sauce', plainLanguage: 'In a small bowl, whisk together soy sauce, rice vinegar, sesame oil, and chili crisp.' },
+      { id: 4, instruction: 'Crisp the other side', plainLanguage: 'Flip gyoza and cook another 2-3 minutes until both sides are golden and crispy.', timer: 3 },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Transfer to a plate, drizzle with sauce, and top with green onions. Serve immediately while crispy!' }
+    ]
+  },
+  {
+    id: '46',
+    title: 'Coconut Curry Dumplings',
+    description: 'One-pan viral sensation! Frozen dumplings in creamy coconut curry.',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 15,
+    servings: 4,
+    tags: ['dinner', 'viral', 'asian', 'trending-2025', 'one-pan'],
+    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 380, protein: 14, carbs: 42, fat: 18, fiber: 3 },
+    ingredients: [
+      { name: 'Frozen dumplings', amount: '24 pieces', visual: 'One large bag' },
+      { name: 'Coconut milk', amount: '1 can (14oz)', visual: 'One can full-fat' },
+      { name: 'Red curry paste', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Soy sauce', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Brown sugar', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Lime juice', amount: '1 tbsp', visual: 'Half a lime' },
+      { name: 'Cilantro', amount: '1/4 cup', visual: 'Quarter cup chopped' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Mix sauce', plainLanguage: 'In an oven-safe skillet, whisk together coconut milk, curry paste, soy sauce, brown sugar, and lime juice.' },
+      { id: 2, instruction: 'Add dumplings', plainLanguage: 'Arrange frozen dumplings in the sauce in a single layer. They can touch but don\'t overlap.' },
+      { id: 3, instruction: 'Bake', plainLanguage: 'Bake at 400°F for 12-15 minutes until dumplings are cooked through and sauce is bubbly.', timer: 15, tip: 'No need to thaw the dumplings!' },
+      { id: 4, instruction: 'Broil for crispy tops', plainLanguage: 'Turn on broiler for 2 minutes to get golden, crispy tops on dumplings.', timer: 2 },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Garnish with cilantro. Serve with rice or eat straight from the pan!' }
+    ]
+  },
+  {
+    id: '47',
+    title: 'Carrot Ribbon Salad',
+    description: 'Viral TikTok salad by Chef Cassie Yeung. Addictively delicious!',
+    difficulty: 'super-easy',
+    prepTime: 15,
+    cookTime: 0,
+    servings: 4,
+    tags: ['salad', 'viral', 'vegan', 'trending-2025', 'no-cook'],
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 145, protein: 2, carbs: 18, fat: 8, fiber: 4 },
+    ingredients: [
+      { name: 'Large carrots', amount: '4', visual: 'Four large carrots' },
+      { name: 'Sesame oil', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Rice vinegar', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Soy sauce', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Garlic', amount: '2 cloves minced', visual: 'Two cloves' },
+      { name: 'Chili crisp', amount: '1-2 tbsp', visual: 'To taste' },
+      { name: 'Sesame seeds', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Green onions', amount: '2 sliced', visual: 'Two green onions' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Make carrot ribbons', plainLanguage: 'Peel carrots. Then use the peeler to shave long, thin ribbons from each carrot into a bowl.', tip: 'Stop when you get to the core - it\'s too hard to peel' },
+      { id: 2, instruction: 'Make dressing', plainLanguage: 'In a small bowl, whisk together sesame oil, rice vinegar, soy sauce, garlic, and chili crisp.' },
+      { id: 3, instruction: 'Toss salad', plainLanguage: 'Pour dressing over carrot ribbons. Toss well with your hands to coat every ribbon.' },
+      { id: 4, instruction: 'Add toppings', plainLanguage: 'Top with sesame seeds and green onions.' },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Serve immediately or let marinate 10 minutes for even more flavor!', tip: 'This is incredible as a side dish or on top of rice bowls!' }
+    ]
+  },
+  {
+    id: '48',
+    title: 'Overnight Oats',
+    description: '2025 meal-prep essential! Customizable, healthy, ready when you wake up.',
+    difficulty: 'super-easy',
+    prepTime: 5,
+    cookTime: 0,
+    servings: 1,
+    tags: ['breakfast', 'meal-prep', 'no-cook', 'trending-2025', 'healthy'],
+    image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 320, protein: 14, carbs: 48, fat: 8, fiber: 8 },
+    ingredients: [
+      { name: 'Rolled oats', amount: '1/2 cup', visual: 'Half cup oats' },
+      { name: 'Greek yogurt', amount: '1/4 cup', visual: 'Quarter cup' },
+      { name: 'Milk', amount: '1/2 cup', visual: 'Half cup any milk' },
+      { name: 'Chia seeds', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Honey', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Vanilla extract', amount: '1/2 tsp', visual: 'Half teaspoon' },
+      { name: 'Toppings', amount: 'as desired', visual: 'Berries, nuts, banana, etc.' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Mix base', plainLanguage: 'In a jar or container, combine oats, yogurt, milk, chia seeds, honey, and vanilla. Stir well.' },
+      { id: 2, instruction: 'Refrigerate', plainLanguage: 'Cover and refrigerate for at least 4 hours or overnight. Oats will absorb liquid and soften.', timer: 240, tip: 'Make 5 jars on Sunday for the whole week!' },
+      { id: 3, instruction: 'Add toppings', plainLanguage: 'In the morning, stir and add your favorite toppings - fresh berries, sliced banana, nuts, nut butter, etc.' },
+      { id: 4, instruction: 'Serve', plainLanguage: 'Eat cold or microwave for 30-60 seconds if you prefer it warm!', tip: 'Variations: Add cocoa powder, peanut butter, cinnamon, or pumpkin spice!' }
+    ]
+  },
+  {
+    id: '49',
+    title: 'Sheet Pan Chicken Fajitas',
+    description: '2025\'s favorite one-pan dinner! Minimal cleanup, maximum flavor.',
+    difficulty: 'super-easy',
+    prepTime: 10,
+    cookTime: 25,
+    servings: 4,
+    tags: ['dinner', 'sheet-pan', 'mexican', 'trending-2025', 'easy-cleanup'],
+    image: 'https://images.unsplash.com/photo-1599974982760-6ba69968b24b?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 340, protein: 32, carbs: 28, fat: 12, fiber: 5 },
+    ingredients: [
+      { name: 'Chicken breasts', amount: '1.5 lbs sliced', visual: 'Three chicken breasts, sliced' },
+      { name: 'Bell peppers', amount: '3 sliced', visual: 'Three different colors' },
+      { name: 'Onion', amount: '1 large sliced', visual: 'One large onion' },
+      { name: 'Olive oil', amount: '3 tbsp', visual: 'Three tablespoons' },
+      { name: 'Fajita seasoning', amount: '3 tbsp', visual: 'Three tablespoons' },
+      { name: 'Lime', amount: '1', visual: 'One lime for juice' },
+      { name: 'Tortillas', amount: '8', visual: 'Eight flour tortillas' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Prep sheet pan', plainLanguage: 'Preheat oven to 425°F. Line a large sheet pan with foil for easy cleanup.' },
+      { id: 2, instruction: 'Season everything', plainLanguage: 'Add chicken, peppers, and onions to the pan. Drizzle with olive oil, sprinkle with fajita seasoning, and toss to coat everything evenly.' },
+      { id: 3, instruction: 'Spread in single layer', plainLanguage: 'Spread everything in a single layer. Don\'t overcrowd or it will steam instead of roast!', tip: 'Use two pans if needed!' },
+      { id: 4, instruction: 'Roast', plainLanguage: 'Roast for 22-25 minutes, stirring halfway through, until chicken is cooked and veggies are tender and slightly charred.', timer: 25 },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Squeeze lime juice over everything. Serve in warm tortillas with your favorite toppings!', tip: 'Top with sour cream, cheese, guac, salsa - the works!' }
+    ]
+  },
+  {
+    id: '50',
+    title: 'Honey Garlic Chicken',
+    description: 'Top 10 recipe of 2025! Sweet, savory, and ridiculously easy.',
+    difficulty: 'easy',
+    prepTime: 10,
+    cookTime: 15,
+    servings: 4,
+    tags: ['dinner', 'quick', 'asian-inspired', 'trending-2025'],
+    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80',
+    nutrition: { calories: 385, protein: 36, carbs: 32, fat: 12, fiber: 1 },
+    ingredients: [
+      { name: 'Chicken thighs', amount: '1.5 lbs', visual: 'About 6 boneless thighs' },
+      { name: 'Honey', amount: '1/3 cup', visual: 'Third cup honey' },
+      { name: 'Soy sauce', amount: '1/4 cup', visual: 'Quarter cup' },
+      { name: 'Garlic', amount: '5 cloves minced', visual: 'Five cloves' },
+      { name: 'Rice vinegar', amount: '2 tbsp', visual: 'Two tablespoons' },
+      { name: 'Cornstarch', amount: '1 tbsp', visual: 'One tablespoon' },
+      { name: 'Sesame seeds', amount: '1 tbsp', visual: 'For garnish' },
+      { name: 'Green onions', amount: '2 sliced', visual: 'Two green onions' }
+    ],
+    steps: [
+      { id: 1, instruction: 'Sear chicken', plainLanguage: 'Heat oil in a large pan over medium-high. Season chicken with salt and pepper. Sear 4-5 minutes per side until golden. Remove and set aside.', timer: 10 },
+      { id: 2, instruction: 'Make sauce', plainLanguage: 'In same pan, add garlic and cook 30 seconds. Add honey, soy sauce, and rice vinegar. Bring to a simmer.' },
+      { id: 3, instruction: 'Thicken', plainLanguage: 'Mix cornstarch with 2 tbsp water. Pour into sauce, stirring constantly until thick and glossy.', tip: 'This takes just 1-2 minutes!' },
+      { id: 4, instruction: 'Finish chicken', plainLanguage: 'Return chicken to pan. Coat with sauce and cook 2-3 minutes until chicken is cooked through and glazed.', timer: 3 },
+      { id: 5, instruction: 'Serve', plainLanguage: 'Garnish with sesame seeds and green onions. Serve over rice with the extra sauce!', tip: 'Make extra sauce - you\'ll want it for the rice!' }
+    ]
   }
 ];
